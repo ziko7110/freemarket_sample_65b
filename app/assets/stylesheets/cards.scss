@@ -1,3 +1,219 @@
-// Place all the styles related to the cards controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.payjp {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100%;
+  background-color: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  padding: 0 0 220px;
+  .payjp__form {
+    display: block;
+    
+    .payjp__form--bar {
+      width: 700px;
+      margin: 0 auto;
+      height: 100%;
+      background: #fff;
+      &--title {
+        font-weight: bold;
+        text-align: center;
+        font-size: 22px;
+        padding: 32px;
+        border-bottom: 1px solid #f5f5f5;
+      }
+      &--main {
+        padding: 50px 16px 40px;
+        .payjp__form--main--bar {
+          max-width: 343px;
+          margin: 0 auto;
+          &--limit {
+            .cardnum {
+              font-weight: 600;
+            }
+            .must {
+              background: #ea352d;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+          }
+          .payjp__number {
+            width: 310px;
+            margin: 8px 0 0;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          .payjp__card__contener__form__content__group__img {
+            margin:8px 0 0;
+            display: flex;
+            &__visa {
+              display: inline-block;
+              vertical-align: middle;
+            }
+            &__master-card {
+              display: inline-block;
+              margin: 0 0 0 8px;
+              vertical-align: middle;
+            }
+            &__saison-card {
+              display: inline-block;
+              margin: 0 0 0 8px;
+              vertical-align: middle;
+            }
+            &__jcb {
+              display: inline-block;
+              margin: 0 0 0 8px;
+              vertical-align: middle;
+            }
+            &__american-express {
+              display: inline-block;
+              margin: 0 0 0 8px;
+              vertical-align: middle;
+            }
+            &__dinersclub {
+              display: inline-block;
+              margin: 0 0 0 8px;
+              vertical-align: middle;
+            }
+            &__discover {
+              display: inline-block;
+              margin: 0 0 0 8px;
+              vertical-align: middle;
+            }
+          }
+          .payjp__form--limit {
+            padding-top: 50px;
+            .month--limit {
+              &--bar {
+                .expiration__date {
+                  font-weight: 600;
+                }
+                .must {
+                  background: #ea352d;
+                  margin: 0 0 0 8px;
+                  padding: 2px 4px;
+                  border-radius: 2px;
+                  color: #fff;
+                  font-size: 12px;
+                  vertical-align: top;
+                }
+              }
+              .exp_month {
+                width: calc(50% - 6px);
+                height: 48px;
+                margin: 8px 0 0;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+                -webkit-appearance: none;
+                appearance: none;
+                position: relative;
+              } 
+              .payjp__chevron--down--icon {
+                position: absolute;
+                margin: 23px 30px 0 -30px;
+                font-size: 18px;
+                color: #888;
+              }
+            }
+            .year--limit {
+              .exp_year {
+                width: calc(50% - 6px);
+                height: 48px;
+                margin: 8px 0 0;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+                -webkit-appearance: none;
+                appearance: none;
+              }
+              .payjp__chevron--down--icon {
+                position: absolute;
+                margin: 23px 30px 0 -30px;
+                font-size: 18px;
+                color: #888;
+              }
+            }
+            .payjp__form--code {
+              padding-top: 50px;
+              &--body {
+                &--bar {
+                  .security__code {
+                    font-weight: 600;
+                  }
+                  .must {
+                    background: #ea352d;
+                    margin: 0 0 0 8px;
+                    padding: 2px 4px;
+                    border-radius: 2px;
+                    color: #fff;
+                    font-size: 12px;
+                    vertical-align: top;
+                  }
+                }
+                .payjp__cvc {
+                  width: 310px;
+                  height: 48px;
+                  margin: 8px 0 0;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+              }
+              .payjp__form--code--bottom {
+                padding-top: 10px;
+                width: 380px;
+                text-align: right;
+                .security__code--note {
+                  &--list {
+                    display: flex;
+                    text-decoration: none;
+                    color: #0099e8;
+                    padding-left: 180px;
+                    .question--icon {
+                    }
+                    .security__code--note--text {
+                    }
+                  }
+                }
+              }
+              .token_submit {
+                margin: 24px 0 0;
+                background: #ea352d;
+                border: 1px solid #ea352d;
+                color: #fff;
+                display: block;
+                width: 100%;
+                line-height: 48px;
+                font-size: 14px;
+                transition: all ease-out .3s;
+                cursor: pointer;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+  

@@ -1,0 +1,39 @@
+.devise-main
+  .devise-header1
+    .devise-header1__registrations
+      = image_tag 'fmarket_logo_red.svg', alt: 'logo', class: 'devise-header__registration__logo', height: '60', width: '185'    
+    .devise-header1__signup-bar
+      %ol.devise-header1__signup-bar__ol
+        %li.devise-header1__signup-bar__nav 
+          .devise-header1__signup-bar__nav__name-red 会員情報
+          .devise-header1__signup-bar__nav__mark-red 
+        %li.devise-header1__signup-bar__nav 
+          .devise-header1__signup-bar__nav__name-red 電話番号
+          .devise-header1__signup-bar__nav__mark-red 
+        %li.devise-header1__signup-bar__nav 
+          .devise-header1__signup-bar__nav__name-gray お届け先住所入力
+          .devise-header1__signup-bar__nav__mark-gray
+        %li.devise-header1__signup-bar__nav 
+          .devise-header1__signup-bar__nav__name-gray 支払い方法
+          .devise-header1__signup-bar__nav__mark-gray
+        %li.devise-header1__signup-bar__nav 
+          .devise-header1__signup-bar__nav__name-gray 完了
+          .devise-header1__signup-bar__nav__mark-gray
+        .devise-header1__signup-bar__line-gray
+        .devise-header1__signup-bar__line-red__call-create
+  .call-create
+    .call-create__header 電話番号の確認
+    .call-create-main
+      .call-create-main__forms
+        = form_with url: '#', method: :get, local: true,class: 'call-create-main__forms_with' do |f|
+          .call-create-main__forms__form 
+            .call-create-main__forms__form__number 携帯電話の番号
+            = f.text_field :nickname, placeholder: "携帯電話の番号を入力", class: 'call-create-main__forms__form__btn'
+            .call-create-main__forms__form__input
+          %p.call-create-main__forms__person 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          = link_to "SMSを送信する", address_new_path, class: 'call-create-main__forms__btn' 
+          %p.call-create-main__forms__phone ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .call-create-main__forms__must
+            = link_to '#', class: 'call-create-main__forms__must__reason' do
+              電話番号の確認が必要な理由
+            %i.fas.fa-angle-right

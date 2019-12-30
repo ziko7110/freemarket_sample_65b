@@ -1,0 +1,476 @@
+
+
+// ここからプロフィール確認画面↓
+.edits {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  background-color: #f5f5f5;
+  .user_edit {
+    overflow: visible;
+    padding: 40px 0 40px;
+    margin: 0px 130px 0;
+    height: 100%;
+    display: flex;
+    .user_edit__side {
+      box-sizing: border-box;
+      background-color: #f5f5f5;
+      font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+      float: left;
+      width: 280px;
+      margin: 0 40px 0 0;
+      &--list {
+        border-style: solid;
+        border-width: 0;
+        margin: 0 auto;
+        ul {
+          li {
+            display: flex;
+            justify-content: space-between;
+            background: #f5f5f5;
+            .user_edit__side--list--list {
+              display: block;
+              min-height: 48px;
+              padding: 16px;
+              background: #fff;
+              font-size: 14px;
+              color: #333;
+              text-decoration: none;
+              margin-top: 1px;
+              touch-action: manipulation;
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+            }
+            .list--icon {
+              display: block;
+              margin-top: 1px;
+              background-color: white;
+              color: lightgrey;
+              position: relative;
+              padding: 0 px;
+              margin-right: 5px;
+              font-size: 20px;
+              transition: all 0.5s;
+            }
+            .user_edit__side--list--list:hover {
+              background-color: #F8F8FF	;
+              .list--icon {
+                transform: translate(5px);
+                background-color: #F8F8FF;
+                color: #333;
+              }
+            }
+          }
+        }
+        ul {
+          .user_edit__side--list--head2 {
+            margin: 40px 0 0;
+            font-weight: bold;
+          }
+          li {
+          }
+        }
+        ul {
+          .user_edit__side--list--head3 {
+            margin: 40px 0 0;
+            font-weight: bold;
+          }
+          li {
+          }
+        }
+      }
+    }
+    .user_edit__top--clearfix {
+      width: 700px;
+      height: 500px;
+      background-color: white;
+      .user_edit__contents {
+        &--container {
+          // line-height: 1.4;
+          font-weight: bold;
+          &--head {
+            font-size: 24px;
+            padding: 8px 24px;
+            text-align: center;
+            background-color: white;
+          }
+          .form {
+            background-color: white;
+            &__box {
+              &--a {
+                padding: 85px 16px 24px;
+                background-image: url("_28283-1129.jpg");
+                // background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                font-size: 0;
+                // justify-content: space-between;
+                
+                .form__box--img {
+                  margin-right: 10px;
+                  border-radius: 50%;
+                }
+                .form__box--text {
+                  display: inline-block;
+                  font-size: 20px;
+                  padding-top: 15px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                }
+              }
+              &--b {
+                padding: 40px 16px;
+                background-color: white;
+                ul {
+                  background-color: white;
+                  li {
+                    background-color: white;
+                    .edit-text {
+                      width: 100%;
+                      background-color: white;
+                    }
+                    .edit-btn {
+                      margin: 16px 0 0;
+                      background-color: #ea352d;
+                      border: 1px solid #ea352d;
+                      color: #fff;
+                      text-align: center;
+                      width: 100%;
+                      line-height: 48px;
+                      font-size: 14px;
+                      font-weight: normal;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ここから本人情報確認ページ
+// (左サイドバーはプロフィール確認画面のものを使用)
+// 記述は右側本人確認フォームから
+.edits {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  background-color: #f5f5f5;
+  .user_edit {
+    overflow: visible;
+    padding: 40px 0 40px;
+    margin: 0px 80px 0;
+    height: 100%;
+    display: flex;
+    &__side {
+      float: left;
+      width: 280px;
+      margin: 0 40px 0 0;
+      &--list {
+        border-style: solid;
+        border-width: 0;
+        margin: 0 auto;
+        ul {
+          li {
+            display: flex;
+            justify-content: space-between;
+            background: #f5f5f5;
+            &--list {
+              display: block;
+              min-height: 48px;
+              padding: 16px;
+              background: #fff;
+              font-size: 14px;
+              color: #333;
+              text-decoration: none;
+              margin-top: 1px;
+              touch-action: manipulation;
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+            }
+            .list--icon {
+              display: block;
+              margin-top: 1px;
+              background-color: white;
+              color: lightgrey;
+              position: relative;
+              padding: 0 px;
+              margin-right: 5px;
+              font-size: 20px;
+              transition: all 0.5s;
+            }
+            &--list:hover {
+              background-color: #F8F8FF	;
+              .list--icon {
+                transform: translate(5px);
+                background-color: #F8F8FF;
+                color: #333;
+              }
+            }
+          }
+        }
+        ul {
+          .user_edit__side--list--head2 {
+            margin: 40px 0 0;
+            font-weight: bold;
+          }
+          li {
+          }
+        }
+        ul {
+          .user_edit__side--list--head3 {
+            margin: 40px 0 0;
+            font-weight: bold;
+          }
+          li {
+          }
+        }
+      }
+    }
+    .user__check {
+      background-color: #fff;
+      background-size: cover;
+      width: 700px;
+      height: 500px;
+      &--title {
+        background-color: #fff;
+        font-weight: bold;
+        text-align: center;
+        font-size: 24px;
+        padding: 8px 24px;
+        margin-bottom: 1px;
+        border-bottom: #f5f5f5 solid 2px;
+      }
+      &--body {
+        background-color: #fff;
+        padding: 64px 64px 0;
+        font-size: 14px;
+        line-height: 1.5;
+        .user__check--text {
+          
+          &--1 {
+            background-color: #fff;
+          }
+          &--2 {
+            background-color: #fff;
+          }
+          &--3 {
+            background-color: #fff;
+            text-align: right;
+            padding: 8px 0 0 0 ;
+            .user__check--upload {
+              
+              background-color: #fff;
+              text-decoration: none;
+              color: #0099e8;
+              .list--icon {
+                background-color: #fff;
+              }
+            }
+          }
+        }
+      }
+      .user__check--form {
+        background-color: #fff;
+        padding: 0 64px 64px;
+        margin: 40px 0 0 0;
+        .user__check--form__box  {
+          &--a {
+            ul {
+              font-size: 14px;
+              background-color: #fff;
+              .form__box--name {
+                background-color: #fff;
+                margin: 40px 0 0;
+                font-weight: bold;
+              }
+              .form__box--list {
+                background-color: #fff;
+                margin: 8px 0 0;
+              }
+            }
+          }
+          &--b {
+            background-color: #fff;
+            ul {
+              background-color: #fff;
+              padding: 20px 0 0;
+              li {
+                background-color: #fff;
+                margin: 20px 0 0;
+                .label {
+                  background-color: #fff;
+                  font-weight: 600;
+                  display: inline-block;
+                }
+                .user__check--ninni {
+                  margin: 0 0 0 8px;
+                  padding: 2px 4px;
+                  border-radius: 2px;
+                  color: #fff;
+                  font-size: 12px;
+                  vertical-align: top;
+                  background-color: #ccc;
+                }
+                .check-text {
+                  width: 100%;
+                  margin: 8px 0 0;
+                  height: 48px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+                #_prefectures {
+                  overflow: hidden;
+                  width: 100%;
+                  height: 48px;
+                  text-align: center;
+                  text-overflow: ellipsis;
+                  outline: none;
+                  background: transparent;
+                  background-image: none;
+                  box-shadow: none;
+                  -webkit-appearance: none;
+                  appearance: none;
+                  padding-left: 16px;
+                }
+                #_prefectures:focus {
+                  border-color: #0099e8;
+                }
+                
+                .check-btn {
+                  background: #ea352d;
+                  border: 1px solid #ea352d;
+                  color: #fff;
+                  display: block;
+                  width: 100%;
+                  line-height: 48px;
+                  font-size: 14px;
+                  transition: all ease-out .3s;
+                  cursor: pointer;
+                  text-align: center;
+                  margin-top: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ここからログアウト画面です！
+// サイドバーの構造は上2つと同じですが、クラスをdestroyで統一しています！
+.destroy {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  background-color: #f5f5f5;
+  .user_destroy {
+    overflow: visible;
+    padding: 40px 0 40px;
+    margin: 0px 130px 0;
+    height: 100%;
+    display: flex;
+    &__side {
+      box-sizing: border-box;
+      background-color: #f5f5f5;
+      font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+      float: left;
+      width: 280px;
+      margin: 0 40px 0 0;
+      &--list {
+        border-style: solid;
+        border-width: 0;
+        margin: 0 auto;
+        ul {
+          li {
+            display: flex;
+            justify-content: space-between;
+            background: #f5f5f5;
+            .user_destroy__side--list--list {
+              display: block;
+              min-height: 48px;
+              padding: 16px;
+              background: #fff;
+              font-size: 14px;
+              color: #333;
+              text-decoration: none;
+              margin-top: 1px;
+              touch-action: manipulation;
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+            }
+            .list--icon {
+              display: block;
+              margin-top: 1px;
+              background-color: white;
+              color: lightgrey;
+              position: relative;
+              padding: 0 px;
+              margin-right: 5px;
+              font-size: 20px;
+              transition: all 0.5s;
+            }
+            .user_destroy__side--list--list:hover {
+              background-color: #F8F8FF	;
+              .list--icon {
+                transform: translate(5px);
+                background-color: #F8F8FF;
+                color: #333;
+              }
+            }
+          }
+        }
+        ul {
+          .user_destroy__side--list--head2 {
+            margin: 40px 0 0;
+            font-weight: bold;
+          }
+          li {
+          }
+        }
+        ul {
+          .user_destroy__side--list--head3 {
+            margin: 40px 0 0;
+            font-weight: bold;
+          }
+          li {
+          }
+        }
+      }
+    }
+    .user_destroy__main {
+      background-color: white;
+      width: 700px;
+      height: 179px;
+      &--body {
+        padding: 64px;
+        &--form {
+          max-width: 320px;
+          margin: 0 auto;
+          .check-btn {
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

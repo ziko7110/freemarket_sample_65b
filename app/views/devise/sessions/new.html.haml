@@ -1,0 +1,25 @@
+.devise-main
+  .devise-header1
+    .devise-header1__registrations
+      = image_tag 'fmarket_logo_red.svg', alt: 'logo', class: 'devise-header__registration__logo', height: '60', width: '185'    
+
+.login
+  .login__center
+    .login__center__new
+      .login__center__new__upper
+        アカウントをお持ちでない方はこちら
+      = link_to "新規会員登録", new_registration_path(resource_name), class: "login__center__new__lower"
+
+    .login__center__sns
+      =link_to "Facebookでログイン", "#", class: "login__center__sns__facebook"
+      =link_to "#", class: "login__center__sns__google" do
+        =image_tag "google_logo.svg", size: "60x60", class: "login__center__sns__google__icon"
+        Googleでログイン
+
+    .login__center__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = f.email_field :email, placeholder: "メールアドレス", autofocus: true, autocomplete: "email", class: "login__center__form__email"
+        = f.password_field :password, placeholder: "パスワード", autocomplete: "current-password", class: "login__center__form__password"
+        = image_tag "reCAPCHA.jpeg", class: "login__center__form__recapcha"
+        = f.submit "ログイン", class: "login__center__form__submit"
+      = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: "forgot_password"

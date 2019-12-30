@@ -1,0 +1,582 @@
+html{
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  header{
+    background-color: #f5f5f5;
+    height: 128px;
+    font-weight: bold;
+    text-align: center;
+    .top{
+      line-height: 128px;
+      svg{
+        height: 49px;
+        margin: 0 auto;
+      }
+    }
+  }
+  .item__head{
+    height: 97px;
+    width: 700px;
+    text-align: center;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 32px 16px;
+    border-bottom: solid 1px #f5f5f5;
+    background-color: white;
+    margin: 0 auto;
+    
+  }
+$titlefont: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+$titleFontcolor: #333333;
+$titleFontsize: 14px;
+$titleFontweight: bold;
+$titleWidth: fit-content;
+$titleBoxSizing: border-box;
+
+$AttentionMargin: 8px;
+$AttentionFontsize: 12px;
+$AttentionBackColor: #EA352E;
+$AttentionFontcolor: white;
+$AttentionBorder: 2px;
+$AttentionPadding: 2px 4px;
+$AttentionHeight: 16px;
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+  .items{
+    margin: 0 auto;
+    width: 700px;
+    background-color: white;
+    &__images{
+      border-bottom: solid 1px #f5f5f5;
+      padding: 40px;
+      &__head{
+        display: flex;
+        &__title{
+          font-family: $titlefont;
+          font-weight: $titleFontweight;
+          color: $titleFontcolor;
+          font-size: 16px;
+          width: $titleWidth;
+          box-sizing: $titleBoxSizing;
+        }
+        &__rightAttention{
+          margin-left: $AttentionMargin;
+          font-size: $AttentionFontsize;
+          font-family: $titlefont;
+          background-color: $AttentionBackColor;
+          color: $AttentionFontcolor;
+          border-radius: $AttentionBorder;
+          padding: $AttentionPadding;
+          height: $AttentionHeight;
+          align-items: center;
+        }
+      }
+      &__imageAttention{
+        font-size: 14px;
+        margin-top: 8px;
+        margin-bottom: 10px;
+      }
+      &__upload{
+        background-color: #f5f5f5;
+        height: 162px;
+        padding: 40px;
+        display: flex;
+        border: dashed 1px #ccc;
+        align-items: center;
+        box-sizing: border-box;
+        &__icon{
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &__information{
+      border-bottom: solid 1px #f5f5f5;
+      box-sizing: border-box;
+      padding: 40px;
+      &__name{
+        display: flex;
+        &__title{
+          font-family: $titlefont;
+          font-weight: $titleFontweight;
+          color: $titleFontcolor;
+          font-size: $titleFontsize;
+          width: $titleWidth;
+          box-sizing: $titleBoxSizing;
+        }
+        &__rightAttention{
+          margin-left: $AttentionMargin;
+          font-size: $AttentionFontsize;
+          font-family: $titlefont;
+          background-color: $AttentionBackColor;
+          color: $AttentionFontcolor;
+          border-radius: $AttentionBorder;
+          padding: $AttentionPadding;
+          height: $AttentionHeight;
+          align-items: center;
+        }
+      }
+      input{
+        margin: 8px 0 0;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      &__explanation{
+        display: flex;
+        padding-top: 40px;
+        &__title{
+          font-family: $titlefont;
+          font-weight: $titleFontweight;
+          color: $titleFontcolor;
+          font-size: $titleFontsize;
+          width: $titleWidth;
+          box-sizing: $titleBoxSizing;
+        }
+        &__rightAttention{
+          margin-left: $AttentionMargin;
+          font-size: $AttentionFontsize;
+          font-family: $titlefont;
+          background-color: $AttentionBackColor;
+          color: $AttentionFontcolor;
+          border-radius: $AttentionBorder;
+          padding: $AttentionPadding;
+          height: $AttentionHeight;
+          align-items: center;
+        }
+      }
+      &__textform-explanation{
+        box-sizing: border-box;
+        width: 100%;
+        height: 142px;
+      }
+      textarea{
+        margin-top: 8px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        height: 140px;
+        font-size: 16px;
+        width: 100%;
+      }
+    }
+    .selectBox{
+      border-color: #ccc;
+      border-style: solid;
+      box-shadow: none;
+      font-family: $titlefont;
+      height: 48px;
+      overflow: hidden;
+      background: transparent;
+      background-image: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      padding: 0 16px;
+      width: 400px;
+    }
+  &__definition{
+    border-bottom: solid 1px #f5f5f5;
+    padding: 40px;
+    &__title{
+      color: #888888;
+      font-size: 14px;
+      font-family: $titlefont;
+      width: fit-content;
+      float: left;
+    }
+    &__category{
+      color: #333333;
+      float: right;
+      height: fit-content;
+      &__contents{
+        width: 400px;
+        float: right;
+        right: 0;
+        &__title{
+          font-family: $titlefont;
+          font-weight: $titleFontweight;
+          color: $titleFontcolor;
+          font-size: $titleFontsize;
+          width: $titleWidth;
+          box-sizing: $titleBoxSizing;
+        }
+        &__rightAttention{
+          margin-left: $AttentionMargin;
+          font-size: $AttentionFontsize;
+          font-family: $titlefont;
+          background-color: $AttentionBackColor;
+          color: $AttentionFontcolor;
+          border-radius: $AttentionBorder;
+          padding: $AttentionPadding;
+          height: $AttentionHeight;
+          align-items: center;
+        }
+      }
+      &__select{
+        position: relative;
+        float: right;
+        i{
+          position: absolute;
+          right: 10px;
+          top: 15px;
+          color: #888;
+        }
+      }
+      &__status{
+        width: 400px;
+        position: relative;
+        margin-top: 40px;
+        display: flex;
+        float: right;
+        &__title{
+          font-family: $titlefont;
+          font-weight: $titleFontweight;
+          color: $titleFontcolor;
+          font-size: $titleFontsize;
+          width: $titleWidth;
+          box-sizing: $titleBoxSizing;
+          margin-bottom: 8px;
+          float: right;
+        }
+        &__rightAttention{
+          margin-left: $AttentionMargin;
+          font-size: $AttentionFontsize;
+          font-family: $titlefont;
+          background-color: $AttentionBackColor;
+          color: $AttentionFontcolor;
+          border-radius: $AttentionBorder;
+          padding: $AttentionPadding;
+          height: $AttentionHeight;
+          align-items: center;
+          position: absolute;
+          left: 70px;
+          top: 0;
+        }
+        &__select{
+          position: relative;
+          float: right;
+          width: 400px;
+          i{
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            color: #888;
+          }
+        }
+      }
+    }
+  }
+
+  &__shipping{
+    border-bottom: solid 1px #f5f5f5;
+    padding: 40px;
+    &__title{
+      color: #888888;
+      font-size: 14px;
+      font-family: $titlefont;
+      width: fit-content;
+      float: left;
+      .fa-question-circle{
+        color: #0099e8;
+      }
+    }
+    &__contents{
+      float: right;
+      width: 400px;
+      right: 0;
+      &__fee{
+        width: 400px;
+        height: fit-content;
+        float: right;
+        &__title{
+          font-family: $titlefont;
+          font-weight: $titleFontweight;
+          color: $titleFontcolor;
+          font-size: $titleFontsize;
+          width: $titleWidth;
+          box-sizing: $titleBoxSizing;
+          margin-bottom: 8px;
+        }
+        &__rightAttention{
+          margin-left: $AttentionMargin;
+          font-size: $AttentionFontsize;
+          font-family: $titlefont;
+          background-color: $AttentionBackColor;
+          color: $AttentionFontcolor;
+          border-radius: $AttentionBorder;
+          padding: $AttentionPadding;
+          height: $AttentionHeight;
+          align-items: center;
+        }
+        &__select{
+          position: relative;
+          i{
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            color: #888;
+          }
+        }
+      }
+      &__area{
+        margin-top: 40px;
+        height: fit-content;
+        width: 400px;
+        float: right;
+        &__title{
+          font-family: $titlefont;
+          font-weight: $titleFontweight;
+          color: $titleFontcolor;
+          font-size: $titleFontsize;
+          width: $titleWidth;
+          box-sizing: $titleBoxSizing;
+          margin-bottom: 8px;
+        }
+        &__rightAttention{
+          margin-left: $AttentionMargin;
+          font-size: $AttentionFontsize;
+          font-family: $titlefont;
+          background-color: $AttentionBackColor;
+          color: $AttentionFontcolor;
+          border-radius: $AttentionBorder;
+          padding: $AttentionPadding;
+          height: $AttentionHeight;
+          align-items: center;
+          }
+          &__select{
+            position: relative;
+            select{
+              border-color: #ccc;
+              border-style: solid;
+              box-shadow: none;
+              font-family: $titlefont;
+              height: 48px;
+              overflow: hidden;
+              background: transparent;
+              background-image: none;
+              -webkit-appearance: none;
+              cursor: pointer;
+              padding: 0 16px;
+              width: 400px;
+            }
+              i{
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            color: #888;
+          }
+        }
+      }
+
+      &__date{
+        width: 400px;
+        height: fit-content;
+        float: right;
+        margin-top: 40px;
+        &__title{
+          font-family: $titlefont;
+          font-weight: $titleFontweight;
+          color: $titleFontcolor;
+          font-size: $titleFontsize;
+          width: $titleWidth;
+          box-sizing: $titleBoxSizing;
+          margin-bottom: 8px;
+        }
+        &__rightAttention{
+          margin-left: $AttentionMargin;
+          font-size: $AttentionFontsize;
+          font-family: $titlefont;
+          background-color: $AttentionBackColor;
+          color: $AttentionFontcolor;
+          border-radius: $AttentionBorder;
+          padding: $AttentionPadding;
+          height: $AttentionHeight;
+          align-items: center;
+        }
+        &__select{
+          position: relative;
+          i{
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            color: #888;
+          }
+        }
+      }
+    }
+  }
+
+  &__cost{
+    border-bottom: solid 1px #f5f5f5;
+    padding: 40px;
+    margin: 0;
+    &__title{
+      color: #888888;
+      font-size: 14px;
+      font-family: $titlefont;
+      width: fit-content;
+      float: left;
+      i{
+        color: #0099e8;
+      }
+    }
+
+    &__price{
+      float: right;
+      width: 400px;
+      &__inputPrice{
+        display: flex;
+        border-bottom:1px solid #ccc;
+        height: 72px;
+        padding-bottom: 24px;
+        align-items: center;
+        position: relative;
+        &__title{
+          font-family: $titlefont;
+          font-weight: $titleFontweight;
+          color: $titleFontcolor;
+          font-size: $titleFontsize;
+          width: $titleWidth;
+          box-sizing: $titleBoxSizing;
+          height: fit-content;
+        }
+        &__rightAttention{
+          margin-left: $AttentionMargin;
+          font-size: $AttentionFontsize;
+          font-family: $titlefont;
+          background-color: $AttentionBackColor;
+          color: $AttentionFontcolor;
+          border-radius: $AttentionBorder;
+          padding: $AttentionPadding;
+          height: $AttentionHeight;
+          align-items: center;
+          width: fit-content;
+          position: absolute;
+          left: 30px;
+        }
+        &-input{
+          float: right;
+          right: 0;
+          position: absolute;
+          font-weight: $titlefont;
+          font-size: 14px;
+          .items__cost__price-inputArea{
+            box-shadow:none;
+            text-decoration: none;
+            box-sizing: border-box;
+            border: solid 1px;
+            border-radius: 4px;
+            font-family: $titlefont;
+            height: 48px;
+            width: 160px;
+            padding: 10px 16px 8px;
+            text-align: right;
+            border-color: #ccc;
+          }
+        }
+      }
+      &__outputFee{
+        padding: 24px 0;
+        height: 62px;
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+        &__title{
+          font-family: $titlefont;
+          font-size: 14px;
+          .items__cost__price-Fee{
+            text-align: right;
+            border-style: none;
+            float: right;
+            outline:none
+          }
+        }
+        &__profit{
+          font-family: $titlefont;
+          font-weight: $titleFontweight;
+          color: $titleFontcolor;
+          font-size: $titleFontsize;
+          box-sizing: $titleBoxSizing;
+          padding: 24px 0;
+          box-sizing: border-box;
+          display: flex;
+          width: 400px;
+          .items__cost__price-inputArea-answer{
+            text-align: right;
+            border-style: none;
+            font-size: 34px;
+            width: 330px;
+            margin-left: 10px;
+            outline:none
+          }
+        }
+      }
+    }
+      
+    
+  }
+
+
+  &__postArea{
+    padding: 40px;
+    &__attention{
+      font-weight: $titleFontweight;
+      font-size: $titleFontsize;
+      color: $titleFontcolor;
+      font-weight: lighter;
+      a{
+        text-decoration: none;
+      }
+    }
+    &__postBtn{
+      margin-top: 40px;
+      background-color: #ea352d;
+      border-color: #ea352d;
+      width: 100%;
+      height: 48px;
+      line-height: 48px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      outline:none
+    }
+    &__backBtn{
+      margin: 24px 170.5px 0;
+      background-color: #AAAAAA;
+      border-color: #AAAAAA;
+      box-sizing: border-box;
+      width: 279px;
+      height: 50px;
+      line-height: 48px;
+      font-size: 14px;
+      cursor: pointer;
+      transition:all ease-out .3s;
+      text-decoration: none;
+      color: white;
+      outline:none
+    }
+    &__backBtn:hover{
+      background-color: #c5c5c5;
+    }
+  }
+}
+}
+.clearfix::after{
+  content:"";
+  clear:both;
+  overflow:hidden;
+}

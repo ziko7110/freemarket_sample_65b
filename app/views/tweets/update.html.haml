@@ -1,0 +1,282 @@
+.product
+  .product__body
+    .product__main
+      %h5.product__main--title チョウチンアンコウの”ここ”
+      .product__main--contents
+        .item__photo
+          .item__photo--main
+            = image_tag "b69543bb.jpg", class: "product__main__item-image"
+          .item__photo--bottom
+            .item__photo--bottom--active
+              = image_tag "b69543bb.jpg", class: "product__main__item-image"
+            .item__photo--bottom--active
+              = image_tag "b69543bb.jpg", class: "product__main__item-image"
+            .item__photo--bottom--active
+              = image_tag "b69543bb.jpg", class: "product__main__item-image"
+            .item__photo--bottom--active
+              = image_tag "b69543bb.jpg", class: "product__main__item-image"
+            .item__photo--bottom--active
+              = image_tag "b69543bb.jpg", class: "product__main__item-image"
+            .item__photo--bottom--active
+              = image_tag "46_img2.jpg", class: "product__main__item-image"
+            .item__photo--bottom--active
+              = image_tag "46_img2.jpg", class: "product__main__item-image"
+            .item__photo--bottom--active
+              = image_tag "46_img2.jpg", class: "product__main__item-image"
+            .item__photo--bottom--active
+              = image_tag "46_img2.jpg", class: "product__main__item-image"
+            .item__photo--bottom--active
+              = image_tag "46_img2.jpg", class: "product__main__item-image"
+            
+        %table.item__ditail
+          %tr.item__ditail--head
+            %th.item__ditail--name 出品者
+            %td
+              .item__ditail--title 寿限無
+              .item__ditail--faceicon
+                %span.item__ditail--faceicon--1
+                  = icon 'fas', 'grin', class:'face--icon'
+                  %span.icon-num 0
+                %span.item__ditail--faceicon--2
+                  = icon 'fas', 'meh', class:'face--icon'
+                  %span.icon-num 0
+                %span.item__ditail--faceicon--3
+                  = icon 'fas', 'frown', class:'face--icon'
+                  %span.icon-num 0
+          %tr.item__ditail--head
+            %th.item__ditail--name カテゴリー
+            %td
+              .item__ditail--list メンズ
+              .item__ditail--list1 靴
+              .item__ditail--list1 スニーカー
+
+          %tr.item__ditail--head
+            %th.item__ditail--name ブランド
+            %td 
+              = link_to "#" ,class:"item__ditail--brand" do
+                ナイキ
+          %tr.item__ditail--head
+            %th.item__ditail--name 商品のサイズ
+            %td 27cm
+          %tr.item__ditail--head
+            %th.item__ditail--name 商品の状態
+            %td 未使用に使い
+          %tr.item__ditail--head
+            %th.item__ditail--name 配送料の負担
+            %td 着払い（購入者負担）
+          %tr.item__ditail--head
+            %th.item__ditail--name 配送の方法
+            %td クロネコヤマト
+          %tr.item__ditail--head
+            %th.item__ditail--name 配送元地域
+            %td
+              = link_to "#" ,class:"item__ditail--area" do
+                大阪府
+          %tr.item__ditail--head
+            %th.item__ditail--name 発送の目安
+            %td 1〜2日で発送
+      .product__main--item--price
+        %span.showprice ¥100,000
+        %span.showtax（税込）
+        %span.showfee 送料込み
+      .item__buy--btn
+        = form_for "#", class: 'item__buy--btn' do |f|
+          = f.submit "購入画面に進む", class: 'item__check-btn'
+      .product__main--comments
+        %p.product__main--comments--main 【27cm】Travis Scott × Nike Air Force 1 Low Cactus Jack トラヴィス スコット エアフォース ご覧いただき、ありがとうございます。SNIKRSで当選し、購入しました。 サイズは27cm になります。 状態は、新品未使用・未試着になります。 個人情報部分を切り取った納品書原本をお付けいたします。入金確認後、即発送させていただきます。※ 落札から24時間以内のご連絡、また1日以内のお振込がお約束できる方のみ、ご入札くださいませ。 ※ご相談等は、可能な限り、お受けしたいと思いますので、ご遠慮なく仰ってください。
+      .item__around--btn
+        .item__around--btn--left 
+          .item__around--btn--left--l 
+            = icon 'far', 'heart', class:'heart--icon'
+            %span.item__around--btn--left--l--iine いいね！
+            %span.item__around--btn--left--l--num 50
+          .item__around--btn--left--r 
+            = icon 'fas', 'flag-checkered', class:'flag--icon'
+            %span.item__around--btn--left--r--hutekisetu 不適切な商品の報告
+        .item__around--btn--right
+          = icon 'fas', 'unlock-alt', class:'unlock--icon'
+          = link_to "#" , class: "item__around--btn--right--link" do
+            あんしん・あんぜんへの取組
+    .product__message
+      .product__message--container
+        .product__message--contents1
+          %ul
+            %li
+              .message-user
+                = icon 'fas', 'user-circle', class:'message-user--icon'
+            %li
+              .message-body
+                .message-body--main
+                  
+                
+        .product__message--contents2
+          .form
+            .form__rule 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          .form__comment
+            = form_for "#", html: {class: 'product__message--form'} do |f|
+              = f.text_area :text, class: 'product__message--text'
+          .product__form--submit
+            = form_for "#", html: {class: 'product__message--form'} do |f|
+              = f.submit "コメントする", class: 'product__message--btn'
+    %ul.product__nav
+      = icon 'fas', 'chevron-left', class:'product__nav--icon'
+      %li.product__nav--left ikonファンクラブ更新特典
+      %li.product__nav--right トランクス：ゼノ　シークレット
+      = icon 'fas', 'chevron-right', class:'product__nav--icon'
+
+    .item__sns
+      .item__sns--box
+        %ul
+          %li
+            = link_to "https://www.facebook.com/" , class: "user__check--upload" do
+              = icon 'fab', 'facebook', class:'facebook__nav--icon'
+          %li
+            = link_to "https://twitter.com/login?lang=ja" , class: "user__check--upload" do
+              = icon 'fab', 'twitter-square', class:'twitter__nav--icon'
+          %li
+            = link_to "#https://line.me/ja/" , class: "user__check--upload" do
+              = icon 'fab', 'line', class:'line__nav--icon'
+          %li
+            = link_to "https://www.pinterest.jp/" , class: "user__check--upload" do
+              = icon 'fab', 'pinterest-square', class:'pinterest__nav--icon'
+
+
+    -# ここから出品者のその他の出品商品一覧
+    .item-in-user-prf
+      %section.item-box-container1
+      %section.item-box-container2
+        %h6.items-box-head 寿限無　その他の商品
+        .items-box-content
+          %section.show__item-box
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class:'show__item-image-num'
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+          %section.show__item-box
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class: "show__item-image-num"
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+          %section.show__item-box1
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class:'show__item-image-num'
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+          %section.show__item-box
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class: "show__item-image-num"
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+          %section.show__item-box
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class:'show__item-image-num'
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+          %section.show__item-box1
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class: "show__item-image-num"
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+    -# ここから出品ブランドのその他の出品商品一覧
+    .item-in-user-prf
+      %section.item-box-container1
+      %section.item-box-container2
+        %h6.items-box-head チョウチンアンコウの”ここ”　その他の商品
+        .items-box-content
+          %section.show__item-box
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class:'show__item-image-num'
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+          %section.show__item-box
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class: "show__item-image-num"
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+          %section.show__item-box1
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class:'show__item-image-num'
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+          %section.show__item-box
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class: "show__item-image-num"
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+          %section.show__item-box
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class:'show__item-image-num'
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+          %section.show__item-box1
+            .show__item-image
+              = image_tag "05-shark-week-gallery_82594_600x450_600x450.jpg", size: "220x220", class: "show__item-image-num"
+            .show__item-text
+              %h7.show__item--text--title ハンマーヘッドシャークの”ここ”
+              .show__item--text--num
+                .show__item--text--num--price ¥3,980
+                .show__item--text--num--body
+                  = icon 'far', 'heart', class:'show__item--text--num--icon'
+                  %span.show__item--text--num--icon--num 3
+  .root__nav
+    %ul
+      %li
+        .itemprop__url ヨダレダコ
+        = icon 'fas', 'chevron-right', class:'itemprop__url--icon'
+      %li
+        %span.itemprop__title 女将 = 蟹宮

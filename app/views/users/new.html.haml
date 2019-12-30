@@ -1,0 +1,95 @@
+.devise-main
+  .devise-header1
+    .devise-header1__registrations
+      = image_tag 'fmarket_logo_red.svg', alt: 'logo', class: 'devise-header__registration__logo', height: '60', width: '185'    
+    .devise-header1__signup-bar
+      %ol.devise-header1__signup-bar__ol
+        %li.devise-header1__signup-bar__nav 
+          .devise-header1__signup-bar__nav__name-red 会員情報
+          .devise-header1__signup-bar__nav__mark-red 
+        %li.devise-header1__signup-bar__nav 
+          .devise-header1__signup-bar__nav__name-gray 電話番号
+          .devise-header1__signup-bar__nav__mark-gray 
+        %li.devise-header1__signup-bar__nav 
+          .devise-header1__signup-bar__nav__name-gray お届け先住所入力
+          .devise-header1__signup-bar__nav__mark-gray
+        %li.devise-header1__signup-bar__nav 
+          .devise-header1__signup-bar__nav__name-gray 支払い方法
+          .devise-header1__signup-bar__nav__mark-gray
+        %li.devise-header1__signup-bar__nav 
+          .devise-header1__signup-bar__nav__name-gray 完了
+          .devise-header1__signup-bar__nav__mark-gray
+        .devise-header1__signup-bar__line-gray
+        
+  .devise-main__registration
+    .devise-main__registration__head 
+      %h1 会員情報入力
+    = form_with url: '#', method: :get, local: true,class: 'devise-main__registration__form' do |f|
+      .field
+        %span.label ニックネーム
+        %span.necessary 必須
+        = f.text_field :nickname, placeholder: "例）メルカリ太郎", class: 'form-control'
+      .field
+        %span.label メールアドレス
+        %span.necessary 必須
+        = f.text_field :nickname, placeholder: "PC・携帯どちらでも可", class: 'form-control'
+      .field
+        %span.label パスワード
+        %span.necessary 必須
+        = f.text_field :nickname, placeholder: "7文字以上の半角英数字", class: 'form-control'
+      .field
+        = f.check_box :hoge_column, class: 'checkbox-password__box'
+        = f.label :hoge_column, 'パスワードを表示する', class: 'checkbox-password__label'  
+      .field
+        %h2.identification 
+          本人確認
+        %p.announcement 
+          安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+      .field
+        %span.label お名前（全角）
+        %span.necessary 必須
+        .field__name 
+          = f.text_field :nickname, placeholder: "例）山田", class: 'form-control_familyname'
+          = f.text_field :nickname, placeholder: "例）彩", class: 'form-control_firstname'
+      .field
+        .field__name2
+      .field
+        %span.label お名前カナ（全角）
+        %span.necessary 必須
+        .field__name
+          = f.text_field :nickname, placeholder: "例）ヤマダ", class: 'form-control_familyname'
+          = f.text_field :nickname, placeholder: "例）アヤ", class: 'form-control_firstname'
+      .field
+        .field__name2
+      .field
+        .identification__form__field
+          %span.label 生年月日
+          %span.necessary 必須
+          .identification__form__field__birth__box
+            = f.select :birth_year, [*1900..2019], {}, class: 'identification__form__field__birth__box__body'
+            %span 年
+            = f.select :birth__month, [*1..12], {},  class: 'identification__form__field__birth__box__body'
+            %span 月
+            = f.select :birth_day, [*1..31], {},  class: 'identification__form__field__birth__box__body'
+            %span 日
+      .field
+        %p.field__info
+          ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+      .field
+        %p.field__info-text
+          「次へ進む」のボタンを押すことにより、
+          = link_to '#', class: 'field__info-text__service' do
+            利用規約
+          に同意したものとみなします
+      .field
+        .field__actions
+          = link_to "次へ進む",call_new_path,class: 'field__actions__btn'
+      .field
+        %p.field__about-identification
+          = link_to '#', class: 'field__about-identification__link' do
+            本人情報の登録について
+          %i.fas.fa-angle-right
+      .field
+        %p.field__recaptcha
+          This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+

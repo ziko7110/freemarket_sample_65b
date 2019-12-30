@@ -22,3 +22,147 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|e-mail|string|null: false, unique: true|
+|password|string|null: false|
+|family_name_kanji|string|null: false|
+|first_name_kanji|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
+|mobile_phone_number|integer|null: false, unique: true|
+|profile_comment|text||
+|postal_code|string||
+|prefecture|integer||
+|city|string||
+|address_number|string||
+|building_name|string||
+
+### Association
+- has_many :items
+- has_many :cards
+- has_many :addresses
+- has_many :comments
+- has_many :likes
+- has_many :evaluations
+- has_many :sns_credentials
+
+
+## user_addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|family_name_kanji|string|null: false|
+|first_name_kanji|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|postal_code|integer|null: false|
+|prefecture|integer|null: false|
+|city|string|null: false|
+|address_number|string|null: false|
+|building_name|string||
+|phone_number|integer||
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+
+
+## itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|user_id|references|null: false, foreign_key: true|
+|description|text|
+|category|integer|null: false|
+|condition|itenger|null: false|
+|delivery_fee|integer|null: false|
+|delivery_method|integer|null: false|
+|shipping_area|integer|null: false|
+|shipping_days |integer|null: false|
+|price|integer|null: false|
+
+### Association
+- belongs_to :user
+- has_many :photos
+- has_many comments
+- has_many :likes
+
+
+## photosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|item_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :item
+
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|number|integer|null: false|
+|expiration_date_month|integer|null: false|
+|expiration_date_year|integer|null: false|
+|security_code|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|comment|text||
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+
+
+## likesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+
+
+## evaluationsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|evaluation|integer||
+|user_id|references|null: false, foreign_key: true|
+|comment|text||
+
+### Association
+- belongs_to :user
+
+
+
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|uid|integer|null: false|
+|provider|string|null: false|
+|token|text||
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user

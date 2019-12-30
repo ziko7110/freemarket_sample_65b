@@ -1,0 +1,27 @@
+.header__container
+  .header__container__top 
+    = link_to '#', class: 'header__container__top__logo' do
+      = image_tag 'fmarket_logo_red.svg', alt: 'logo', class: 'header__container__top__logo__image', height: '36', width: '134'
+    .header__container__top__searchs
+      = form_tag class: 'header__container__top__search' do |f|
+        = text_field_tag '','', placeholder: '何かお探しですか？',class: 'header__container__top__search__field'
+      .header__container__top__search__action
+        = button_tag type: 'submit', class: "follow-btn" do
+          = icon('fas', 'search')
+
+
+  .header__container__bottom
+    %nav.header__container__bottom__nav
+      .header__container__bottom__nav__category
+        %i.fas.fa-list-ul
+        = link_to 'カテゴリーから探す', '#', class: 'header__container__bottom__nav__category__link'
+
+
+      .header__container__bottom__nav__brand
+        %i.fas.fa-tag
+        = link_to 'ブランドから探す', '#', class: 'header__container__bottom__nav__brand__link'
+
+      .header__container__bottom__user
+        = link_to '新規会員登録', new_user_path, class: 'header__container__bottom__user__signup'
+        = link_to 'ログイン',    '#', class: 'header__container__bottom__user__login'
+        

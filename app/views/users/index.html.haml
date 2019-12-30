@@ -1,0 +1,18 @@
+.devise-header
+  .devise-header__registration
+    = image_tag 'fmarket_logo_red.svg', alt: 'logo', class: 'devise-header__registration__logo', height: '60', width: '185'    
+
+.devise-main
+  .devise-main__contents
+    %h2.devise-main__contents__top  新規会員登録
+    .devise-main__registration__links
+      .devise-main__registration__links__link
+        = link_to '#', class: 'devise-main__registration__links__link__email' do
+          %i.far.fa-envelope
+          .devise-main__registration__links__link__email__content メールアドレスで登録する
+        = link_to '#', method: :post, class: 'devise-main__registration__links__link__facebook'  do
+          %i.fab.fa-facebook-square
+          .devise-main__registration__links__link__facebook__content  Facebookで登録する
+        = link_to '#', method: :post, class: 'devise-main__registration__links__link__google' do
+          %i.fab.fa-google-plus-g
+          .devise-main__registration__links__link__google__content Googleで登録する

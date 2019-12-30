@@ -1,0 +1,55 @@
+
+.main
+  .center
+    .top.slick
+      .photo
+        = image_tag "top1.jpg", size: "1350x674", class: "photo__image"
+        .photo__word
+          .photo__word__upper
+            スマホでかんたん
+            %br
+            フリマアプリ
+          .photo__word__middle
+            メルカリはスマホカメラからすぐに出品できる
+            %br
+            購入時も安心な独自システムのアプリです
+          .photo__word__lower
+            =link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8", target: "_blank", class: "banner" do
+              =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", class: "badge"
+            =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&amp;hl=ja", target: "_blank", class: "banner" do
+              =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", class: "badge"
+      .photo
+        = image_tag "top2.jpg", size: "1280x450", class: "photo__image"
+    .category
+      .category__upper
+        %h2 人気のカテゴリー
+      .category__lower
+        %ul
+          %li
+            = link_to "レディース", "#", class: "list"
+          %li
+            = link_to "メンズ", "#", class: "list"
+          %li
+            = link_to "家電・スマホ・カメラ", "#", class: "list"
+          %li
+            = link_to "おもちゃ・ホビー・グッズ", "#", class: "list"
+    .products
+      = render "product"
+      = render "product"
+      = render "product"
+      = render "product"
+    .brand
+      .brand__upper
+        %h2 人気のブランド
+      .brand__lower
+        %ul
+          %li シャネル
+          %li ルイヴィトン
+          %li シュプリーム
+          %li ナイキ
+    .products
+      = render "product"
+      = render "product"
+      = render "product"
+      = render "product"
+= render "aside"

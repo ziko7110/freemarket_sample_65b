@@ -1,6 +1,6 @@
 .devise-main
   .devise-header1
-    .devise-header1__registrations
+    = link_to root_path, class: 'devise-header1__registrations' do
       = image_tag 'fmarket_logo_red.svg', alt: 'logo', class: 'devise-header__registration__logo', height: '60', width: '185'    
     .devise-header1__signup-bar
       %ol.devise-header1__signup-bar__ol
@@ -24,7 +24,7 @@
   .devise-main__registration
     .devise-main__registration__head 
       %h1 会員情報入力
-    = form_with url: '#', method: :get, local: true,class: 'devise-main__registration__form' do |f|
+    = form_with url: call_new_path, method: :get, local: true,class: 'devise-main__registration__form' do |f|
       .field
         %span.label ニックネーム
         %span.necessary 必須
@@ -83,7 +83,7 @@
           に同意したものとみなします
       .field
         .field__actions
-          = link_to "次へ進む",call_new_path,class: 'field__actions__btn'
+          = f.submit "次へ進む",class: 'field__actions__btn'
       .field
         %p.field__about-identification
           = link_to '#', class: 'field__about-identification__link' do

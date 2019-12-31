@@ -104,13 +104,13 @@ $footer-font: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGot
   float: left;
   font-size: 23px;
 }
-.fa-facebook-square{
+
+.devise-main__registration__links__link__facebook__icon{
   margin-top: 15px;
   margin-left: 13px ;
   float: left;
   font-size: 23px;
 }
-
 .fa-google-plus-g{
   margin-top: 15px;
   margin-left: 13px ;
@@ -171,6 +171,7 @@ $footer-font: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGot
     &__registrations {
     margin-bottom: 35px;
     width: 240px;
+    display: block;
       &__logo{
       line-height: 49px;
       }
@@ -604,7 +605,8 @@ height: 380px;
   }
 }
 .user-done__image{
-margin-left:370px
+margin: 0 auto;
+display: block;
 }
 
 

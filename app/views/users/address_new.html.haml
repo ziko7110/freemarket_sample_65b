@@ -1,6 +1,6 @@
 .devise-main
   .devise-header1
-    .devise-header1__registrations
+    = link_to root_path, class: 'devise-header1__registrations' do
       = image_tag 'fmarket_logo_red.svg', alt: 'logo', class: 'devise-header__registration__logo', height: '60', width: '185'    
     .devise-header1__signup-bar
       %ol.devise-header1__signup-bar__ol
@@ -24,7 +24,7 @@
   .address-main
     %h1.address-main__header 住所入力
 
-    = form_with url: '#', method: :get, local: true,class: 'devise-main__registration__form' do |f|
+    = form_with url: new_card_path, method: :get, local: true,class: 'devise-main__registration__form' do |f|
       .address-main__fields__field
         %span.label お名前
         %span.necessary 必須
@@ -110,4 +110,4 @@
         = f.text_field :nickname, placeholder: "例） 09012345678", class: 'address-main__form'
       .address-main__fields__field
         .field__actions
-          = link_to "次へ進む",new_card_path, class: 'field__actions__btn' 
+          = f.submit "次へ進む", class: 'field__actions__btn' 

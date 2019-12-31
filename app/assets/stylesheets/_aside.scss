@@ -1,11 +1,12 @@
 .aside {
   position: relative;
   height: 260px;
-  width: 1280px;
+  width: 100%;
+  min-width: 1060px;
   &__image {
     object-fit: cover;
     height: 260px;
-    width: 1280px;
+    width: 100%;
   }
   &__word {
     position: absolute;

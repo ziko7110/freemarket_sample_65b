@@ -9,7 +9,4 @@ class TweetsController < ApplicationController
   def update
   end
 
-  def confirmation
-  end
-
 end

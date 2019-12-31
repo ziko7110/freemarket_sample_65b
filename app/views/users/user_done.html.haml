@@ -1,6 +1,6 @@
 .devise-main
   .devise-header1
-    .devise-header1__registrations
+    = link_to root_path, class: 'devise-header1__registrations' do
       = image_tag 'fmarket_logo_red.svg', alt: 'logo', class: 'devise-header__registration__logo', height: '60', width: '185'    
     .devise-header1__signup-bar
       %ol.devise-header1__signup-bar__ol

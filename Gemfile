@@ -81,4 +81,4 @@ gem 'jquery-rails'
 gem 'fog-aws'
 gem 'payjp'
 gem 'active_hash'
-gem "gretel"
+gem 'gretel'

@@ -1,4 +1,6 @@
 class TweetsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @address = Prefecture.all
   end
@@ -7,6 +9,10 @@ class TweetsController < ApplicationController
   end
 
   def update
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 
 end

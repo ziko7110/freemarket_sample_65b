@@ -24,7 +24,7 @@
   .devise-main__registration
     .devise-main__registration__head 
       %h1 会員情報入力
-    = form_with url: call_new_path, method: :get, local: true,class: 'devise-main__registration__form' do |f|
+    = form_with url: call_new_path, method: :post, local: true,class: 'devise-main__registration__form' do |f|
       .field
         %span.label ニックネーム
         %span.necessary 必須
@@ -32,11 +32,11 @@
       .field
         %span.label メールアドレス
         %span.necessary 必須
-        = f.text_field :nickname, placeholder: "PC・携帯どちらでも可", class: 'form-control'
+        = f.text_field :email, placeholder: "PC・携帯どちらでも可", class: 'form-control'
       .field
         %span.label パスワード
         %span.necessary 必須
-        = f.text_field :nickname, placeholder: "7文字以上の半角英数字", class: 'form-control'
+        = f.text_field :password, placeholder: "7文字以上の半角英数字", class: 'form-control'
       .field
         = f.check_box :hoge_column, class: 'checkbox-password__box'
         = f.label :hoge_column, 'パスワードを表示する', class: 'checkbox-password__label'  
@@ -49,16 +49,16 @@
         %span.label お名前（全角）
         %span.necessary 必須
         .field__name 
-          = f.text_field :nickname, placeholder: "例）山田", class: 'form-control_familyname'
-          = f.text_field :nickname, placeholder: "例）彩", class: 'form-control_firstname'
+          = f.text_field :family_name_kanji, placeholder: "例）山田", class: 'form-control_familyname'
+          = f.text_field :first_name_kanji, placeholder: "例）彩", class: 'form-control_firstname'
       .field
         .field__name2
       .field
         %span.label お名前カナ（全角）
         %span.necessary 必須
         .field__name
-          = f.text_field :nickname, placeholder: "例）ヤマダ", class: 'form-control_familyname'
-          = f.text_field :nickname, placeholder: "例）アヤ", class: 'form-control_firstname'
+          = f.text_field :family_name_kana, placeholder: "例）ヤマダ", class: 'form-control_familyname'
+          = f.text_field :first_name_kana, placeholder: "例）アヤ", class: 'form-control_firstname'
       .field
         .field__name2
       .field

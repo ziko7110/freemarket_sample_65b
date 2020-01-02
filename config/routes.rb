@@ -7,6 +7,7 @@ Rails.application.routes.draw do
  get 'address_new', to: 'users#address_new'
  get 'user_done', to: 'users#user_done'
  get 'call_new', to: 'users#call_new'
+ resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
  resources :tweets, only: [:new, :show, :update] 
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy]
   resources :cards, only: [:new, :show] do

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   layout 'devise'
   def index
- 
+    @users = User.new
   end
 
   def new

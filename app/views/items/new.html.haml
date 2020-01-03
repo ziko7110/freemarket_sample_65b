@@ -18,10 +18,9 @@
       #imageBox.items__images__upload
       = f.label :images, class: "image-label" do
         .items__images__upload__box
-          %p ドラッグアンドドロップ
-          %p またはクリックしてファイルをアップロード
-        .items__images__upload__icon
-          %i.fas.fa-camera
+          %pre
+            ドラッグアンドドロップ
+            またはクリックしてファイルをアップロード
           = f.file_field :images, multiple: true, class: "image-label__input"
       .clearfix
     .items__information

@@ -1,16 +1,19 @@
 class UsersController < ApplicationController
 
-    layout 'devise', except: [:sign_out, :show, :edit, :confirmation]
+  layout 'devise', except: [:sign_out, :show, :edit, :confirmation]
 
   def confirmation
   end
 
   def index
- 
+    @users = User.new
   end
 
   def new
    
+  end
+
+  def check_user
   end
   
   def call_new

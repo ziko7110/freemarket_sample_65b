@@ -7,17 +7,23 @@
     商品の情報を入力
   .items
     .items__images
+    = form_for @item do |f|
       .items__images__head
-      .clearfix
         %label.items__images__head__title
           出品画像
         %label.items__images__head__rightAttention
           必須
       .items__images__imageAttention
         最大10枚までアップロードできます
-      .items__images__upload
+      #imageBox.items__images__upload
+      = f.label :images, class: "image-label" do
+        .items__images__upload__box
+          %p ドラッグアンドドロップ
+          %p またはクリックしてファイルをアップロード
         .items__images__upload__icon
           %i.fas.fa-camera
+          = f.file_field :images, multiple: true, class: "image-label__input"
+      .clearfix
     .items__information
       .items__information__name
         %label.items__information__name__title

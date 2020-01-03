@@ -10,7 +10,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :shipping_area,null: false
       t.integer :shipping_days,null: false
       t.integer :price,null: false
-      t.integer :seller_id, foreign_key: true
+      t.integer :brand
       t.integer :buyer_id, foreign_key: true
     end
   end

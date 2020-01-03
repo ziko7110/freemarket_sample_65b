@@ -17,5 +17,4 @@ Rails.application.routes.draw do
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
     end
-  end
 end

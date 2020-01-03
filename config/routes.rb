@@ -7,12 +7,14 @@ Rails.application.routes.draw do
  get 'address_new', to: 'users#address_new'
  get 'user_done', to: 'users#user_done'
  get 'call_new', to: 'users#call_new'
+ get 'card', to: 'tweets#card'
  get 'confirmation', to: 'users#confirmation'
  get 'sign_out', to: 'users#sign_out'
  get 'check-user', to: 'users#check_user'
  get 'buy_confirmation', to: 'items#buy_confirmation'
+
  resources :tweets, only: [:new, :show, :update] 
- resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
+ resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy]
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy]
   resources :cards, only: [:new, :show] do
     collection do

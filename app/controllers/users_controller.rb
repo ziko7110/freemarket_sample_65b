@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  def confirmation
+  end
+
   layout 'devise'
   def index
     @users = User.new

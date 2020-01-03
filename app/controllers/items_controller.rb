@@ -35,4 +35,5 @@ private
 
 def item_params
   params.require(:product).permit(:name, :price, images_attributes: [:image])
+
 end

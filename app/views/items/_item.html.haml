@@ -3,6 +3,8 @@
     .box__image
       = image_tag "sample.jpg", size: "188x188", class: "photo"
       .price
-        %span= "¥ #{item.price}"
-    .box__name 
-      %span= item.name
+        %span= "¥ 800"
+        -# %span= "¥ #{item.price}"
+    .box__name
+      %span{ class: 'box__name__span'}= "パソコン"
+      -# %span= item.name

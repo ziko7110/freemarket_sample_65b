@@ -1,0 +1,169 @@
+.user_edit
+  .user_edit__side
+    .user_edit__side--list
+      %ul
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            マイページ 
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            お知らせ
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            やることリスト
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            いいね！一覧
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            出品する
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            出品した商品-出品中
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            出品した商品-取引中
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            出品した商品-売却済み
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            購入した商品-取引中
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            購入した商品-過去の取引
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            ニュース一覧
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            評価一覧
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            ガイド
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            お問い合わせ
+            = icon 'fas', 'chevron-right', class:'list--icon'
+      %ul
+        %h3.user_edit__side--list--head2 メルペイ
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            売上・振込申請
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            ポイント
+            = icon 'fas', 'chevron-right', class:'list--icon'
+      %ul
+        %h3.user_edit__side--list--head2 設定
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            プロフィール
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            発送元・お届け先住所変更
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            支払い方法
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            メール/パスワード
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            本人情報
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            電話番号の確認
+            = icon 'fas', 'chevron-right', class:'list--icon'
+        %li
+          = link_to "#" , class:"user_edit__side--list--list" do
+            ログアウト
+            = icon 'fas', 'chevron-right', class:'list--icon'
+
+  .user__check
+    %h4.user__check--title 本人情報の登録
+    .user__check--body
+      .user__check--text
+        .user__check--text--1 お客様の本人情報をご登録ください
+        .user__check--text--2 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        .user__check--text--3
+          = link_to "#" , class: "user__check--upload" do
+            本人確認書類のアップロードについて
+            = icon 'fas', 'chevron-right', class:'list--icon'
+    .user__check--form
+      .user__check--form__box
+        .user__check--form__box--a
+          -# 『このコメントアウトは、データベース実装の際usersテーブルから
+          -# 　特定の特定の情報を引っ張ってくるためのものです。』
+          -# - @users.each do |user|
+          -#   %ul
+          -#     %li
+          -#       = f.label :お名前
+          -#       %span.user__check--ninni 任意
+          -#       = user.name 
+          -#     %li
+          -#       = f.label :お名前カナ
+          -#       %span.user__check--ninni 任意
+          -#       = user.name(カナ)
+          -#     %li
+          -#       = f.label :生年月日
+          -#       %span.user__check--ninni 任意
+          -#       = user.birthday
+          %ul
+            %li.form__box--name
+              お名前
+            %li.form__box--list
+              寿限無
+            %li.form__box--name
+              お名前カナ
+            %li.form__box--list
+              ジュゲム
+            %li.form__box--name
+              生年月日
+            %li.form__box--list
+              2019/3/3
+        .user__check--form__box--b
+          = form_for "#", method: :post, class: 'form__box--check--b' do |f|
+            %ul
+              %li
+                = f.label :郵便番号, class:'label'
+                %span.user__check--ninni 任意
+                = f.text_area :text, class:'check-text', placeholder: "例) 1234567"
+              %li
+                = f.label :都道府県, class:'label'
+                %span.user__check--ninni 任意
+                = f.select :prefectures, ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"], class:'check-text-select' 
+              %li
+                = f.label :市区町村, class:'label'
+                %span.user__check--ninni 任意
+                = f.text_area :text, class:'check-text', placeholder: "例) 横浜市緑区"
+              %li
+                = f.label :番地, class:'label'
+                %span.user__check--ninni 任意
+                = f.text_area :text, class:'check-text', placeholder: "例) 青山 1-1-1"
+
+              %li
+                = f.label :建物名, class:'label'
+                %span.user__check--ninni 任意
+                = f.text_area :text, class:'check-text', placeholder: "例) 柳ビル 103"
+              %li
+                = f.submit "登録する", class: 'check-btn'

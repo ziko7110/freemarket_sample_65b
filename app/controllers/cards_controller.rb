@@ -2,10 +2,13 @@ class CardsController < ApplicationController
 
   require "payjp"
 
+  layout 'devise', only: :new
+
   def new
     # ここはDB実装の際に使います
     # card = Card.where(user_id: current_user.id)
     # redirect_to action: "show" if card.exists?
+
   end
     # ここはDB実装の際に使います
   def pay #payjpとCardのデータベース作成を実施します。

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  def confirmation
+  end
+
   layout 'devise'
   def index
  
@@ -9,9 +12,6 @@ class UsersController < ApplicationController
    
   end
   
-  def confirmation
-  end
-
   def call_new
 
   end

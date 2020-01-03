@@ -9,7 +9,7 @@ Rails.application.routes.draw do
  get 'call_new', to: 'users#call_new'
  get 'check-user', to: 'users#check_user'
  resources :tweets, only: [:new, :show, :update] 
- resources :items, only: :index
+ resources :items, only: [:index, :new, :show]
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy]
   resources :cards, only: [:new, :show] do
     collection do
@@ -17,4 +17,5 @@ Rails.application.routes.draw do
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
     end
+  end
 end

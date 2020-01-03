@@ -11,7 +11,7 @@ Rails.application.routes.draw do
  get 'sign_out', to: 'users#sign_out'
  get 'check-user', to: 'users#check_user'
  resources :tweets, only: [:new, :show, :update] 
- resources :items, only: :index
+ resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy]
   resources :cards, only: [:new, :show] do
     collection do

@@ -1,13 +1,12 @@
 class ItemsController < ApplicationController
 
   def index
-    @item = Item.includes(:images).order('created_at DESC')
-    @item = Item.new
+    @items = Item.includes(:images).order('created_at DESC')
   end
 
   def new
     @item = Item.new
-    @item.images.new
+    @item.photos.new
   end
 
   def create

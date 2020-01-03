@@ -24,7 +24,7 @@
   .devise-main__registration
     .devise-main__registration__head 
       %h1 会員情報入力
-    = form_with url: call_new_path, method: :post, local: true,class: 'devise-main__registration__form' do |f|
+    = form_with model: @user ,local: true,url: call_new_path, method: :get, class: 'devise-main__registration__form' do |f|
       .field
         %span.label ニックネーム
         %span.necessary 必須

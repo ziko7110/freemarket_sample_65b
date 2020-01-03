@@ -8,7 +8,16 @@ Rails.application.routes.draw do
  get 'user_done', to: 'users#user_done'
  get 'call_new', to: 'users#call_new'
  resources :tweets, only: [:new, :show, :update] 
- resources :users, only: [:edit, :update, :index, :show, :new, :destroy]
+ resources :users, only: [:edit, :update, :index, :show, :new, :destroy, :create]
+ resources :signup do
+  collection do
+    get 'new'
+    get 'call_new'
+    get 'address_new'
+    get 'pay_jp'
+    get 'user_done' 
+  end
+end
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
  get 'address_new', to: 'users#address_new'
  get 'user_done', to: 'users#user_done'
  get 'call_new', to: 'users#call_new'
+ get 'confirmation', to: 'users#confirmation'
+ get 'sign_out', to: 'users#sign_out'
  get 'check-user', to: 'users#check_user'
  resources :tweets, only: [:new, :show, :update] 
  resources :items, only: :index

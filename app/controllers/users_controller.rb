@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 
-  
+  layout 'devise', except: [:sign_out, :show, :edit, :confirmation]
 
-  layout 'devise'
+  def confirmation
+  end
+
   def index
     @users = User.new
   end
@@ -39,6 +41,6 @@ class UsersController < ApplicationController
   def update
   end
 
-  def destroy
+  def sign_out
   end
 end

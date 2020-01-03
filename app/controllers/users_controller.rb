@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
-  def confirmation
-  end
+  
 
   layout 'devise'
   def index
@@ -10,6 +9,9 @@ class UsersController < ApplicationController
 
   def new
    
+  end
+
+  def check_user
   end
   
   def call_new

@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
 
+  # layout 'devise'
+
   def confirmation
   end
 
-  layout 'devise'
   def index
  
   end
@@ -37,6 +38,6 @@ class UsersController < ApplicationController
   def update
   end
 
-  def destroy
+  def sign_out
   end
 end

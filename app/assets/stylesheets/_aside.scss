@@ -1,4 +1,4 @@
-.aside {
+.top-aside {
   position: relative;
   height: 260px;
   width: 100%;
@@ -32,15 +32,14 @@
     &__lower {
       height: 68px;
       display: flex;
-      .aside-icon {
+      .top-aside-icon {
         height: 68px;
         width: 68px;
         margin-right: 20px;;
       }
-      .aside-banner {
-        .aside-badge {
+      .top-aside-banner {
+        .top-aside-badge {
           width: 144px;
-          height: 40px;
           margin-right: 8px;
           object-fit: cover;
           padding: 14px 0;

@@ -9,6 +9,9 @@ class UsersController < ApplicationController
    
   end
   
+  def confirmation
+  end
+
   def call_new
 
   end

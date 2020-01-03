@@ -43,7 +43,7 @@
     color: rgb(51, 51, 51);
     background-color: rgb(245, 245, 245);
     display: table;
-    span {
+    &__span {
       display: table-cell;
       vertical-align: middle;
     }

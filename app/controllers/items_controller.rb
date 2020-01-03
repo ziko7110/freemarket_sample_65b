@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.photos.new
+    # @item.photos.new
   end
 
   def show

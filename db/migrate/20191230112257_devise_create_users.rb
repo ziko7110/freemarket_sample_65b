@@ -7,7 +7,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :nickname, null: false
-      t.string :password, null: false
       t.string :family_name_kanji, null: false
       t.string :first_name_kanji, null: false
       t.string :family_name_kana, null: false
@@ -15,7 +14,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :birth_year, null: false
       t.integer :birth_month, null: false
       t.integer :birth_day, null: false
-      t.integer :mobile_phone_number, null: false, unique: true
+      t.string :mobile_phone_number, null: false, unique: true
       t.text :profile_comment
       t.string :postal_code 
       t.integer :prefecture

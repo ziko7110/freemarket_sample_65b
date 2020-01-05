@@ -2,6 +2,7 @@ class SignupController < ApplicationController
 
   def new
     @user = User.new
+
   end
 
   def call_new
@@ -18,6 +19,7 @@ class SignupController < ApplicationController
     session[:birth_day] = user_params[:birth_day]
 
     @user = User.new 
+   
   end
 
   def address_new
@@ -43,7 +45,7 @@ class SignupController < ApplicationController
   end
 
  def create 
- 
+
   @user = User.new(
     nickname: session[:nickname],
     email: session[:email],
@@ -79,7 +81,24 @@ class SignupController < ApplicationController
     building_name: user_params[:building_name],
     # phone_number: user_params[:phone_number],
     )
+ 
+    @user_address = UserAddress.new(
+    family_name_kanji: session[:family_name_kanji],
+    first_name_kanji: session[:first_name_kanji],
+    family_name_kana: session[:family_name_kana],
+    first_name_kana: session[:first_name_kana],
+    postal_code: user_params[:postal_code],
+    prefecture: user_params[:prefecture],
+    city:  user_params[:city],
+    address_number: user_params[:address_number],
+    building_name: user_params[:building_name],
+    phone_number: user_params[:phone_number]
+    )
+
+  binding.pry
   @user.save
+  binding.pry
+  @user_address.save!
   redirect_to root_path
  end
  end
@@ -105,10 +124,10 @@ class SignupController < ApplicationController
       :first_name_kanji,
       :family_name_kana,
       :postal_code,
-      :prefecture,
       :city,
       :address_number,
       :building_name,
       :phone_number,
+      :prefecture
     )
 end

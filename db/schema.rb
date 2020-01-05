@@ -90,15 +90,15 @@ ActiveRecord::Schema.define(version: 2019_12_30_115721) do
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
     t.integer "postal_code", null: false
-    t.integer "prefecture", null: false
+    t.string "prefecture", null: false
     t.string "city", null: false
     t.string "address_number", null: false
     t.string "building_name"
-    t.integer "phone_number"
-    t.bigint "user_id_id", null: false
+    t.string "phone_number"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id_id"], name: "index_user_addresses_on_user_id_id"
+    t.index ["user_id"], name: "index_user_addresses_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

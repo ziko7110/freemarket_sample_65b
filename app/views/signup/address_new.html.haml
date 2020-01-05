@@ -42,8 +42,8 @@
       .address-main__fields__field
         %span.label 都道府県
         %span.necessary 必須
-        %select.address-main__select{:name => "prefecture"}  
-          %option{:selected => "selected", :value => ""} 北海道
+        %select.address-main__select{:name => 'user[prefecture]'}  
+          %option{:selected => "prefecture", :value => ""} 北海道
           %option{:value => "北海道"} 北海道
           %option{:value => "青森県"} 青森県
           %option{:value => "岩手県"} 岩手県

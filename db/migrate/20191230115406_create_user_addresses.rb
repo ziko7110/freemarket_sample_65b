@@ -6,12 +6,12 @@ class CreateUserAddresses < ActiveRecord::Migration[5.2]
       t.string :family_name_kana, null: false
       t.string :first_name_kana, null: false
       t.integer :postal_code, null: false
-      t.integer :prefecture, null: false
+      t.string :prefecture, null: false
       t.string :city, null: false
       t.string :address_number, null: false
       t.string :building_name
-      t.integer :phone_number
-      t.references :user_id, null: false
+      t.string :phone_number
+      t.references :user, null: false
       t.timestamps
       t.timestamps
     end

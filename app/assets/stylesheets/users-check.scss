@@ -167,7 +167,6 @@
     padding: 40px 0 40px;
     margin: 0px 80px 0;
     height: 100%;
-    
     .user_edit--main {
       width: 1000px;
       margin: 0 auto;
@@ -325,7 +324,7 @@
                   .check-text {
                     width: 557px;
                     margin: 8px 0 0;
-                    height: 40px;
+                    height: 50px;
                     padding: 10px 16px 8px;
                     border-radius: 4px;
                     border: 1px solid #ccc;
@@ -386,95 +385,99 @@
     padding: 40px 0 40px;
     margin: 0px 130px 0;
     height: 100%;
-    display: flex;
-    &__side {
-      box-sizing: border-box;
-      background-color: #f5f5f5;
-      font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
-      float: left;
-      width: 280px;
-      margin: 0 40px 0 0;
-      &--list {
-        border-style: solid;
-        border-width: 0;
-        margin: 0 auto;
-        ul {
-          li {
-            display: flex;
-            justify-content: space-between;
-            background: #f5f5f5;
-            .user_destroy__side--list--list {
-              display: block;
-              padding: 16px;
-              background: #fff;
-              font-size: 14px;
-              color: #333;
-              text-decoration: none;
-              margin-top: 1px;
-              touch-action: manipulation;
-              width: 100%;
+    &__body {
+      width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      &__side {
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+        font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+        // float: left;
+        width: 280px;
+        margin: 0 40px 0 0;
+        &--list {
+          border-style: solid;
+          border-width: 0;
+          margin: 0 auto;
+          ul {
+            li {
               display: flex;
               justify-content: space-between;
-            }
-            .list--icon {
-              display: block;
-              margin-top: 1px;
-              background-color: white;
-              color: lightgrey;
-              position: relative;
-              padding: 0 px;
-              margin-right: 5px;
-              font-size: 20px;
-              transition: all 0.5s;
-            }
-            .user_destroy__side--list--list:hover {
-              background-color: #F8F8FF	;
-              .list--icon {
-                transform: translate(5px);
-                background-color: #F8F8FF;
+              background: #f5f5f5;
+              .user_destroy__side--list--list {
+                display: block;
+                padding: 16px;
+                background: #fff;
+                font-size: 14px;
                 color: #333;
+                text-decoration: none;
+                margin-top: 1px;
+                touch-action: manipulation;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+              }
+              .list--icon {
+                display: block;
+                margin-top: 1px;
+                background-color: white;
+                color: lightgrey;
+                position: relative;
+                padding: 0 px;
+                margin-right: 5px;
+                font-size: 20px;
+                transition: all 0.5s;
+              }
+              .user_destroy__side--list--list:hover {
+                background-color: #F8F8FF	;
+                .list--icon {
+                  transform: translate(5px);
+                  background-color: #F8F8FF;
+                  color: #333;
+                }
               }
             }
           }
-        }
-        ul {
-          .user_destroy__side--list--head2 {
-            margin: 40px 0 0;
-            font-weight: bold;
+          ul {
+            .user_destroy__side--list--head2 {
+              margin: 40px 0 0;
+              font-weight: bold;
+            }
+            li {
+            }
           }
-          li {
-          }
-        }
-        ul {
-          .user_destroy__side--list--head3 {
-            margin: 40px 0 0;
-            font-weight: bold;
-          }
-          li {
+          ul {
+            .user_destroy__side--list--head3 {
+              margin: 40px 0 0;
+              font-weight: bold;
+            }
+            li {
+            }
           }
         }
       }
-    }
-    .user_destroy__main {
-      background-color: white;
-      width: 700px;
-      height: 179px;
-      &--body {
-        padding: 64px;
-        &--form {
-          max-width: 320px;
-          margin: 0 auto;
-          .check-btn {
-            background: #ea352d;
-            border: 1px solid #ea352d;
-            color: #fff;
-            display: block;
-            width: 100%;
-            line-height: 48px;
-            font-size: 14px;
-            transition: all ease-out .3s;
-            cursor: pointer;
-            text-align: center;
+      .user_destroy__main {
+        background-color: white;
+        width: 700px;
+        height: 179px;
+        &--body {
+          padding: 64px;
+          &--form {
+            max-width: 320px;
+            margin: 0 auto;
+            .check-btn {
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+            }
           }
         }
       }

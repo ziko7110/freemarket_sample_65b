@@ -85,14 +85,14 @@ ActiveRecord::Schema.define(version: 2019_12_30_115721) do
   end
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "family_name_kanji", null: false
-    t.string "first_name_kanji", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.integer "postal_code", null: false
-    t.string "prefecture", null: false
-    t.string "city", null: false
-    t.string "address_number", null: false
+    t.string "family_name_kanji"
+    t.string "first_name_kanji"
+    t.string "family_name_kana"
+    t.string "first_name_kana"
+    t.integer "postal_code"
+    t.string "prefecture"
+    t.string "city"
+    t.string "address_number"
     t.string "building_name"
     t.string "phone_number"
     t.bigint "user_id", null: false

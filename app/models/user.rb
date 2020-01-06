@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :addresses
+  has_many :user_address
+  accepts_nested_attributes_for :user_address
 end

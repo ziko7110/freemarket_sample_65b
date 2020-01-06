@@ -2,10 +2,12 @@ class SignupController < ApplicationController
 
   def new
     @user = User.new
+    @user.user_address.build
 
   end
 
   def call_new
+  
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
@@ -19,12 +21,13 @@ class SignupController < ApplicationController
     session[:birth_day] = user_params[:birth_day]
 
     @user = User.new 
-   
+    @user.user_address.build
   end
 
   def address_new
     session[:mobile_phone_number] = user_params[:mobile_phone_number]
     @user = User.new 
+    @user.user_address.build
   end
 
   # def pay_jp
@@ -59,6 +62,7 @@ class SignupController < ApplicationController
     birth_month: session[:birth_month],
     birth_day: session[:birth_day],
     mobile_phone_number: session[:mobile_phone_number],
+
     # family_name_kanji: session[:family_name_kanji],
     # first_name_kanji: session[:first_name_kanji],
     # family_name_kana: session[:family_name_kana],
@@ -82,23 +86,24 @@ class SignupController < ApplicationController
     # phone_number: user_params[:phone_number],
     )
  
-    @user_address = UserAddress.new(
-    family_name_kanji: session[:family_name_kanji],
-    first_name_kanji: session[:first_name_kanji],
-    family_name_kana: session[:family_name_kana],
-    first_name_kana: session[:first_name_kana],
-    postal_code: user_params[:postal_code],
-    prefecture: user_params[:prefecture],
-    city:  user_params[:city],
-    address_number: user_params[:address_number],
-    building_name: user_params[:building_name],
-    phone_number: user_params[:phone_number]
-    )
+    # @user_address = UserAddress.new(
+    # family_name_kanji: session[:family_name_kanji],
+    # first_name_kanji: session[:first_name_kanji],
+    # family_name_kana: session[:family_name_kana],
+    # first_name_kana: session[:first_name_kana],
+    # postal_code: user_params[:postal_code],
+    # prefecture: user_params[:prefecture],
+    # city:  user_params[:city],
+    # address_number: user_params[:address_number],
+    # building_name: user_params[:building_name],
+    # phone_number: user_params[:phone_number]
+    # )
 
+  @user.user_address.build(user_params[:user_address_attributes]) 
   binding.pry
   @user.save
-  binding.pry
-  @user_address.save!
+
+  # @user_address.save
   redirect_to root_path
  end
  end
@@ -120,14 +125,23 @@ class SignupController < ApplicationController
       :birth_month,
       :birth_day,
       :mobile_phone_number,
-      :family_name_kanji,
-      :first_name_kanji,
-      :family_name_kana,
       :postal_code,
+      :prefecture,
       :city,
       :address_number,
       :building_name,
       :phone_number,
-      :prefecture
+      user_address_attributes:[
+      :family_name_kanji,
+      :first_name_kanji,
+      :family_name_kana,
+      :first_name_kana,
+      :postal_code,
+      :prefecture,
+      :city,
+      :address_number,
+      :building_name,
+      :phone_number,
+  ]
     )
 end

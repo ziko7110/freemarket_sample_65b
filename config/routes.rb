@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get 'new'
     get 'call_new'
     get 'address_new'
-    # get 'pay_jp_new'
+    get 'pay_jp_new'
     get 'user_done' 
   end
 end

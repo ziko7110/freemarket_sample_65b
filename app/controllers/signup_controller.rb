@@ -30,21 +30,10 @@ class SignupController < ApplicationController
     @user.user_address.build
   end
 
-  # def pay_jp
-  #   session[:family_name_kanji] = user_params[:family_name_kanji]
-  #   session[:first_name_kanji] = user_params[:first_name_kanji]
-  #   session[:family_name_kana] = user_params[:family_name_kana]
-  #   session[:first_name_kana] = user_params[:first_name_kana]
-  #   session[:postal_code] = user_params[:postal_code]
-  #   session[:prefecture] = user_params[:prefecture]
-  #   session[:city] = user_params[:city]
-  #   session[:address_number] = user_params[:address_number]
-  #   session[:building_name] = user_params[:building_name]
-  #   session[:phone_number] = user_params[:phone_number]
-  #   @user = User.new 
-  # end
+  def pay_jp
+  end
 
-  def done
+  def user_done
   end
 
  def create 
@@ -62,49 +51,19 @@ class SignupController < ApplicationController
     birth_month: session[:birth_month],
     birth_day: session[:birth_day],
     mobile_phone_number: session[:mobile_phone_number],
-
-    # family_name_kanji: session[:family_name_kanji],
-    # first_name_kanji: session[:first_name_kanji],
-    # family_name_kana: session[:family_name_kana],
-    # first_name_kana: session[:first_name_kana],
-    # postal_code: session[:postal_code],
-    # prefecture: session[:prefecture],
-    # city: session[:city],
-    # address_number: session[:address_number],
-    # building_name: session[:building_name],
-    # phone_number:session[:phone_number],
-
-    # family_name_kanji: user_params[:family_name_kanji],  
-    # first_name_kanji:  user_params[:first_name_kanji],
-    # family_name_kana: user_params[:family_name_kana],
-    # first_name_kana: user_params[:first_name_kana],
     postal_code: user_params[:postal_code],
     prefecture: user_params[:prefecture],
     city:  user_params[:city],
     address_number: user_params[:address_number],
     building_name: user_params[:building_name],
-    # phone_number: user_params[:phone_number],
     )
  
-    # @user_address = UserAddress.new(
-    # family_name_kanji: session[:family_name_kanji],
-    # first_name_kanji: session[:first_name_kanji],
-    # family_name_kana: session[:family_name_kana],
-    # first_name_kana: session[:first_name_kana],
-    # postal_code: user_params[:postal_code],
-    # prefecture: user_params[:prefecture],
-    # city:  user_params[:city],
-    # address_number: user_params[:address_number],
-    # building_name: user_params[:building_name],
-    # phone_number: user_params[:phone_number]
-    # )
 
-  @user.user_address.build(user_params[:user_address_attributes]) 
-  binding.pry
+
+
+    @user.user_address.build(user_params[:user_address_attributes]["0"]) 
   @user.save
-
-  # @user_address.save
-  redirect_to root_path
+  redirect_to   pay_jp_new_signup_index_path
  end
  end
 

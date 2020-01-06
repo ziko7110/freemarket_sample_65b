@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 2019_12_30_115721) do
     t.string "mobile_phone_number", null: false
     t.text "profile_comment"
     t.string "postal_code"
-    t.integer "prefecture"
+    t.string "prefecture"
     t.string "city"
     t.string "address_number"
     t.string "building_name"

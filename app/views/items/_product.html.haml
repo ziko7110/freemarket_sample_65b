@@ -5,16 +5,16 @@
       もっと見る
       = icon 'fas', 'angle-right', class: "icon"
   .product__lower
-    %ul
-      %li=render "item"
-      %li=render "item"
-      %li=render "item"
-      %li=render "item"
-      %li=render "item"
-      %li=render "item"
-      %li=render "item"
-      %li=render "item"
-      %li=render "item"
-      %li=render "item"
-      -# - @items.first(10).each do |item|
-      -#   %li=render "item", item: item
+    -# %ul
+      -# %li=render "item"
+      -# %li=render "item"
+      -# %li=render "item"
+      -# %li=render "item"
+      -# %li=render "item"
+      -# %li=render "item"
+      -# %li=render "item"
+      -# %li=render "item"
+      -# %li=render "item"
+      -# %li=render "item"
+    = @items.first(10).each do |item|
+      %li= render "item", item: item

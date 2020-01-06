@@ -10,7 +10,7 @@ Rails.application.routes.draw do
  get 'card', to: 'tweets#card'
  get 'confirmation', to: 'users#confirmation'
  get 'sign_out', to: 'users#sign_out'
- get 'check-user', to: 'users#check_user'
+ get 'check_user', to: 'users#check_user'
  get 'buy_confirmation', to: 'items#buy_confirmation'
 
  resources :tweets, only: [:new, :show, :update] 

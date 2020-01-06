@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
     t.integer "expiration_date_month", null: false
     t.integer "expiration_date_year", null: false
     t.integer "security_code", null: false
-    t.bigint "user_id_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id_id"], name: "index_cards_on_user_id_id"
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -30,20 +30,20 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id_id", null: false
-    t.bigint "user_id_id", null: false
+    t.bigint "item_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id_id"], name: "index_comments_on_item_id_id"
-    t.index ["user_id_id"], name: "index_comments_on_user_id_id"
+    t.index ["item_id"], name: "index_comments_on_item_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id_id", null: false
+    t.bigint "user_id", null: false
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id_id"], name: "index_evaluations_on_user_id_id"
+    t.index ["user_id"], name: "index_evaluations_on_user_id"
   end
 
   create_table "item_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,36 +57,35 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.bigint "user_id_id", null: false
+    t.bigint "user_id", null: false
     t.text "description"
-    t.integer "category", null: false
     t.integer "condition", null: false
     t.integer "delivery_fee", null: false
     t.integer "delivery_method", null: false
     t.integer "shipping_area", null: false
     t.integer "shipping_days", null: false
     t.integer "price", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "brand"
+    t.integer "buyer_id"
     t.index ["name"], name: "index_items_on_name"
-    t.index ["user_id_id"], name: "index_items_on_user_id_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id_id", null: false
-    t.bigint "item_id_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id_id"], name: "index_likes_on_item_id_id"
-    t.index ["user_id_id"], name: "index_likes_on_user_id_id"
+    t.index ["item_id"], name: "index_likes_on_item_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
-    t.bigint "item_id_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id_id"], name: "index_photos_on_item_id_id"
+    t.index ["item_id"], name: "index_photos_on_item_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,10 +109,10 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
     t.string "address_number", null: false
     t.string "building_name"
     t.integer "phone_number"
-    t.bigint "user_id_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id_id"], name: "index_user_addresses_on_user_id_id"
+    t.index ["user_id"], name: "index_user_addresses_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -146,4 +145,6 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
 
   add_foreign_key "item_categories", "categories"
   add_foreign_key "item_categories", "items"
+  add_foreign_key "items", "users"
+  add_foreign_key "photos", "items"
 end

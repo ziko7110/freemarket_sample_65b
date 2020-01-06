@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  layout 'devise', except: [:sign_out, :show, :edit, :confirmation]
+  layout 'devise', except: [:sign_out, :show, :edit, :confirmation, :check_user]
 
   def confirmation
   end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'products/index'
   get 'products/pay'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  root to: 'items#index'
  get 'address_new', to: 'users#address_new'
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
  get 'check-user', to: 'users#check_user'
  get 'buy_confirmation', to: 'items#buy_confirmation'
 
- resources :tweets, only: [:new, :show, :update] 
+ resources :tweets, only: [:new, :show, :update]
  resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy]
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy]
   resources :cards, only: [:new, :show] do

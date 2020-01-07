@@ -52,14 +52,19 @@ $AttentionHeight: 16px;
   display: block;
   clear: both;
 }
+#new_item{
+  border-bottom: solid 1px #f5f5f5;
+  padding: 40px;
+}
+.image-label__input{
+  display: none;
+}
 
   .items{
     margin: 0 auto;
     width: 700px;
     background-color: white;
     &__images{
-      border-bottom: solid 1px #f5f5f5;
-      padding: 40px;
       &__head{
         display: flex;
         &__title{
@@ -87,14 +92,28 @@ $AttentionHeight: 16px;
         margin-top: 8px;
         margin-bottom: 10px;
       }
-      &__upload{
+      &__upload__box{
         background-color: #f5f5f5;
         height: 162px;
         padding: 40px;
-        display: flex;
         border: dashed 1px #ccc;
-        align-items: center;
         box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        font-family: monospace,monospace;
+        font-size: 14px;
+        cursor: pointer;
+        line-height: 20px;
+        color: #333;
+        p{
+          text-align: center;
+          height: fit-content;
+          position: absolute;
+          top: 50%;
+        }
         &__icon{
           margin: 0 auto;
         }
@@ -178,11 +197,11 @@ $AttentionHeight: 16px;
       border-color: #ccc;
       border-style: solid;
       box-shadow: none;
+      box-sizing: border-box;
       font-family: $titlefont;
       height: 48px;
       overflow: hidden;
       background: transparent;
-      background-image: none;
       -webkit-appearance: none;
       cursor: pointer;
       padding: 0 16px;
@@ -229,18 +248,55 @@ $AttentionHeight: 16px;
       &__select{
         position: relative;
         float: right;
+        width: 400px;
+        margin-top: 10px;
         i{
           position: absolute;
           right: 10px;
-          top: 15px;
+          top: 20px;
           color: #888;
+        }
+      }
+      &__brand{
+        width: 400px;
+        float: right;
+        right: 0;
+        &__contents{
+          margin-top: 40px;
+          &__title{
+            font-family: $titlefont;
+            font-weight: $titleFontweight;
+            color: $titleFontcolor;
+            font-size: $titleFontsize;
+            width: $titleWidth;
+            box-sizing: $titleBoxSizing;
+          }
+          &__rightAttention{
+            margin-left: $AttentionMargin;
+            font-size: $AttentionFontsize;
+            font-family: $titlefont;
+            background-color: #cccccc;
+            color: $AttentionFontcolor;
+            border-radius: $AttentionBorder;
+            padding: $AttentionPadding;
+            height: $AttentionHeight;
+            align-items: center;
+          }
+          input{
+            margin: 8px 0 0;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            height: 48px;
+          }
         }
       }
       &__status{
         width: 400px;
-        position: relative;
         margin-top: 40px;
-        display: flex;
         float: right;
         &__title{
           font-family: $titlefont;
@@ -249,8 +305,6 @@ $AttentionHeight: 16px;
           font-size: $titleFontsize;
           width: $titleWidth;
           box-sizing: $titleBoxSizing;
-          margin-bottom: 8px;
-          float: right;
         }
         &__rightAttention{
           margin-left: $AttentionMargin;
@@ -262,18 +316,16 @@ $AttentionHeight: 16px;
           padding: $AttentionPadding;
           height: $AttentionHeight;
           align-items: center;
-          position: absolute;
-          left: 70px;
-          top: 0;
         }
         &__select{
           position: relative;
           float: right;
           width: 400px;
+          margin-top: 10px;
           i{
             position: absolute;
             right: 10px;
-            top: 15px;
+            top: 20px;
             color: #888;
           }
         }
@@ -309,7 +361,6 @@ $AttentionHeight: 16px;
           font-size: $titleFontsize;
           width: $titleWidth;
           box-sizing: $titleBoxSizing;
-          margin-bottom: 8px;
         }
         &__rightAttention{
           margin-left: $AttentionMargin;
@@ -324,10 +375,13 @@ $AttentionHeight: 16px;
         }
         &__select{
           position: relative;
+          float: right;
+          width: 400px;
+          margin-top: 10px;
           i{
             position: absolute;
             right: 10px;
-            top: 15px;
+            top: 20px;
             color: #888;
           }
         }
@@ -344,7 +398,6 @@ $AttentionHeight: 16px;
           font-size: $titleFontsize;
           width: $titleWidth;
           box-sizing: $titleBoxSizing;
-          margin-bottom: 8px;
         }
         &__rightAttention{
           margin-left: $AttentionMargin;
@@ -359,10 +412,14 @@ $AttentionHeight: 16px;
           }
           &__select{
             position: relative;
+            float: right;
+            width: 400px;
+            margin-top: 10px;
             select{
               border-color: #ccc;
               border-style: solid;
               box-shadow: none;
+              box-sizing: border-box;
               font-family: $titlefont;
               height: 48px;
               overflow: hidden;
@@ -376,7 +433,7 @@ $AttentionHeight: 16px;
               i{
             position: absolute;
             right: 10px;
-            top: 15px;
+            top: 20px;
             color: #888;
           }
         }
@@ -394,7 +451,6 @@ $AttentionHeight: 16px;
           font-size: $titleFontsize;
           width: $titleWidth;
           box-sizing: $titleBoxSizing;
-          margin-bottom: 8px;
         }
         &__rightAttention{
           margin-left: $AttentionMargin;
@@ -409,10 +465,11 @@ $AttentionHeight: 16px;
         }
         &__select{
           position: relative;
+          margin-top: 10px;
           i{
             position: absolute;
             right: 10px;
-            top: 15px;
+            top: 20px;
             color: #888;
           }
         }

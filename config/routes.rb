@@ -3,10 +3,16 @@ Rails.application.routes.draw do
   get 'products/pay'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- root to: 'tweets#index'
+ root to: 'items#index'
  get 'address_new', to: 'users#address_new'
  get 'user_done', to: 'users#user_done'
  get 'call_new', to: 'users#call_new'
+ get 'card', to: 'tweets#card'
+ get 'confirmation', to: 'users#confirmation'
+ get 'sign_out', to: 'users#sign_out'
+ get 'check_user', to: 'users#check_user'
+ get 'buy_confirmation', to: 'items#buy_confirmation'
+
  resources :tweets, only: [:new, :show, :update] 
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy, :create]
  resources :signup do
@@ -18,6 +24,7 @@ Rails.application.routes.draw do
     get 'user_done' 
   end
 end
+ resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy]
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'

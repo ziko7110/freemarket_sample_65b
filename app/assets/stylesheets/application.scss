@@ -3,7 +3,7 @@
 @import 'font-awesome';
 @import 'header';
 @import 'footer';
-@import "modules/users";
+@import "users-check";
 @import 'sell-btn';
 @import 'tweets';
 @import 'devise';
@@ -19,5 +19,4 @@
 @import "confirmation";
 @import "cards";
 @import "login";
-@import "tweets/shipping";
-
+@import "items/new";

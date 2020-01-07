@@ -1,4 +1,4 @@
-.aside {
+.top-aside {
   position: relative;
   height: 260px;
   width: 100%;
@@ -11,8 +11,8 @@
   &__word {
     position: absolute;
     top: 40px;
-    left: 20%;
-    width: 500px;
+    width: 1060px;
+    margin: 0 calc(50% - 510px);
     font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     &__upper {
       height: 24px;
@@ -32,15 +32,14 @@
     &__lower {
       height: 68px;
       display: flex;
-      .aside-icon {
+      .top-aside-icon {
         height: 68px;
         width: 68px;
         margin-right: 20px;;
       }
-      .aside-banner {
-        .aside-badge {
+      .top-aside-banner {
+        .top-aside-badge {
           width: 144px;
-          height: 40px;
           margin-right: 8px;
           object-fit: cover;
           padding: 14px 0;

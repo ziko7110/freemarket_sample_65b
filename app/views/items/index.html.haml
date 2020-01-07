@@ -20,37 +20,36 @@
     = image_tag "slick2.jpg", class: "photo__image"
 
 .top-middle
-  .center
-    .category
-      .category__upper
-        %h2 人気のカテゴリー
-      .category__lower
-        %ul
-          %li
-            = link_to "レディース", "#", class: "list"
-          %li
-            = link_to "メンズ", "#", class: "list"
-          %li
-            = link_to "家電・スマホ・カメラ", "#", class: "list"
-          %li
-            = link_to "おもちゃ・ホビー・グッズ", "#", class: "list"
-    .products
-      = render "product"
-      = render "product"
-      = render "product"
-      = render "product"
-    .brand
-      .brand__upper
-        %h2 人気のブランド
-      .brand__lower
-        %ul
-          %li シャネル
-          %li ルイヴィトン
-          %li シュプリーム
-          %li ナイキ
-    .products
-      = render "product"
-      = render "product"
-      = render "product"
-      = render "product"
-= render "aside"
+  .category
+    .category__upper
+      %h2 人気のカテゴリー
+    .category__lower
+      %ul
+        %li
+          = link_to "レディース", "#", class: "list"
+        %li
+          = link_to "メンズ", "#", class: "list"
+        %li
+          = link_to "家電・スマホ・カメラ", "#", class: "list"
+        %li
+          = link_to "おもちゃ・ホビー・グッズ", "#", class: "list"
+  .products
+    = render "product"
+    = render "product"
+    = render "product"
+    = render "product"
+  .brand
+    .brand__upper
+      %h2 人気のブランド
+    .brand__lower
+      %ul
+        %li シャネル
+        %li ルイヴィトン
+        %li シュプリーム
+        %li ナイキ
+  .products
+    = render "product"
+    = render "product"
+    = render "product"
+    = render "product"
+    

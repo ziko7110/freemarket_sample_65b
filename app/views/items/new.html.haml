@@ -7,17 +7,22 @@
     商品の情報を入力
   .items
     .items__images
+    = form_for @item do |f|
       .items__images__head
-      .clearfix
         %label.items__images__head__title
           出品画像
         %label.items__images__head__rightAttention
           必須
       .items__images__imageAttention
         最大10枚までアップロードできます
-      .items__images__upload
-        .items__images__upload__icon
-          %i.fas.fa-camera
+      #imageBox.items__images__upload
+      = f.label :images, class: "image-label" do
+        .items__images__upload__box
+          %pre
+            ドラッグアンドドロップ
+            またはクリックしてファイルをアップロード
+          = f.file_field :images, multiple: true, class: "image-label__input"
+      .clearfix
     .items__information
       .items__information__name
         %label.items__information__name__title
@@ -39,7 +44,6 @@
       .items__definition__title
         商品の詳細
       .items__definition__category
-      .clearfix
         .items__definition__category__contents
           %label.items__definition__category__contents__title
             カテゴリー
@@ -62,6 +66,13 @@
             %option{value: "11"} チケット
             %option{value: "12"} 自転車・オートバイ
             %option{value: "13"} その他
+        .items__definition__category__brand
+          .items__definition__category__brand__contents
+            %label.items__definition__category__brand__contents__title
+              ブランド
+            %label.items__definition__category__brand__contents__rightAttention
+              任意
+            %input.items__definition__category__brand__contents__input{placeholder:"例）シャネル"}
         .items__definition__category__status
           %label.items__definition__category__status__title
             商品の状態
@@ -77,13 +88,13 @@
             %option{value: "4"} やや傷や汚れあり
             %option{value: "5"} 傷や汚れあり
             %option{value: "6"} 全体的に状態が悪い
+      .clearfix
 
     .items__shipping
       .items__shipping__title
         配送について
         <i class="fas fa-question-circle"></i>
       .items__shipping__contents
-      .clearfix
         .items__shipping__contents__fee
           %label.items__shipping__contents__fee__title
             配送料の負担
@@ -95,7 +106,6 @@
               %option{value: "0"} ---
               %option{value: "1"} 送料込み(出品者負担)
               %option{value: "2"} 着払い(購入者負担)
-        .clearfix
         .items__shipping___contents__area{style:"float: right; margin-top: 40px;"}
           %label.items__shipping__contents__area__title
             発送元の地域
@@ -117,6 +127,7 @@
               %option{value: "1"} 1~2日で発送
               %option{value: "2"} 2~3日で発送
               %option{value: "3"} 4~7日で発送
+      .clearfix
 
     .items__cost
       .items__cost__title

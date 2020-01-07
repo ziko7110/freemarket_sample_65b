@@ -1,0 +1,20 @@
+.product
+  .product__upper
+    %h3= "カテゴリー" + "新着アイテム"
+    = link_to "", class: "see_more" do
+      もっと見る
+      = icon 'fas', 'angle-right', class: "icon"
+  .product__lower
+    %ul
+      %li=render "item"
+      %li=render "item"
+      %li=render "item"
+      %li=render "item"
+      %li=render "item"
+      %li=render "item"
+      %li=render "item"
+      %li=render "item"
+      %li=render "item"
+      %li=render "item"
+      -# - @items.first(10).each do |item|
+      -#   %li=render "item", item: item

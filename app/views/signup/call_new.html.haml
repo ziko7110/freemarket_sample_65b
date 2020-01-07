@@ -25,10 +25,10 @@
     .call-create__header 電話番号の確認
     .call-create-main
       .call-create-main__forms
-        = form_with url: address_new_path, method: :get, local: true,class: 'call-create-main__forms_with' do |f|
+        = form_with model: @user ,url: address_new_signup_index_path, method: :get, local: true,class: 'call-create-main__forms_with' do |f|
           .call-create-main__forms__form 
             .call-create-main__forms__form__number 携帯電話の番号
-            = f.text_field :nickname, placeholder: "携帯電話の番号を入力", class: 'call-create-main__forms__form__btn'
+            = f.text_field :mobile_phone_number, placeholder: "携帯電話の番号を入力", class: 'call-create-main__forms__form__btn'
             .call-create-main__forms__form__input
           %p.call-create-main__forms__person 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
           = f.submit  "SMSを送信する", class: 'call-create-main__forms__btn' 

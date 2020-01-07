@@ -99,16 +99,16 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
   end
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "family_name_kanji", null: false
-    t.string "first_name_kanji", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.integer "postal_code", null: false
-    t.integer "prefecture", null: false
-    t.string "city", null: false
-    t.string "address_number", null: false
+    t.string "family_name_kanji"
+    t.string "first_name_kanji"
+    t.string "family_name_kana"
+    t.string "first_name_kana"
+    t.integer "postal_code"
+    t.string "prefecture"
+    t.string "city"
+    t.string "address_number"
     t.string "building_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -119,7 +119,6 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
-    t.string "password", null: false
     t.string "family_name_kanji", null: false
     t.string "first_name_kanji", null: false
     t.string "family_name_kana", null: false
@@ -127,10 +126,10 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
     t.integer "birth_year", null: false
     t.integer "birth_month", null: false
     t.integer "birth_day", null: false
-    t.integer "mobile_phone_number", null: false
+    t.string "mobile_phone_number", null: false
     t.text "profile_comment"
     t.string "postal_code"
-    t.integer "prefecture"
+    t.string "prefecture"
     t.string "city"
     t.string "address_number"
     t.string "building_name"

@@ -31,6 +31,7 @@ class SignupController < ApplicationController
   end
   
   def user_done
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
   
   def create 
@@ -54,8 +55,13 @@ class SignupController < ApplicationController
       building_name: user_params[:building_name],
       )
     @user.user_address.build(user_params[:user_address_attributes]["0"]) 
-    @user.save
+    # binding.pry
+    if @user.save
+      session[:id] = @user.id 
       redirect_to   pay_jp_new_signup_index_path
+    else
+      render '/signup/new'
+    end
   end
 end
 

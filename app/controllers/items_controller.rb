@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.joins(:photos).group("item_id").order('id DESC')
-    @photos
   end
 
   def new

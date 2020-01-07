@@ -51,9 +51,4 @@ class UsersController < ApplicationController
   def sign_out
   end
   
-<<<<<<< HEAD
-
-
-=======
->>>>>>> master
 end

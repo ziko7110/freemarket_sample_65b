@@ -30,9 +30,11 @@
     color: rgb(255, 255, 255);
     height: 50px;
     padding-top: 5px;
+    width: 1020px;
+    margin: 0 auto;
       &__image{
         float: left;
-        margin-left: 200px;
+        // margin-left: 200px;
       }
       &__twitter{
         float: left;

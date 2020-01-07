@@ -12,6 +12,7 @@ Rails.application.routes.draw do
  get 'sign_out', to: 'users#sign_out'
  get 'check_user', to: 'users#check_user'
  get 'buy_confirmation', to: 'items#buy_confirmation'
+ get 'new_user_session', to: 'sessions#new'
 
  resources :tweets, only: [:new, :show, :update] 
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy, :create]

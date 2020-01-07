@@ -3,8 +3,6 @@
     .box__image
       = image_tag item.photos.first.image.url, size: "188x188", class: "photo"
       .price
-        -# %span= "¥ 800"
         %span= "¥ #{item.price}"
     .box__name
-      -# %span{ class: 'box__name__span'}= "パソコン"
       %span{ class: 'box__name__span'}= item.name

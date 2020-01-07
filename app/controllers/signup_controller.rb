@@ -2,7 +2,7 @@ class SignupController < ApplicationController
 
   def new
     @user = User.new
-    @user.user_address.build
+    @user.user_addresses.build
   end
 
   def call_new
@@ -18,13 +18,13 @@ class SignupController < ApplicationController
     session[:birth_month] = user_params[:birth_month]
     session[:birth_day] = user_params[:birth_day]
     @user = User.new 
-    @user.user_address.build
+    @user.user_addresses.build
   end
 
   def address_new
     session[:mobile_phone_number] = user_params[:mobile_phone_number]
     @user = User.new 
-    @user.user_address.build
+    @user.user_addresses.build
   end
   
   def pay_jp
@@ -54,7 +54,7 @@ class SignupController < ApplicationController
       address_number: user_params[:address_number],
       building_name: user_params[:building_name],
       )
-    @user.user_address.build(user_params[:user_address_attributes]["0"]) 
+    @user.user_addresses.build(user_params[:user_addresses_attributes]["0"]) 
     if @user.save
       session[:id] = @user.id 
       redirect_to   pay_jp_new_signup_index_path
@@ -85,7 +85,7 @@ end
       :address_number,
       :building_name,
       :phone_number,
-      user_address_attributes:[
+      user_addresses_attributes:[
       :family_name_kanji,
       :first_name_kanji,
       :family_name_kana,

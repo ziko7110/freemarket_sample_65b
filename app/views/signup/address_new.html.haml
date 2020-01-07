@@ -25,7 +25,7 @@
     %h1.address-main__header 住所入力
 
     = form_with id:@address, model:@user, url: "/signup", method: :post, local: true,class: 'devise-main__registration__form' do |f|
-      = f.fields_for :user_address do |i|
+      = f.fields_for :user_addresses do |i|
         .address-main__fields__field
           %span.label お名前
           %span.necessary 必須

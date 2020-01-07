@@ -55,7 +55,6 @@ class SignupController < ApplicationController
       building_name: user_params[:building_name],
       )
     @user.user_address.build(user_params[:user_address_attributes]["0"]) 
-    # binding.pry
     if @user.save
       session[:id] = @user.id 
       redirect_to   pay_jp_new_signup_index_path

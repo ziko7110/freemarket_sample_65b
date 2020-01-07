@@ -29,15 +29,16 @@ class SignupController < ApplicationController
     @user = User.new 
     @user.user_address.build
   end
-
+  
   def pay_jp
   end
-
+  
   def user_done
   end
-
- def create 
-
+  
+  def create 
+    
+  
   @user = User.new(
     nickname: session[:nickname],
     email: session[:email],
@@ -57,10 +58,7 @@ class SignupController < ApplicationController
     address_number: user_params[:address_number],
     building_name: user_params[:building_name],
     )
- 
-
-
-
+# binding.pry
     @user.user_address.build(user_params[:user_address_attributes]["0"]) 
   @user.save
   redirect_to   pay_jp_new_signup_index_path

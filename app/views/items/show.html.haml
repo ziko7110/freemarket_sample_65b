@@ -4,8 +4,9 @@
       %h5.product__main--title
         = @item.name
       .product__main--contents
-        .item__photo
+        .item__photo.slider-item
           .item__photo--main
+          
             = image_tag @item.photos.first.image.url, class: 'product__main__item-image'
           .item__photo--bottom
             -@item.photos.each do |photo|

@@ -1,8 +1,9 @@
-.box.a
-  = link_to '#', class: "link" do
-    .box__image
-      = image_tag item.photos.first.image.url, size: "188x188", class: "photo"
-      .price
-        %span= "¥ #{item.price}"
-    .box__name
-      %span{ class: 'box__name__span'}= item.name
+.box
+  = link_to item_path(item.id), method: :get, class: "link" do
+    .box__inner
+      .box__inner__image
+        = image_tag item.photos.first.image.url, size: "188x188", class: "photo"
+        .box__inner__image__price
+          %span= "¥ #{item.price}"
+      .box__inner__name
+        %span{ class: 'box__inner__name__span'}= item.name

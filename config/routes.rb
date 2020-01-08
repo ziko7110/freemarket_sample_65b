@@ -19,6 +19,9 @@ Rails.application.routes.draw do
  get 'buy_confirmation', to: 'items#buy_confirmation'
  get 'new_user_session', to: 'sessions#new'
 
+ devise_scope :user do
+  get '/users/sign_out' => 'devise/sessions#destroy'
+end
  resources :tweets, only: [:new, :show, :update] 
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy, :create]
  resources :signup do

@@ -14,7 +14,9 @@ Rails.application.routes.draw do
  get 'buy_confirmation', to: 'items#buy_confirmation'
 
  resources :tweets, only: [:new, :show, :update] 
- resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+ resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy] 
+ resource :photos,only: [:show]
+ 
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy]
   resources :cards, only: [:new, :show] do
     collection do

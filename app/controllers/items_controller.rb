@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
 
-  layout 'devise', only: [:new, :buy_confirmation]
+  # layout 'devise', only: [:new, :buy_confirmation]
 
   def index
-    @items = Item.includes(:images).order('created_at DESC')
+    @items = Item.all.joins(:photos).group("item_id").order('id DESC')
   end
 
   def new
@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def create
@@ -42,6 +43,6 @@ end
 private
 
 def item_params
-  params.require(:product).permit(:name, :price, images_attributes: [:image])
+  params.require(:item).permit(:name, :price, images_attributes: [:image])
 
 end

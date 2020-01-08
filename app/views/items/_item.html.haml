@@ -1,7 +1,8 @@
 .box.a
+  -# - @items.each do |item|
   = link_to '#', class: "link" do
     .box__image
-      = image_tag "sample.jpg", size: "188x188", class: "photo"
+      = image_tag item.photos.first.image.url, size: "188x188", class: "photo"
       .price
         %span= "¥ 800"
         -# %span= "¥ #{item.price}"

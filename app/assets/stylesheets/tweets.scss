@@ -166,16 +166,21 @@
             }
           }
         // このコメントアウトは、DBを実装していく際使います。
-        //   &--head {
-        //     &--name {
-        //     }
-        //     td {
-        //       &--list {
-        //       }
-        //       &--list1 {
-        //       }
-        //     }
-        //   }
+          &--head {
+            &--name {
+            }
+            td {
+              .item__ditail--list {
+                display: block;
+              }
+              .item__ditail--list1 {
+                display: block;
+              }
+              .item__ditail--list1 {
+                display: block;
+              }
+            }
+          }
         //   &--head {
         //     &--name {
         //       td {
@@ -231,12 +236,13 @@
         }
       }
       &--item--price {
-        
         text-align: center;
         margin: 24px 0 0;
+
         .showprice {
           margin: 0 16px 0 0;
           font-size: 50px;
+          font-weight: 600px;
         }
         .showtax {
           font-size: 10px;

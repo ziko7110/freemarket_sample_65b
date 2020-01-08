@@ -91,11 +91,10 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "uid", null: false
     t.string "provider", null: false
-    t.text "token"
-    t.bigint "user_id_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id_id"], name: "index_sns_credentials_on_user_id_id"
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

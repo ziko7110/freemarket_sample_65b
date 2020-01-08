@@ -103,5 +103,4 @@
       .user_destroy__main
         .user_destroy__main--body
           .user_destroy__main--body--form
-            = form_for "#" , method: :destroy , class: 'user_destroy__main--body--form--form' do |f|
-              = f.submit "ログアウト", class: 'check-btn'
+            = link_to "ログアウト", destroy_user_session_path, method: :delete,class: 'user_destroy__main--body--form--form check-btn'

@@ -15,7 +15,10 @@
         %i.fas.fa-tag
         = link_to 'ブランドから探す', '#', class: 'header__container__bottom__nav__brand__link'
       .header__container__bottom__user
-        = link_to '新規会員登録', new_user_session_path, class: 'header__container__bottom__user__signup'
-        = link_to 'ログイン', new_user_session_path, class: 'header__container__bottom__user__login'
-
+        -if user_signed_in?
+          = link_to 'マイページ', '/users/1', class: 'header__container__bottom__user__signup'
+          = link_to 'ログアウト', sign_out_path, class: 'header__container__bottom__user__login'
+        -else
+          = link_to '新規会員登録', users_path, class: 'header__container__bottom__user__signup'
+          = link_to 'ログイン', new_user_session_path, class: 'header__container__bottom__user__login'
         

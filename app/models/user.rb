@@ -57,7 +57,6 @@ class User < ApplicationRecord
       sns = snscredential
     else
       user = without_sns_data(auth)[:user]
-      sns = without_sns_data(auth)[:sns]
     end
     return { user: user ,sns: sns}
   end

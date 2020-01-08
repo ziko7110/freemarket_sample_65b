@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   layout 'devise', only: [:new, :buy_confirmation]
 
   def index
-    @items = Item.all.joins(:photos).group("item_id").order('id DESC')
+    @items = Item.joins(:photos).group("item_id").order('id DESC')
   end
 
   def new

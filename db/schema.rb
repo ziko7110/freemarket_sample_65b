@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "uid", null: false
+    t.string "uid", null: false
     t.string "provider", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

@@ -97,7 +97,7 @@
                 電話番号の確認
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_destroy__side--list--list" do
+              = link_to destroy_user_session_path, method: :delete, class:"user_destroy__side--list--list" do
                 ログアウト
                 = icon 'fas', 'chevron-right', class:'list--icon'
       .user_destroy__main

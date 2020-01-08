@@ -16,7 +16,7 @@ class User < ApplicationRecord
   message: 'には日本語を含めてください。(Text must contain katakana.)' }
 
   def self.without_sns_data(auth)
-    user = User.where(email: auth.info.email).first
+    user = User.find_by(email: auth.info.email)
 
       if user.present?
         sns = SnsCredential.create(
@@ -38,7 +38,7 @@ class User < ApplicationRecord
     end
 
    def self.with_sns_data(auth, snscredential)
-    user = User.where(id: snscredential.user_id).first
+    user = User.find_by(id: snscredential.user_id)
     unless user.present?
       user = User.new(
         nickname: auth.info.name,
@@ -51,7 +51,7 @@ class User < ApplicationRecord
    def self.find_oauth(auth)
     uid = auth.uid
     provider = auth.provider
-    snscredential = SnsCredential.where(uid: uid, provider: provider).first
+    snscredential = SnsCredential.find_by(uid: uid, provider: provider)
     if snscredential.present?
       user = with_sns_data(auth, snscredential)[:user]
       sns = snscredential

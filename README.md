@@ -89,6 +89,9 @@ Things you may want to cover:
 |shipping_area|integer|null: false|
 |shipping_days |integer|null: false|
 |price|integer|null: false|
+|brand|integer|
+|buyer|integer|null: false|
+
 
 ### Association
 - belongs_to :user
@@ -168,3 +171,34 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|integer|null: false|
+
+### Association
+- has_many :item_categories
+- has_many :items, through: :item_categories
+
+
+## item_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item|references|foreign_key: true|
+|category|references|foreign_key: true|
+
+### Association
+- belongs_to :item
+- belongs_to :category
+
+
+##  brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item|references|foreign_key: true|
+|brandname|string|
+
+### Association
+- belongs_to :item

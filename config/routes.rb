@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- root to: 'items#trading'
+ root to: 'items#index'
  get 'address_new', to: 'users#address_new'
  get 'user_done', to: 'users#user_done'
  get 'call_new', to: 'users#call_new'

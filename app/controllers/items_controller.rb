@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   layout 'devise', only: [:new, :buy_confirmation]
 
   def index
-    @items = Item.joins(:photos).group("item_id").order('id DESC')
+    @items = Item.all.joins(:photos).group("item_id").order('id DESC')
+
   end
 
   def new
@@ -57,6 +58,8 @@ end
 private
 
 def item_params
+
   params.require(:item).permit(:name, :description, :price, :text, :brand, :condition, :delivery_fee, :prefecture_id, :shipping_days, :shipping_area, :price, :categoryname, :user_id, photos_attributes: [:image], brands_attributes: [:brandname])
+
 
 end

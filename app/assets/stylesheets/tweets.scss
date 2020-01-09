@@ -58,13 +58,11 @@
           }
             
             .product__main__item-subimage {
-              // position: relative;
               width: 60px !important;
               height: 60px;
               display: inline-block;
               vertical-align: bottom;
               outline: none;
-              // object-fit: cover;
             }
           
       
@@ -73,16 +71,7 @@
               width: 300px !important;
             }
 
-        // .product__main__item-subimage {
-        //   position: relative;
-        //   width: 60px !important;
-        //   height: 60px;
-        //   vertical-align: bottom;
-        // }
-        // .thumb-item {
-        //   width: 300px !important;
-        // }
-        
+      
 
 
 
@@ -164,7 +153,6 @@
             }
           }
         }
-        // このコメントアウトは、DBを実装していく際使います。
         .item__ditail--head {
           .item__ditail--name {
             }
@@ -180,6 +168,7 @@
               }
             }
           }
+       // このコメントアウトは、DBを実装していく際使います。
         //   &--head {
         //     &--name {
         //       td {

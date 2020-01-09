@@ -1,7 +1,5 @@
 class Item < ApplicationRecord
 
-  # accepts_nested_attributes_for :photos
-  # accepts_nested_attributes_for :photos, allow_destroy: true
   validates :name, :price, :description, :condition, :delivery_fee, :shipping_area, :shipping_days, :categoryname, presence: true
   belongs_to :user, optional: true ,class_name: "User" 
   belongs_to :buyer, optional: true , class_name: "User"
@@ -9,6 +7,9 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :photos, allow_destroy: true
   has_many :brands
   accepts_nested_attributes_for :brands
+
+
+  # 下記コメントアウトはenum形式でformを作成する時の為
 
   # has_many :items_categories
   # has_many :categories, through: :items_categories

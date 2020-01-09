@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  # layout 'devise', only: [:new, :buy_confirmation]
+  layout 'devise', only: [:new, :buy_confirmation]
 
   def index
     @items = Item.all.joins(:photos).group("item_id").order('id DESC')

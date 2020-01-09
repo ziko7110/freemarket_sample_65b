@@ -28,15 +28,15 @@
                 出品する
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_edit__side--list--list" do
+              = link_to exhibiting_path , class:"user_destroy__side--list--list" do
                 出品した商品-出品中
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_edit__side--list--list" do
+              = link_to trading_path , class:"user_destroy__side--list--list" do
                 出品した商品-取引中
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_edit__side--list--list" do
+              = link_to sold_path , class:"user_destroy__side--list--list" do
                 出品した商品-売却済み
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
@@ -100,7 +100,7 @@
                 電話番号の確認
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_edit__side--list--list" do
+              = link_to sign_out_path , class:"user_edit__side--list--list" do
                 ログアウト
                 = icon 'fas', 'chevron-right', class:'list--icon'
 
@@ -112,7 +112,7 @@
             .form
               .form__box
                 .form__box--a
-                  = image_tag '1472381.jpg', size:"40x40",class:"form__box--img"
+                  = image_tag 'aside.jpg', size:"40x40",class:"form__box--img"
                   %input{type:"text",class:"form__box--text", placeholder: "名前を入力してください"}
                 .form__box--b
                   = form_for "#", method: :get, class: 'form__box--b' do |f|

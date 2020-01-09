@@ -1,5 +1,7 @@
 class SignupController < ApplicationController
 
+  layout 'devise'
+
   def new
     @user = User.new
     @user.user_addresses.build

@@ -38,10 +38,10 @@ Things you may want to cover:
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
-|mobile_phone_number|integer|null: false, unique: true|
+|mobile_phone_number|string|null: false, unique: true|
 |profile_comment|text||
 |postal_code|string||
-|prefecture|integer||
+|prefecture|string||
 |city|string||
 |address_number|string||
 |building_name|string||
@@ -59,16 +59,16 @@ Things you may want to cover:
 ## user_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|family_name_kanji|string|null: false|
-|first_name_kanji|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|postal_code|integer|null: false|
-|prefecture|integer|null: false|
-|city|string|null: false|
-|address_number|string|null: false|
+|family_name_kanji|string||
+|first_name_kanji|string||
+|family_name_kana|string||
+|first_name_kana|string||
+|postal_code|integer||
+|prefecture|string||
+|city|string||
+|address_number|string||
 |building_name|string||
-|phone_number|integer||
+|phone_number|string||
 |user_id|references|null: false, foreign_key: true|
 
 ### Association

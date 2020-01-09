@@ -29,17 +29,17 @@
                   出品する
                   = icon 'fas', 'chevron-right', class:'list--icon'
               %li
-                = link_to "#" , class:"user_edit__side--list--list" do
-                  出品した商品-出品中
-                  = icon 'fas', 'chevron-right', class:'list--icon'
-              %li
-                = link_to "#" , class:"user_edit__side--list--list" do
-                  出品した商品-取引中
-                  = icon 'fas', 'chevron-right', class:'list--icon'
-              %li
-                = link_to "#" , class:"user_edit__side--list--list" do
-                  出品した商品-売却済み
-                  = icon 'fas', 'chevron-right', class:'list--icon'
+              = link_to exhibiting_path , class:"user_destroy__side--list--list" do
+                出品した商品-出品中
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to trading_path , class:"user_destroy__side--list--list" do
+                出品した商品-取引中
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to sold_path , class:"user_destroy__side--list--list" do
+                出品した商品-売却済み
+                = icon 'fas', 'chevron-right', class:'list--icon'
               %li
                 = link_to "#" , class:"user_edit__side--list--list" do
                   購入した商品-取引中

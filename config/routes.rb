@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- root to: 'items#index'
+ root to: 'items#trading'
  get 'address_new', to: 'users#address_new'
  get 'user_done', to: 'users#user_done'
  get 'call_new', to: 'users#call_new'
@@ -17,8 +17,12 @@ Rails.application.routes.draw do
  get 'sign_out', to: 'users#sign_out'
  get 'check_user', to: 'users#check_user'
  get 'buy_confirmation', to: 'items#buy_confirmation'
+ get 'exhibiting', to:'items#exhibiting'
+ get 'sold', to:'items#sold'
+ get 'trading', to:'items#trading'
+#  get 'get_delivery_method', to: 'items#get_delivery_method'
+resources :items, except: :show
  get 'new_user_session', to: 'sessions#new'
-
  devise_scope :user do
   get '/users/sign_out' => 'devise/sessions#destroy'
 end

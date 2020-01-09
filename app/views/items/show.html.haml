@@ -98,14 +98,10 @@
           = icon 'fas', 'unlock-alt', class:'unlock--icon'
           = link_to "#" , class: "item__around--btn--right--link" do
             あんしん・あんぜんへの取組
+
+
     - if user_signed_in? && current_user.id == @item.user_id
-      .product__dealing
-
-        .product__dealing__deleat
-          =link_to '削除', item_path, method: :delete
-
-
-
+      =render "product_change"
 
 
     .product__message

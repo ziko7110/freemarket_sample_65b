@@ -25,15 +25,15 @@
                 出品する
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_destroy__side--list--list" do
+              = link_to exhibiting_path , class:"user_destroy__side--list--list" do
                 出品した商品-出品中
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_destroy__side--list--list" do
+              = link_to trading_path , class:"user_destroy__side--list--list" do
                 出品した商品-取引中
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_destroy__side--list--list" do
+              = link_to sold_path , class:"user_destroy__side--list--list" do
                 出品した商品-売却済み
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
@@ -100,3 +100,35 @@
               = link_to "#" , class:"user_destroy__side--list--list" do
                 ログアウト
                 = icon 'fas', 'chevron-right', class:'list--icon'
+      .e-content
+        %section.e-content__main
+          %h10.e-content__main__title
+            出品した商品
+          %ul.e-content__main__tab
+            %li.e-content__main__tab__list4
+              %h11.e-content__main__tab__list__title4 出品中
+            %li.e-content__main__tab__list5
+              %h11.e-content__main__tab__list__title5 取引中
+            %li.e-content__main__tab__list6
+              %h11.e-content__main__tab__list__title6 売却済み
+          %ul.e-content__main__bottom
+            %li.e-content__main__bottom__main
+              .e-content__main__bottom__main__body
+                .e-content__main__bottom__main__body__image
+                  = image_tag 'b69543bb.jpg', size:"50x50",class:"content__box--img"
+                .e-content__main__bottom__main__body__main
+                  .e-content__main__bottom__main__body__main__text カリオキ
+                  %ul.e-content__main__bottom__main__body__main__sub
+                    %li.listing-item-count
+                      = icon 'far', 'heart', class:'listing-item-count__icon'
+                      %span 5
+                    %li.listing-item-count
+                      = icon 'far', 'comment-alt', class:'listing-item-count__icon'
+                      %span 5
+                    %li.listing-item-text 公開停止中
+              = icon 'fas', 'chevron-right', class:'e-content__main__bottom__main__body__icon'
+          %ul.e-content__main__history
+            %li.e-content__main__history__icon1
+              = icon 'fas', 'chevron-left', class:'e-content__main__history__icon11'
+            %li.e-content__main__history__icon2
+              = icon 'fas', 'chevron-right', class:'e-content__main__history__icon22'

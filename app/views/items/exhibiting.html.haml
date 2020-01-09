@@ -25,15 +25,15 @@
                 出品する
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_destroy__side--list--list" do
+              = link_to exhibiting_path , class:"user_destroy__side--list--list" do
                 出品した商品-出品中
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_destroy__side--list--list" do
+              = link_to trading_path , class:"user_destroy__side--list--list" do
                 出品した商品-取引中
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_destroy__side--list--list" do
+              = link_to sold_path , class:"user_destroy__side--list--list" do
                 出品した商品-売却済み
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
@@ -120,14 +120,16 @@
                   .e-content__main__bottom__main__body__main__text カリオキ
                   %ul.e-content__main__bottom__main__body__main__sub
                     %li.listing-item-count
-                      .listing-item-count__icon
+                      = icon 'far', 'heart', class:'listing-item-count__icon'
                       %span 5
                     %li.listing-item-count
-                      .listing-item-count__icon
+                      = icon 'far', 'comment-alt', class:'listing-item-count__icon'
                       %span 5
                     %li.listing-item-text 公開停止中
-                .e-content__main__bottom__main__body__icon
+              = icon 'fas', 'chevron-right', class:'e-content__main__bottom__main__body__icon'
           %ul.e-content__main__history
             %li.e-content__main__history__icon1
+              = icon 'fas', 'chevron-left', class:'e-content__main__history__icon11'
             %li.e-content__main__history__icon2
+              = icon 'fas', 'chevron-right', class:'e-content__main__history__icon22'
 

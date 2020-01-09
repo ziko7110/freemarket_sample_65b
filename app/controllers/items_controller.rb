@@ -41,6 +41,15 @@ class ItemsController < ApplicationController
   def buy_confirmation
   end
 
+  def exhibiting
+  end
+
+  def sold
+  end
+
+  def trading
+  end
+
 end
 
 private

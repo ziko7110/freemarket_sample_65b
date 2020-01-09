@@ -1,3 +1,5 @@
+// 商品出品中
+
 .e-content {
   width: 100%;
   &__main {
@@ -72,6 +74,8 @@
         margin-block-end: 1em;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
+        display: flex;
+        justify-content: space-between;
         &__body {
           display: block;
           min-height: 80px;
@@ -96,33 +100,469 @@
             &__sub {
               display: flex;
               height: 30px;
+              line-height: 30px;
+              width: 100%;
               .listing-item-count {
+                vertical-align: 2px;
+                margin: 0 6px 0 0;
                 &__icon {
-                  
+                  vertical-align: middle;
+                  color: #ccc;
+                }
+                span {
+                  vertical-align: middle;
+                  margin: 0 0 0 2px;
+                  font-size: 16px;
+                  color: #888;
                 }
               }
               .listing-item-count {
+                vertical-align: 2px;
+                margin: 0 6px 0 0;
                 &__icon {
-
+                  vertical-align: middle;
+                  color: #ccc;
+                }
+                span {
+                  vertical-align: middle;
+                  margin: 0 0 0 2px;
+                  font-size: 16px;
+                  color: #888;
                 }
               }
               .listing-item-text {
-                
+                vertical-align: 2px;
+                margin: 0 6px 0 0;
+                background: #ea352d;
+                display: inline-block;
+                margin: 8px 0 3px 0;
+                padding: 5px 6px;
+                border-radius: 2px;
+                font-size: 12px;
+                color: #fff;
+                font-weight: 600;
+                line-height: 1em;
               }
             }
           }
           &__icon {
-
+            margin: 35px 10px 0 0;
+            font-size: 20px;
           }
         }
       }
     }
     &__history {
+      margin: 40px 0 0;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
       &__icon1 {
-        
+        display: inline-block;
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        background: #fff;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        line-height: 42px;
+        text-align: center;
+        .e-content__main__history__icon11 {
+          
+        }
       }
       &__icon2 {
+        display: inline-block;
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        background: #fff;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        line-height: 42px;
+        text-align: center;
+        .e-content__main__history__icon22 {
+        }
+      }
+    }
+  }
+}
 
+// 商品取引中
+
+.e-content {
+  width: 100%;
+  &__main {
+    &__title {
+      padding: 0 4%;
+      background: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+      padding: 0 16px;
+      display: block;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+    }
+    &__tab {
+      display: flex;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      border: 0;
+      background: #eee;
+      color: #333;
+      font-size: 16px;
+      line-height: 72px;
+      font-weight: bold;
+      &__list4 {
+        background: #eee;
+        width: 33.3%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height: 90px;
+        line-height: 90px;
+        font-size: 22px;
+        border-top: 2px solid #eee;
+        &__title4 {
+          
+        }
+      }
+      &__list5 {
+        background: #fff;
+        width: 33.3%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height: 90px;
+        line-height: 90px;
+        font-size: 22px;
+        border-top: 2px solid #ea352d;
+        &__title5 {
+
+        }
+      }
+      &__list6 {
+        background: #eee;
+        width: 33.3%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height: 90px;
+        line-height: 90px;
+        font-size: 22px;
+        border-top: 2px solid #eee;
+        &__title6 {
+
+        }
+      }
+    }
+    &__bottom {
+      width: 100%;
+      background-color: white;
+      &__main {
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        display: flex;
+        justify-content: space-between;
+        &__body {
+          display: block;
+          min-height: 80px;
+          padding: 16px;
+          color: #333;
+          display: flex;
+          &__image {
+            
+          }
+          &__main {
+            margin: 0 40px 0 20px;
+            &__text {
+              overflow: hidden;
+              display: block;
+              display: -webkit-box;
+              max-height: 4.4em;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              text-overflow: ellipsis;
+              line-height: 1.5;
+            }
+            &__sub {
+              display: flex;
+              height: 30px;
+              line-height: 30px;
+              width: 100%;
+              .listing-item-count {
+                vertical-align: 2px;
+                margin: 0 6px 0 0;
+                &__icon {
+                  vertical-align: middle;
+                  color: #ccc;
+                }
+                span {
+                  vertical-align: middle;
+                  margin: 0 0 0 2px;
+                  font-size: 16px;
+                  color: #888;
+                }
+              }
+              .listing-item-count {
+                vertical-align: 2px;
+                margin: 0 6px 0 0;
+                &__icon {
+                  vertical-align: middle;
+                  color: #ccc;
+                }
+                span {
+                  vertical-align: middle;
+                  margin: 0 0 0 2px;
+                  font-size: 16px;
+                  color: #888;
+                }
+              }
+              .listing-item-text {
+                vertical-align: 2px;
+                margin: 0 6px 0 0;
+                background: #ea352d;
+                display: inline-block;
+                margin: 8px 0 3px 0;
+                padding: 5px 6px;
+                border-radius: 2px;
+                font-size: 12px;
+                color: #fff;
+                font-weight: 600;
+                line-height: 1em;
+              }
+            }
+          }
+          &__icon {
+            margin: 35px 10px 0 0;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    &__history {
+      margin: 40px 0 0;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      &__icon1 {
+        display: inline-block;
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        background: #fff;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        line-height: 42px;
+        text-align: center;
+        .e-content__main__history__icon11 {
+          
+        }
+      }
+      &__icon2 {
+        display: inline-block;
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        background: #fff;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        line-height: 42px;
+        text-align: center;
+        .e-content__main__history__icon22 {
+        }
+      }
+    }
+  }
+}
+
+// 商品売却済み
+
+.e-content {
+  width: 100%;
+  &__main {
+    &__title {
+      padding: 0 4%;
+      background: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+      padding: 0 16px;
+      display: block;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+    }
+    &__tab {
+      display: flex;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      border: 0;
+      background: #eee;
+      color: #333;
+      font-size: 16px;
+      line-height: 72px;
+      font-weight: bold;
+      &__list7 {
+        background: #eee;
+        width: 33.3%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height: 90px;
+        line-height: 90px;
+        font-size: 22px;
+        border-top: 2px solid #eee;
+        &__title7 {
+          
+        }
+      }
+      &__list8 {
+        background: #eee;
+        width: 33.3%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height: 90px;
+        line-height: 90px;
+        font-size: 22px;
+        border-top: 2px solid #eee;
+        &__title8 {
+
+        }
+      }
+      &__list9 {
+        background: #fff;
+        width: 33.3%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height: 90px;
+        line-height: 90px;
+        font-size: 22px;
+        border-top: 2px solid #ea352d;
+        &__title9 {
+
+        }
+      }
+    }
+    &__bottom {
+      width: 100%;
+      background-color: white;
+      &__main {
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        display: flex;
+        justify-content: space-between;
+        &__body {
+          display: block;
+          min-height: 80px;
+          padding: 16px;
+          color: #333;
+          display: flex;
+          &__image {
+            
+          }
+          &__main {
+            margin: 0 40px 0 20px;
+            &__text {
+              overflow: hidden;
+              display: block;
+              display: -webkit-box;
+              max-height: 4.4em;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              text-overflow: ellipsis;
+              line-height: 1.5;
+            }
+            &__sub {
+              display: flex;
+              height: 30px;
+              line-height: 30px;
+              width: 100%;
+              .listing-item-count {
+                vertical-align: 2px;
+                margin: 0 6px 0 0;
+                &__icon {
+                  vertical-align: middle;
+                  color: #ccc;
+                }
+                span {
+                  vertical-align: middle;
+                  margin: 0 0 0 2px;
+                  font-size: 16px;
+                  color: #888;
+                }
+              }
+              .listing-item-count {
+                vertical-align: 2px;
+                margin: 0 6px 0 0;
+                &__icon {
+                  vertical-align: middle;
+                  color: #ccc;
+                }
+                span {
+                  vertical-align: middle;
+                  margin: 0 0 0 2px;
+                  font-size: 16px;
+                  color: #888;
+                }
+              }
+              .listing-item-text {
+                vertical-align: 2px;
+                margin: 0 6px 0 0;
+                background: #ea352d;
+                display: inline-block;
+                margin: 8px 0 3px 0;
+                padding: 5px 6px;
+                border-radius: 2px;
+                font-size: 12px;
+                color: #fff;
+                font-weight: 600;
+                line-height: 1em;
+              }
+            }
+          }
+          &__icon {
+            margin: 35px 10px 0 0;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    &__history {
+      margin: 40px 0 0;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      &__icon1 {
+        display: inline-block;
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        background: #fff;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        line-height: 42px;
+        text-align: center;
+        .e-content__main__history__icon11 {
+          
+        }
+      }
+      &__icon2 {
+        display: inline-block;
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        background: #fff;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        line-height: 42px;
+        text-align: center;
+        .e-content__main__history__icon22 {
+        }
       }
     }
   }

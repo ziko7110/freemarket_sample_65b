@@ -39,6 +39,7 @@ class UsersController < ApplicationController
   end
   
   def pay_jp
+
     
   end
   

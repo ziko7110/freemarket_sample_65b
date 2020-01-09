@@ -4,13 +4,15 @@
       %h5.product__main--title
         = @item.name
       .product__main--contents
-        .item__photo.slider-item
-          .item__photo--main
-          
-            = image_tag @item.photos.first.image.url, class: 'product__main__item-image'
-          .item__photo--bottom
+
+        .item__photo
+          .item__photo--main.slider-item
             -@item.photos.each do |photo|
-              = image_tag photo.image.url, size:"60x60", class: 'product__main__item-image'
+              = image_tag photo.image.url, class: 'product__main__item-image'
+          .item__photo--bottom.thumb-item
+            -@item.photos.each do |photo|
+              = image_tag photo.image.url, style:'width:60px;height:60px;',class: 'product__main__item-subimage'
+
         %table.item__ditail
           %tr.item__ditail--head
             %th.item__ditail--name 出品者

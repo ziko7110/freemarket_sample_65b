@@ -146,7 +146,6 @@
             }
           }
           &__icon {
-            margin: 35px 10px 0 0;
             font-size: 20px;
           }
         }
@@ -336,7 +335,7 @@
             }
           }
           &__icon {
-            margin: 35px 10px 0 0;
+            // margin: 35px 10px 0 0;
             font-size: 20px;
           }
         }
@@ -454,80 +453,85 @@
         margin-block-end: 1em;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
-        display: flex;
         justify-content: space-between;
-        &__body {
-          display: block;
-          min-height: 80px;
-          padding: 16px;
-          color: #333;
+        .e-content__main__bottom__main__list {
           display: flex;
-          &__image {
-            
-          }
-          &__main {
-            margin: 0 40px 0 20px;
-            &__text {
-              overflow: hidden;
-              display: block;
-              display: -webkit-box;
-              max-height: 4.4em;
-              -webkit-line-clamp: 3;
-              -webkit-box-orient: vertical;
-              text-overflow: ellipsis;
-              line-height: 1.5;
+          justify-content: space-between;
+          width: 730px;
+          &__body {
+            display: block;
+            min-height: 80px;
+            padding: 16px;
+            color: #333;
+            display: flex;
+            &__image {
+              
             }
-            &__sub {
-              display: flex;
-              height: 30px;
-              line-height: 30px;
-              width: 100%;
-              .listing-item-count {
-                vertical-align: 2px;
-                margin: 0 6px 0 0;
-                &__icon {
-                  vertical-align: middle;
-                  color: #ccc;
-                }
-                span {
-                  vertical-align: middle;
-                  margin: 0 0 0 2px;
-                  font-size: 16px;
-                  color: #888;
-                }
+            &__main {
+              margin: 0 40px 0 20px;
+              &__text {
+                overflow: hidden;
+                display: block;
+                display: -webkit-box;
+                max-height: 4.4em;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                line-height: 1.5;
+                left: 0;
               }
-              .listing-item-count {
-                vertical-align: 2px;
-                margin: 0 6px 0 0;
-                &__icon {
-                  vertical-align: middle;
-                  color: #ccc;
+              &__sub {
+                display: flex;
+                height: 30px;
+                line-height: 30px;
+                width: 100%;
+                .listing-item-count {
+                  vertical-align: 2px;
+                  margin: 0 6px 0 0;
+                  &__icon {
+                    vertical-align: middle;
+                    color: #ccc;
+                  }
+                  span {
+                    vertical-align: middle;
+                    margin: 0 0 0 2px;
+                    font-size: 16px;
+                    color: #888;
+                  }
                 }
-                span {
-                  vertical-align: middle;
-                  margin: 0 0 0 2px;
-                  font-size: 16px;
-                  color: #888;
+                .listing-item-count {
+                  vertical-align: 2px;
+                  margin: 0 6px 0 0;
+                  &__icon {
+                    vertical-align: middle;
+                    color: #ccc;
+                  }
+                  span {
+                    vertical-align: middle;
+                    margin: 0 0 0 2px;
+                    font-size: 16px;
+                    color: #888;
+                  }
                 }
-              }
-              .listing-item-text {
-                vertical-align: 2px;
-                margin: 0 6px 0 0;
-                background: #ea352d;
-                display: inline-block;
-                margin: 8px 0 3px 0;
-                padding: 5px 6px;
-                border-radius: 2px;
-                font-size: 12px;
-                color: #fff;
-                font-weight: 600;
-                line-height: 1em;
+                .listing-item-text {
+                  vertical-align: 2px;
+                  margin: 0 6px 0 0;
+                  background: #ea352d;
+                  display: inline-block;
+                  margin: 8px 0 3px 0;
+                  padding: 5px 6px;
+                  border-radius: 2px;
+                  font-size: 12px;
+                  color: #fff;
+                  font-weight: 600;
+                  line-height: 1em;
+                }
               }
             }
-          }
-          &__icon {
-            margin: 35px 10px 0 0;
-            font-size: 20px;
+            &__icon {
+              margin: 35px 10px 0 0;
+              font-size: 20px;
+            }
           }
         }
       }

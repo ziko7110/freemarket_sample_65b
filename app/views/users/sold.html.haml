@@ -111,26 +111,27 @@
               %h11.e-content__main__tab__list__title8 取引中
             %li.e-content__main__tab__list9
               %h11.e-content__main__tab__list__title9 売却済み
-          %ul.e-content__main__bottom
-            %li.e-content__main__bottom__main
-              .e-content__main__bottom__main__body
-                .e-content__main__bottom__main__body__image
-                  - @solditems.each do |item|
-                    - item.photos.each do |photo|
-                      = image_tag photo.image.url, size:"50x50",class:"content__box--img"
-                .e-content__main__bottom__main__body__main
-                  .e-content__main__bottom__main__body__main__text 
-                    - @solditems.each do |item|
-                      = item.name
-                  %ul.e-content__main__bottom__main__body__main__sub
-                    %li.listing-item-count
-                      = icon 'far', 'heart', class:'listing-item-count__icon'
-                      %span 5
-                    %li.listing-item-count
-                      = icon 'far', 'comment-alt', class:'listing-item-count__icon'
-                      %span 5
-                    %li.listing-item-text 公開停止中
-              = icon 'fas', 'chevron-right', class:'e-content__main__bottom__main__body__icon'
+          .e-content__main__bottom
+            .e-content__main__bottom__main
+              %ul
+                - @solditems.each do |item|
+                  %ul.e-content__main__bottom__main__list
+                    %li.e-content__main__bottom__main__list__body
+                      .e-content__main__bottom__main__list__body__image
+                        - item.photos.each do |photo|
+                          = image_tag photo.image.url, size:"50x50",class:"content__box--img"
+                      .e-content__main__bottom__main__list__body__main
+                        .e-content__main__bottom__main__list__body__main__text 
+                          = item.name
+                        %ul.e-content__main__bottom__main__list__body__main__sub
+                          %li.listing-item-count
+                            = icon 'far', 'heart', class:'listing-item-count__icon'
+                            %span 5
+                          %li.listing-item-count
+                            = icon 'far', 'comment-alt', class:'listing-item-count__icon'
+                            %span 5
+                          %li.listing-item-text 公開停止中
+                    = icon 'fas', 'chevron-right', class:'e-content__main__bottom__main__list__body__icon'
           %ul.e-content__main__history
             %li.e-content__main__history__icon1
               = icon 'fas', 'chevron-left', class:'e-content__main__history__icon11'

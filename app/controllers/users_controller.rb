@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   def create
   @user = User.new(user_params)
   @user.create
-
   end
 
 
@@ -34,7 +33,7 @@ class UsersController < ApplicationController
   def sold
     @solditems = @user.sold_items
   end
-  
+
 
   def check_user
   end

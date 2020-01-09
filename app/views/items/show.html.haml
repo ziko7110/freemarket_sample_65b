@@ -1,7 +1,8 @@
 .product
   .product__body
     .product__main
-      %h5.product__main--title チョウチンアンコウの”ここ”
+      %h5.product__main--title
+        =@item.name
       .product__main--contents
         .item__photo
           .item__photo--main
@@ -97,6 +98,12 @@
           = icon 'fas', 'unlock-alt', class:'unlock--icon'
           = link_to "#" , class: "item__around--btn--right--link" do
             あんしん・あんぜんへの取組
+
+
+    - if user_signed_in? && current_user.id == @item.user_id
+      =render "product_change"
+
+
     .product__message
       .product__message--container
         .product__message--contents1

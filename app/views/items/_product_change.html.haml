@@ -1,0 +1,7 @@
+.product__change
+  =link_to "商品の編集", "#", class: "product__change__edit"
+  .product__change__or
+    or
+  =link_to "出品を一旦停止する", "#", class: "product__change__suspension"
+  =link_to "この商品を削除する", item_path, method: :delete, class: "product__change__delete"
+    

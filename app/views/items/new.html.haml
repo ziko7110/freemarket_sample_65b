@@ -16,7 +16,6 @@
         .items__images__imageAttention
           最大10枚までアップロードできます
         #imageBox.items__images__upload
-
           .item-num-0#image-box__container
             = f.fields_for :photos, class: "image-label" do |i|
               .items__images__upload__box
@@ -52,7 +51,7 @@
               %label.items__definition__category__contents__rightAttention
                 必須
             .items__definition__category__select
-              <i class="fas fa-chevron-down"></i>
+              = icon 'fas', 'chevron-down'
               = f.select :categoryname, ["---","レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自転車・オートバイ","その他"], class:'selectBox'
             .items__definition__category__brand
               .items__definition__category__brand__contents
@@ -68,7 +67,7 @@
               %label.items__definition__category__status__rightAttention
                 必須
             .items__definition__category__status__select
-              <i class="fas fa-chevron-down"></i>
+              = icon 'fas', 'chevron-down'
               = f.select :condition, ["---","新品、未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"],class:"selectBox"
           .clearfix
         .items__shipping
@@ -82,7 +81,7 @@
               %label.items__shipping__contents__fee__rightAttention
                 必須
               .items__shipping__contents__fee__select
-                <i class="fas fa-chevron-down"></i>
+                = icon 'fas', 'chevron-down'
                 = f.select :delivery_fee, ["---","送料込み(出品者負担)","着払い(購入者負担)"], class: "selectBox"
             .items__shipping___contents__area{style:"float: right; margin-top: 40px;"}
               %label.items__shipping__contents__area__title
@@ -90,7 +89,7 @@
               %label.items__shipping__contents__area__rightAttention
                 必須
               .items__shipping__contents__area__select
-                <i class="fas fa-chevron-down"></i>
+                = icon 'fas', 'chevron-down'
                 = f.select :shipping_area, ["---","北海道""北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"]
             .items__shipping__contents__date
               %label.items__shipping__contents__date__title
@@ -98,13 +97,13 @@
               %label.items__shipping__contents__date__rightAttention
                 必須
               .items__shipping__contents__date__select
-                <i class="fas fa-chevron-down"></i>
+                = icon 'fas', 'chevron-down'
                 = f.select :shipping_days, ["---","1~2日で発送","2~3日で発送","4~7日で発送"], class: "selectBox"
           .clearfix
         .items__cost
           .items__cost__title
             販売価格(300〜9,999,999)
-            <i class="fas fa-question-circle"></i>
+            = icon 'fas', 'chevron-down'
           .items__cost__price
             .items__cost__price__inputPrice
               .items__cost__price__inputPrice__title

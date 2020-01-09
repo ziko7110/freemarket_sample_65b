@@ -10,7 +10,14 @@ class UsersController < ApplicationController
   end
 
   def new
-   
+  @user = User.new
+  
+  end
+
+  def create
+  @user = User.new(user_params)
+  @user.create
+
   end
 
   def check_user
@@ -42,6 +49,7 @@ class UsersController < ApplicationController
   end
 
   def sign_out
+    
   end
   
 end

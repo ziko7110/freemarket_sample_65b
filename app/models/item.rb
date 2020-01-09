@@ -1,6 +1,5 @@
 class Item < ApplicationRecord
   validates :name, :price, :description, :condition, :delivery_fee, :shipping_area, :shipping_days, :categoryname, presence: true
-
   belongs_to :user, optional: true ,class_name: "User" 
   belongs_to :buyer, optional: true , class_name: "User"
   has_many :photos

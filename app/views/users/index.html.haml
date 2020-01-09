@@ -7,7 +7,7 @@
     %h2.devise-main__contents__top  新規会員登録
     .devise-main__registration__links
       .devise-main__registration__links__link
-        = link_to '#', class: 'devise-main__registration__links__link__email' do
+        = link_to new_signup_path, class: 'devise-main__registration__links__link__email' do
           %i.far.fa-envelope
           .devise-main__registration__links__link__email__content メールアドレスで登録する
         = link_to '#', method: :post, class: 'devise-main__registration__links__link__facebook'  do

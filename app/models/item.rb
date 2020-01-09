@@ -8,6 +8,9 @@ class Item < ApplicationRecord
   has_many :brands
   accepts_nested_attributes_for :brands
 
+
+  # 下記コメントアウトはenum形式でformを作成する時の為
+
   # has_many :items_categories
   # has_many :categories, through: :items_categories
   # accepts_nested_attributes_for :categories, allow_destroy: true
@@ -33,6 +36,7 @@ class Item < ApplicationRecord
   # "---":0,
   # "1~2日で発送":1, "2~3日で発送":2, "4~7日で発送":3
   # },_prefix: true
+
 
 
 end

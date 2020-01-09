@@ -2,6 +2,28 @@ crumb :root do
   link "トップページ", root_path
 end
 
+crumb :mypage do
+  link "マイページ", '/users/1'
+  parent :root
+end
+crumb :sign_out do
+  link "ログアウト", sign_out_path
+  parent :root
+end
+
+
+crumb :check_user do
+  link "本人情報の登録", check_user_path
+  parent :mypage
+end
+
+crumb :edit_user do
+  link "プロフィール編集", edit_user_path
+  parent :mypage
+end
+
+
+
 # crumb :mypage do
   # link "マイページ", users_show_path
   # parent :root

@@ -1,0 +1,103 @@
+.devise-header1
+  .devise-header1__registrations
+    = image_tag 'fmarket_logo_red.svg', alt: 'logo', class: 'devise-header__registration__logo', height: '60', width: '185'    
+  .devise-header1__signup-bar
+    %ol.devise-header1__signup-bar__ol
+      %li.devise-header1__signup-bar__nav 
+        .devise-header1__signup-bar__nav__name-red 会員情報
+        .devise-header1__signup-bar__nav__mark-red 
+      %li.devise-header1__signup-bar__nav 
+        .devise-header1__signup-bar__nav__name-red 電話番号
+        .devise-header1__signup-bar__nav__mark-red 
+      %li.devise-header1__signup-bar__nav 
+        .devise-header1__signup-bar__nav__name-red お届け先住所入力
+        .devise-header1__signup-bar__nav__mark-red
+      %li.devise-header1__signup-bar__nav 
+        .devise-header1__signup-bar__nav__name-red 支払い方法
+        .devise-header1__signup-bar__nav__mark-red
+      %li.devise-header1__signup-bar__nav 
+        .devise-header1__signup-bar__nav__name-gray 完了
+        .devise-header1__signup-bar__nav__mark-gray
+      .devise-header1__signup-bar__line-gray
+      .devise-header1__signup-bar__line-red-card-new
+      
+
+.payjp
+  .payjp__form
+    .payjp__form--bar
+      .payjp__form--bar--title 支払い方法
+      .payjp__form--bar--main
+        .payjp__form--main--bar
+          .payjp__form--main--bar--limit
+            %label.cardnum カード番号
+            %label.must 必須
+          = text_field_tag "number", "", class: "payjp__number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+          %ul.payjp__card__contener__form__content__group__img
+            %li
+              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574', class:"payjp__card__contener__form__content__group__img__visa", size: "49x20"
+            %li
+              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1714804574', class:"payjp__card__contener__form__content__group__img__master-card", size: "34x20"
+            %li
+              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?1714804574', class:"payjp__card__contener__form__content__group__img__saison-card", size: "30x20"
+            %li
+              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1714804574', class:"payjp__card__contener__form__content__group__img__jcb", size: "32x20"
+            %li
+              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1714804574', class:"payjp__card__contener__form__content__group__img__american-express", size: "21x20"
+            %li
+              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1714804574', class:"payjp__card__contener__form__content__group__img__dinersclub", size: "32x20"
+            %li
+              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1714804574', class:"payjp__card__contener__form__content__group__img__discover", size:"32x20"
+          .payjp__form--limit
+            .month--limit
+              .month--limit--bar
+                %label.expiration__date 有効期限
+                %label.must 必須
+              %select.exp_month{name: "exp_month", type: "text"}
+                %option{value: ""} --
+                %option{value: "1"}01
+                %option{value: "2"}02
+                %option{value: "3"}03
+                %option{value: "4"}04
+                %option{value: "5"}05
+                %option{value: "6"}06
+                %option{value: "7"}07
+                %option{value: "8"}08
+                %option{value: "9"}09
+                %option{value: "10"}10
+                %option{value: "11"}11
+                %option{value: "12"}12
+              = icon 'fas', 'chevron-down', class:'payjp__chevron--down--icon'
+              %span 月
+            .year--limit
+              %select.exp_year{name: "exp_year", type: "text"}
+                %option{value: ""} --
+                %option{value: "2019"}19
+                %option{value: "2020"}20
+                %option{value: "2021"}21
+                %option{value: "2022"}22
+                %option{value: "2023"}23
+                %option{value: "2024"}24
+                %option{value: "2025"}25
+                %option{value: "2026"}26
+                %option{value: "2027"}27
+                %option{value: "2028"}28
+                %option{value: "2029"}29
+              = icon 'fas', 'chevron-down', class:'payjp__chevron--down--icon'
+              %span 年
+            .payjp__form--code
+              .payjp__form--code--body
+                .payjp__form--code--body--bar
+                  %label.security__code セキュリティコード
+                  %label.must 必須
+                = text_field_tag "cvc", "", class: "payjp__cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+              .payjp__form--code--bottom
+                %label.security__code--note 
+                  = link_to "#" , class:"security__code--note--list" do
+                    = icon 'fas', 'question-circle', class:'question--icon'
+                    .security__code--note--text カード裏面の番号とは？
+                #card_token
+              = link_to "次へ進む", user_done_signup_index_path, class: "token_submit"
+
+
+
+

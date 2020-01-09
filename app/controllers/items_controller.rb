@@ -33,11 +33,11 @@ class ItemsController < ApplicationController
   end
 
   def trading
-    @sellingitem = @user.selling_items
+    @sellingitem = @item.selling_items
   end
 
   def sold
-    @solditem = @user.sold_items
+    @solditem = @item.sold_items
   end
 
   def get_delivery_method

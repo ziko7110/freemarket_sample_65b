@@ -11,4 +11,5 @@ describe Photo do
       expect(photo.errors[:image]).to include("can't be blank")
     end
   end
+  
 end

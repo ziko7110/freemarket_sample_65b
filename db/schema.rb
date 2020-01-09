@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_02_074630) do
+ActiveRecord::Schema.define(version: 2020_01_07_125328) do
+
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "brandname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "item_id"
+    t.index ["item_id"], name: "index_brands_on_item_id"
+  end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "number", null: false
@@ -24,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "name", null: false
+    t.integer "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,17 +64,19 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.bigint "user_id", null: false
+    t.string "name"
+    t.bigint "user_id"
     t.text "description"
-    t.integer "condition", null: false
-    t.integer "delivery_fee", null: false
-    t.integer "delivery_method", null: false
-    t.integer "shipping_area", null: false
-    t.integer "shipping_days", null: false
-    t.integer "price", null: false
+    t.integer "condition"
+    t.integer "delivery_fee"
+    t.integer "delivery_method"
+    t.integer "shipping_area"
+    t.integer "shipping_days"
+    t.integer "price"
     t.integer "brand"
     t.integer "buyer_id"
+    t.text "text"
+    t.integer "categoryname"
     t.index ["name"], name: "index_items_on_name"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
@@ -81,34 +91,33 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.bigint "item_id", null: false
+    t.string "image"
+    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_photos_on_item_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "uid", null: false
+    t.string "uid", null: false
     t.string "provider", null: false
-    t.text "token"
-    t.bigint "user_id_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id_id"], name: "index_sns_credentials_on_user_id_id"
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "family_name_kanji", null: false
-    t.string "first_name_kanji", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.integer "postal_code", null: false
-    t.integer "prefecture", null: false
-    t.string "city", null: false
-    t.string "address_number", null: false
+    t.string "family_name_kanji"
+    t.string "first_name_kanji"
+    t.string "family_name_kana"
+    t.string "first_name_kana"
+    t.integer "postal_code"
+    t.string "prefecture"
+    t.string "city"
+    t.string "address_number"
     t.string "building_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -119,7 +128,6 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
-    t.string "password", null: false
     t.string "family_name_kanji", null: false
     t.string "first_name_kanji", null: false
     t.string "family_name_kana", null: false
@@ -127,10 +135,10 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
     t.integer "birth_year", null: false
     t.integer "birth_month", null: false
     t.integer "birth_day", null: false
-    t.integer "mobile_phone_number", null: false
+    t.string "mobile_phone_number", null: false
     t.text "profile_comment"
     t.string "postal_code"
-    t.integer "prefecture"
+    t.string "prefecture"
     t.string "city"
     t.string "address_number"
     t.string "building_name"
@@ -143,8 +151,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_074630) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "brands", "items"
   add_foreign_key "item_categories", "categories"
   add_foreign_key "item_categories", "items"
-  add_foreign_key "items", "users"
-  add_foreign_key "photos", "items"
 end

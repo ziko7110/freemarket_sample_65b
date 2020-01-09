@@ -4,11 +4,13 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.joins(:photos).group("item_id").order('id DESC')
+
   end
 
   def new
     @item = Item.new
-    # @item.photos.new
+    @item.photos.new
+    @item.brands.new
   end
 
   def show
@@ -18,11 +20,14 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to new_item_path
     else
-      render :new
+      render new_user_path
     end
   end
+
+  def get_delivery_method
+  end 
 
   def edit
   end
@@ -31,6 +36,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
   end
@@ -38,11 +44,22 @@ class ItemsController < ApplicationController
   def buy_confirmation
   end
 
+  def exhibiting
+  end
+
+  def sold
+  end
+
+  def trading
+  end
+
 end
 
 private
 
 def item_params
-  params.require(:item).permit(:name, :price, images_attributes: [:image])
+
+  params.require(:item).permit(:name, :description, :price, :text, :brand, :condition, :delivery_fee, :prefecture_id, :shipping_days, :shipping_area, :price, :categoryname, :user_id, photos_attributes: [:image], brands_attributes: [:brandname])
+
 
 end

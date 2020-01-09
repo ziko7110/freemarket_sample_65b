@@ -16,8 +16,13 @@
         = link_to 'ブランドから探す', '#', class: 'header__container__bottom__nav__brand__link'
       .header__container__bottom__user
         -if user_signed_in?
-          = link_to 'マイページ', '/users/1', class: 'header__container__bottom__user__signup'
-          = link_to 'ログアウト', sign_out_path, class: 'header__container__bottom__user__login'
+          .afetr_iogin
+            %i.fas.fa-user
+            = link_to 'マイページ', '/users/1', class: 'afetr_iogin__string'
+            %i.far.fa-bell 
+            = link_to 'お知らせ', '/users/1', class: 'afetr_iogin__string'
+            %i.fas.fa-check 
+            = link_to 'やることリスト',destroy_user_session_path, method: :delete, class: 'afetr_iogin__string'
         -else
           = link_to '新規会員登録', users_path, class: 'header__container__bottom__user__signup'
           = link_to 'ログイン', new_user_session_path, class: 'header__container__bottom__user__login'

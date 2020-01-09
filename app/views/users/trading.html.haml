@@ -25,15 +25,15 @@
                 出品する
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to exhibiting_path , class:"user_destroy__side--list--list" do
+              = link_to "#" , class:"user_destroy__side--list--list" do
                 出品した商品-出品中
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to trading_path , class:"user_destroy__side--list--list" do
+              = link_to "#" , class:"user_destroy__side--list--list" do
                 出品した商品-取引中
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to sold_path , class:"user_destroy__side--list--list" do
+              = link_to "#" , class:"user_destroy__side--list--list" do
                 出品した商品-売却済み
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
@@ -115,9 +115,13 @@
             %li.e-content__main__bottom__main
               .e-content__main__bottom__main__body
                 .e-content__main__bottom__main__body__image
-                  = image_tag 'b69543bb.jpg', size:"50x50",class:"content__box--img"
+                  - @sellingitems.each do |item|
+                    - item.photos.each do |photo|
+                      = image_tag photo.image.url, size:"50x50",class:"content__box--img"
                 .e-content__main__bottom__main__body__main
-                  .e-content__main__bottom__main__body__main__text カリオキ
+                  .e-content__main__bottom__main__body__main__text 
+                    - @sellingitems.each do |item|
+                      = item.name
                   %ul.e-content__main__bottom__main__body__main__sub
                     %li.listing-item-count
                       = icon 'far', 'heart', class:'listing-item-count__icon'

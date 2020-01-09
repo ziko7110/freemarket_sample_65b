@@ -20,6 +20,22 @@ class UsersController < ApplicationController
 
   end
 
+
+  def exhibiting
+    @user = User.find(params[:id])
+    @buyeditems = @user.buyed_items
+  end
+
+  def trading
+    @user = User.find(params[:id])
+    @sellingitems = @user.selling_items
+  end
+
+  def sold
+    @user = User.find(params[:id])
+    @solditems = @user.sold_items
+  end
+
   def check_user
   end
   
@@ -40,4 +56,9 @@ class UsersController < ApplicationController
     
   end
   
+  def item_params
+    params.require(:item).permit(:name, :description, :price, :text, :brand, :condition, :delivery_fee, :prefecture_id, :shipping_days, :shipping_area, :price, :categoryname, :user_id, photos_attributes: [:image], brands_attributes: [:brandname])
+  
+  end
+
 end

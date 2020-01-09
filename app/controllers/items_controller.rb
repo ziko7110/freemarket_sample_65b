@@ -24,6 +24,21 @@ class ItemsController < ApplicationController
     end
   end
 
+  def exhibiting
+    @item = Item.find(params[:id])
+    @buyedphotos = @item.buyed_items
+  end
+
+  def trading
+    @user = User.find(params[:id])
+    @sellingitem = @user.selling_items
+  end
+
+  def sold
+    @user = User.find(params[:id])
+    @solditem = @user.sold_items
+  end
+
   def get_delivery_method
   end 
 

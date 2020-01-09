@@ -173,3 +173,18 @@
 .fa-tag{
   color: red;
 }
+.fa-user{
+  background-color: lightgray;
+  border-radius: 50px;
+  font-size: 20px;
+
+}
+
+.afetr_iogin{
+  margin-top: 5px;
+  &__string{
+    color : black;
+    margin-left: 5px;
+    margin-right: 2px;
+  }
+}

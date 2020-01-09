@@ -38,10 +38,10 @@ Things you may want to cover:
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
-|mobile_phone_number|integer|null: false, unique: true|
+|mobile_phone_number|string|null: false, unique: true|
 |profile_comment|text||
 |postal_code|string||
-|prefecture|integer||
+|prefecture|string||
 |city|string||
 |address_number|string||
 |building_name|string||
@@ -59,16 +59,16 @@ Things you may want to cover:
 ## user_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|family_name_kanji|string|null: false|
-|first_name_kanji|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|postal_code|integer|null: false|
-|prefecture|integer|null: false|
-|city|string|null: false|
-|address_number|string|null: false|
+|family_name_kanji|string||
+|first_name_kanji|string||
+|family_name_kana|string||
+|first_name_kana|string||
+|postal_code|integer||
+|prefecture|string||
+|city|string||
+|address_number|string||
 |building_name|string||
-|phone_number|integer||
+|phone_number|string||
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
@@ -89,6 +89,9 @@ Things you may want to cover:
 |shipping_area|integer|null: false|
 |shipping_days |integer|null: false|
 |price|integer|null: false|
+|brand|integer|
+|buyer|integer|null: false|
+
 
 ### Association
 - belongs_to :user
@@ -168,3 +171,34 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|integer|null: false|
+
+### Association
+- has_many :item_categories
+- has_many :items, through: :item_categories
+
+
+## item_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item|references|foreign_key: true|
+|category|references|foreign_key: true|
+
+### Association
+- belongs_to :item
+- belongs_to :category
+
+
+##  brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item|references|foreign_key: true|
+|brandname|string|
+
+### Association
+- belongs_to :item

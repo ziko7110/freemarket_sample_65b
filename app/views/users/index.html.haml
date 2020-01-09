@@ -7,12 +7,12 @@
     %h2.devise-main__contents__top  新規会員登録
     .devise-main__registration__links
       .devise-main__registration__links__link
-        = link_to '#', class: 'devise-main__registration__links__link__email' do
+        = link_to new_signup_path, class: 'devise-main__registration__links__link__email' do
           %i.far.fa-envelope
           .devise-main__registration__links__link__email__content メールアドレスで登録する
-        = link_to '#', method: :post, class: 'devise-main__registration__links__link__facebook'  do
+        = link_to user_facebook_omniauth_authorize_path, method: :post, class: 'devise-main__registration__links__link__facebook'  do
           = icon 'fab', 'facebook-square', class:'devise-main__registration__links__link__facebook__icon'
           .devise-main__registration__links__link__facebook__content  Facebookで登録する
-        = link_to '#', method: :post, class: 'devise-main__registration__links__link__google' do
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'devise-main__registration__links__link__google' do
           %i.fab.fa-google-plus-g
           .devise-main__registration__links__link__google__content Googleで登録する

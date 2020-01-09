@@ -476,14 +476,37 @@
               display: block;
               width: 100%;
               line-height: 48px;
-              font-size: 14px;
+              font-size: 16px;
               transition: all ease-out .3s;
               cursor: pointer;
               text-align: center;
+              text-decoration:	none;
             }
           }
         }
       }
     }
   }
+}
+// パンくず
+.breadcrumbs{
+  width: 100%;
+  background-color: white;
+  border-color: rgb(248, 242, 242);
+  border-bottom-style: inset;
+}
+.breadcrumbs__bar{
+
+  width: 1060px;
+  height: 35px; 
+  background-color: white;
+  font-size:14px;
+  text-decoration: none;
+  padding-left:25px;
+  padding-top: 10px;
+  margin:0 auto;
+}
+a{
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  text-decoration: none;
 }

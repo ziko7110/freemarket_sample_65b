@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   def sold
     @solditems = @user.sold_items
   end
+  
 
   def check_user
   end

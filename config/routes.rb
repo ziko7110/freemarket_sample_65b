@@ -30,6 +30,9 @@ resources :items, except: :show
   get '/users/sign_out' => 'devise/sessions#destroy'
 end
  resources :tweets, only: [:new, :show, :update] 
+
+ resource :photos,only: [:show]
+ 
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy, :create]
  resources :signup do
   collection do

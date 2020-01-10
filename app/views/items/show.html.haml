@@ -17,7 +17,7 @@
           %tr.item__ditail--head
             %th.item__ditail--name 出品者
             %td
-              =link_to @item.user.nickname, '#', class: "item__ditail--title"
+              =link_to @item.user_id, '#', class: "item__ditail--title"
               .item__ditail--faceicon
                 %span.item__ditail--faceicon--1
                   = icon 'fas', 'grin', class:'face--icon'
@@ -55,10 +55,11 @@
           %tr.item__ditail--head
             %th.item__ditail--name 配送元地域
             %td
-              = link_to("大阪府", '#', class:"item__ditail--area")
+              = link_to @item.shipping_area, '#', class:"item__ditail--area"
           %tr.item__ditail--head
             %th.item__ditail--name 発送の目安
-            %td 1〜2日で発送
+            %td
+              = @item.shipping_days
       .product__main--item--price
         %span.showprice 
           = @item.price
@@ -68,7 +69,8 @@
         = form_for "#", class: 'item__buy--btn' do |f|
           = f.submit "購入画面に進む", class: 'item__check-btn'
       .product__main--comments
-        %p.product__main--comments--main 【27cm】Travis Scott × Nike Air Force 1 Low Cactus Jack トラヴィス スコット エアフォース ご覧いただき、ありがとうございます。SNIKRSで当選し、購入しました。 サイズは27cm になります。 状態は、新品未使用・未試着になります。 個人情報部分を切り取った納品書原本をお付けいたします。入金確認後、即発送させていただきます。※ 落札から24時間以内のご連絡、また1日以内のお振込がお約束できる方のみ、ご入札くださいませ。 ※ご相談等は、可能な限り、お受けしたいと思いますので、ご遠慮なく仰ってください。
+        %p.product__main--comments--main
+          = @item.description 
       .item__around--btn
         .item__around--btn--left 
           .item__around--btn--left--l 
@@ -98,6 +100,8 @@
             %li
               .message-body
                 .message-body--main
+                  
+
                   
                 
         .product__message--contents2

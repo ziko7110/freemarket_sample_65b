@@ -18,7 +18,7 @@
         -if user_signed_in?
           .afetr_iogin
             %i.fas.fa-user
-            = link_to 'マイページ', '/users/1', class: 'afetr_iogin__string'
+            = link_to 'マイページ', user_path(current_user), class: 'afetr_iogin__string'
             %i.far.fa-bell 
             = link_to 'お知らせ', '/users/1', class: 'afetr_iogin__string'
             %i.fas.fa-check 

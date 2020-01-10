@@ -17,20 +17,20 @@ Rails.application.routes.draw do
  get 'sign_out', to: 'users#sign_out'
  get 'check_user', to: 'users#check_user'
  get 'buy_confirmation', to: 'items#buy_confirmation'
- get 'exhibiting', to:'items#exhibiting'
- get 'sold', to:'items#sold'
- get 'trading', to:'items#trading'
-#  get 'get_delivery_method', to: 'items#get_delivery_method'
 resources :items, except: :show
  get 'new_user_session', to: 'sessions#new'
  devise_scope :user do
   get '/users/sign_out' => 'devise/sessions#destroy'
-end
+ end
  resources :tweets, only: [:new, :show, :update] 
-
  resource :photos,only: [:show]
- 
- resources :users, only: [:edit, :update, :index, :show, :new, :destroy, :create]
+ resources :users, only: [:edit, :update, :index, :show, :new, :destroy, :create] do
+  member do
+    get 'exhibiting', to: 'users#exhibiting'
+    get 'sold', to: 'users#sold'
+    get 'trading', to: 'users#trading'
+  end
+ end
  resources :signup do
   collection do
     get 'new'
@@ -39,7 +39,7 @@ end
     get 'pay_jp_new'
     get 'user_done' 
   end
-end
+ end
  resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy]
   resources :cards, only: [:new, :show] do
     collection do

@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to new_item_path
     else
-      render new_user_path
+      render :new
     end
   end
 
@@ -29,9 +29,17 @@ class ItemsController < ApplicationController
   end 
 
   def edit
+    @item = Item.find(params[:id])
+    @photos = @item.photos
   end
 
   def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to new_item_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -56,7 +64,13 @@ end
 
 private
 
-def item_params
-  params.require(:item).permit(:name, :description, :price, :text, :brand, :condition, :delivery_fee, :prefecture_id, :shipping_days, :shipping_area, :price, :categoryname, :user_id, photos_attributes: [:image], brands_attributes: [:brandname])
 
-end
+  def item_params
+    params.require(:item).permit(:name, :description, :price, :text, :brand, :condition, :delivery_fee, :prefecture_id, :shipping_days, :shipping_area, :price, :categoryname, :user_id, photos_attributes: [:image], brands_attributes: [:brandname]).merge(user_id: current_user.id)
+
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+  

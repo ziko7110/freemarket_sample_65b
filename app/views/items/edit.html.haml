@@ -3,10 +3,10 @@
     .top
       .top__logo
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281.19 84.08"><defs><style>.cls-1{fill:#dc4912;stroke:#fff;stroke-miterlimit:10;}.cls-2{font-size:48px;fill:#231815;font-family:YuGo-Bold-83pv-RKSJ-H, YuGothic;}</style></defs><title>アセット 3</title><g id="レイヤー_2" data-name="レイヤー 2"><g id="レイヤー_1-2" data-name="レイヤー 1"><polygon class="cls-1" points="36.41 83.5 0.5 62.77 0.5 21.31 36.41 0.58 72.32 21.31 72.32 62.77 36.41 83.5"/><polyline class="cls-1" points="0.5 21.31 36.41 42.04 72.32 21.31"/><polyline class="cls-1" points="36.41 83.5 36.41 49.36 36.41 42.04"/><line class="cls-1" x1="36.41" y1="52.41" x2="0.5" y2="31.67"/><line class="cls-1" x1="72.32" y1="33.2" x2="36.41" y2="50.88"/><text class="cls-2" transform="translate(86.41 62.77)">Fmarket</text></g></g></svg>
-  .edit__item__head
+  .item__head
     商品の情報を入力
   .items
-    = form_for (@item), method: :post,class:"items" do |f|
+    = form_for (@item), method: :patch, class:"items" do |f|
       .items__images
         .items__images__head
           %label.items__images__head__title
@@ -17,17 +17,14 @@
           最大10枚までアップロードできます
         #imageBox.items__images__upload
           .item-num-0#image-box__container
-            = f.fields_for :photos, class: "image-label" do |i|
-              .items__images__upload__box
-                = i.file_field :image, type: 'file', name: "item[photos_attributes][][image]", value:"", class: "image-label__input", id: "user_img"
-                %label{for:"user_img"}
+            = f.fields_for :photo, class: "image-label" do |i|
+              %label{for:"user_img"}
+                .items__images__upload__box
+                  = i.file_field :image, type: 'file', name: "item[photos_attributes][][image]", value:"", style: "display:none", class: "image-label__input", id: "user_img"
                   %pre
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
             
-              - if @item.persisted? 
-                = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-      
         .clearfix
         .items__information
           .items__information__name
@@ -56,14 +53,14 @@
                 必須
             .items__definition__category__select
               = icon 'fas', 'chevron-down'
-              = f.select :categoryname, ["---","レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自転車・オートバイ","その他"], class:'selectBox'
+              = f.select :categoryname, Item.categorynames.keys, {class:'selectBox'}
             .items__definition__category__brand
               .items__definition__category__brand__contents
                 %label.items__definition__category__brand__contents__title
                   ブランド
                 %label.items__definition__category__brand__contents__rightAttention
                   任意
-                = f.fields_for :brands do |brand|
+                = f.fields_for :brand do |brand|
                   = brand.text_field :brandname, placeholder: "例）シャネル", value: "", class: 'items__definition__category__brand__contents__input'
             .items__definition__category__status
               %label.items__definition__category__status__title
@@ -72,7 +69,7 @@
                 必須
             .items__definition__category__status__select
               = icon 'fas', 'chevron-down'
-              = f.select :condition, ["---","新品、未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"],class:"selectBox"
+              = f.select :condition, Item.conditions.keys, class: 'selectBox'
           .clearfix
         .items__shipping
           .items__shipping__title

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  layout 'devise', only: [:new, :buy_confirmation]
+  layout 'devise', only: [:new, :edit, :buy_confirmation]
 
   def index
     @items = Item.joins(:photos).group("item_id").order('id DESC')
@@ -8,12 +8,13 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.photos.new
-    @item.brands.new
+    @photo = @item.photos.new
+    @brand = @item.brands.new
   end
 
   def show
     @item = Item.find(params[:id])
+    @brand = @item.brands
   end
 
   def create
@@ -36,7 +37,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
-      redirect_to new_item_path
+      redirect_to item_path
     else
       render :edit
     end

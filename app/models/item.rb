@@ -16,6 +16,15 @@ class Item < ApplicationRecord
   # accepts_nested_attributes_for :categories, allow_destroy: true
   # belongs_to :category
   # accepts_nested_attributes_for :images, allow_destroy: true
+  
+  enum categoryname: {
+  "--−":0, "レディース":1,"メンズ":2,"ベビー・キッズ":3,"インテリア・住まい・小物":4,"本・音楽・ゲーム":5,"おもちゃ・ホビー・グッズ":6,"コスメ・香水・美容":7,"家電・スマホ・カメラ":8,"スポーツ・レジャー":9,"ハンドメイド":10,"チケット":11,"自転車・オートバイ":12,"その他":13
+  }
+  
+  enum condition: {
+  "-−-":0,"新品、未使用":1,"未使用に近い":2,"目立った傷や汚れなし":3,"やや傷や汚れあり":4,"傷や汚れあり":5,"全体的に状態が悪い":6
+  }
+
   enum delivery_fee: {
   "---":0,"送料込み(出品者負担)":1,"着払い(購入者負担)":2
   }

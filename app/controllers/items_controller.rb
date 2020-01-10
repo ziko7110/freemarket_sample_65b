@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @brand = @item.brands
   end
 
   def create

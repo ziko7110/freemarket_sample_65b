@@ -31,9 +31,7 @@
           %tr.item__ditail--head
             %th.item__ditail--name カテゴリー
             %td
-              =link_to("メンズ", '#', class: "item__ditail--list")
-              =link_to("靴", '#', class: "item__ditail--list1")
-              =link_to("スニーカー", '#', class: "item__ditail--list2")
+              =link_to @item.categoryname, '#', class: "item__ditail--list"
 
           %tr.item__ditail--head
             %th.item__ditail--name ブランド

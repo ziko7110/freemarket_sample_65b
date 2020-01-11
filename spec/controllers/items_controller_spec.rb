@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# before_action :article_owner?, only: [:edit]
 describe ItemsController, type: :controller do
   
   describe 'GET #index' do
@@ -11,6 +11,25 @@ describe ItemsController, type: :controller do
 
   end
 
+
+  describe 'GET #edit' do
+    it "データが取れているか" do
+      item = create(:item)
+      get :edit, params: {id: item.id}
+      expect(response).to be_success
+    end
+  end
+
+  describe "PATCH #update" do
+    it "正常に記事を更新できるか？" do
+      item = create(:item)
+      item_params = {name:"商品"}
+      binding.pry
+    
+      patch :update, item: {name:item_params}
+      expect(item.reload.name).to eq "商品"
+    end
+  end
 
   describe 'DELETE #destroy' do
 
@@ -24,3 +43,11 @@ describe ItemsController, type: :controller do
   end
 
 end
+
+
+# private
+# def article_owner?
+#   @item = Item.find(params[:id])
+#   unless @item.user_id == current_user.id
+#   end
+# end

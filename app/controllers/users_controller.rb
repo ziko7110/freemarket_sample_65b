@@ -39,8 +39,9 @@ class UsersController < ApplicationController
   end
   
   def pay_jp
+  end
 
-    
+  def user_done
   end
   
   def edit

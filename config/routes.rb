@@ -43,9 +43,9 @@ resources :items, except: :show
  resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy]
   resources :cards, only: [:new, :show] do
     collection do
-      post 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
     end
   end
 end

@@ -15,12 +15,12 @@
             必須
         .items__images__imageAttention
           最大10枚までアップロードできます
-        #imageBox.items__images__upload
-          .item-num-0#image-box__container
-            = f.fields_for :photos, class: "image-label" do |i|
-              .items__images__upload__box
-                = i.file_field :image, type: 'file', name: "item[photos_attributes][][image]", value:"", style: "display:none",  class: "image-label__input", id: "user_img"
-                %label{for:"user_img"}
+        %label{for:"user_img"}
+          #imageBox.items__images__upload
+            .item-num-0#image-box__container
+              = f.fields_for :photos, class: "image-label" do |i|
+                .items__images__upload__box
+                  = i.file_field :image, type: 'file', name: "item[photos_attributes][][image]", value:"", style: "display:none",  class: "image-label__input", id: "user_img"
                   %pre
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード

@@ -65,8 +65,8 @@
         %span.showtax（税込）
         %span.showfee 送料込み
       .item__buy--btn
-        = form_for "#", class: 'item__buy--btn' do |f|
-          = f.submit "購入画面に進む", class: 'item__check-btn'
+        = link_to item_purchase_index_path(@item), class: 'item__check-btn' do
+          購入画面に進む
       .product__main--comments
         %p.product__main--comments--main 【27cm】Travis Scott × Nike Air Force 1 Low Cactus Jack トラヴィス スコット エアフォース ご覧いただき、ありがとうございます。SNIKRSで当選し、購入しました。 サイズは27cm になります。 状態は、新品未使用・未試着になります。 個人情報部分を切り取った納品書原本をお付けいたします。入金確認後、即発送させていただきます。※ 落札から24時間以内のご連絡、また1日以内のお振込がお約束できる方のみ、ご入札くださいませ。 ※ご相談等は、可能な限り、お受けしたいと思いますので、ご遠慮なく仰ってください。
       .item__around--btn

@@ -1,10 +1,126 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+.destroy
+  .user_destroy
+    .user_destroy__body
+      .user_destroy__body__side
+        .user_destroy__body__side--list
+          %ul
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                マイページ 
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                お知らせ
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                やることリスト
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                いいね！一覧
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                出品する
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                出品した商品-出品中
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                出品した商品-取引中
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                出品した商品-売却済み
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                購入した商品-取引中
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                購入した商品-過去の取引
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                ニュース一覧
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                評価一覧
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                ガイド
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                お問い合わせ
+                = icon 'fas', 'chevron-right', class:'list--icon'
+          %ul
+            %h3.user_destroy__side--list--head2 メルペイ
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                売上・振込申請
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                ポイント
+                = icon 'fas', 'chevron-right', class:'list--icon'
+          %ul
+            %h3.user_destroy__side--list--head3 設定
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                プロフィール
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                発送元・お届け先住所変更
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                支払い方法
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                メール/パスワード
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                本人情報
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to "#" , class:"user_destroy__side--list--list" do
+                電話番号の確認
+                = icon 'fas', 'chevron-right', class:'list--icon'
+            %li
+              = link_to destroy_user_session_path, method: :delete, class:"user_destroy__side--list--list" do
+                ログアウト
+                = icon 'fas', 'chevron-right', class:'list--icon'
+      .show__card--main
+        .show__card--main--body
+          %label.show__cards__title 支払い一覧
+          .show__card--body
+            .show__card--body__tab
+              .show__card--body__tab__list
+                .show__card--body__tab__list__title クレジットカード一覧
+                .show__card--body__tab__list__body
+                  = icon 'fab', 'cc-visa', class:'show__card--body__tab__list__body--icon'
+                  %br.show__card--body__tab__list__body__main
+                    = "**** **** **** " + @default_card_information.last4
+                  %br.show__card--body__tab__list__body__card
+                    - exp_month = @default_card_information.exp_month.to_s
+                    - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                    = exp_month + " / " + exp_year
+                    = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+                      %input{ type: "hidden", name: "card_id", value: "" }
+                %button.show__card__delete 削除する
+            .show__card--body__bottom 
+              = link_to "#", class:"show__card--body__bottom__link" do
+                支払い方法について
+                = icon 'fas', 'chevron-right', class:'list--icon'
+
+

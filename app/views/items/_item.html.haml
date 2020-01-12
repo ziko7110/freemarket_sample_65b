@@ -3,6 +3,10 @@
     .box__inner
       .box__inner__image
         = image_tag item.photos.first.image.url, size: "188x188", class: "photo"
+        -if item.buyer_id.present? 
+          .items-box_photo__sold
+            .items-box_photo__sold__inner
+              SOLD
         .box__inner__image__price
           %span= "¥ #{item.price}"
       .box__inner__name

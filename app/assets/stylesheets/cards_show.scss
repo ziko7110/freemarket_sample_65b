@@ -1,0 +1,148 @@
+.destroy {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  background-color: #f5f5f5;
+  .user_destroy {
+    overflow: visible;
+    padding: 40px 0 40px;
+    margin: 0px 130px 0;
+    height: 100%;
+    &__body {
+      width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      &__side {
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+        font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+        width: 280px;
+        margin: 0 40px 0 0;
+        &--list {
+          border-style: solid;
+          border-width: 0;
+          margin: 0 auto;
+          ul {
+            li {
+              display: flex;
+              justify-content: space-between;
+              background: #f5f5f5;
+              &--list {
+                display: block;
+                padding: 16px;
+                background: #fff;
+                font-size: 14px;
+                color: #333;
+                text-decoration: none;
+                margin-top: 1px;
+                touch-action: manipulation;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+              }
+              .list--icon {
+                display: block;
+                margin-top: 1px;
+                background-color: white;
+                color: lightgrey;
+                position: relative;
+                padding: 0 px;
+                margin-right: 5px;
+                font-size: 20px;
+                transition: all 0.5s;
+              }
+              &--list--list:hover {
+                background-color: #F8F8FF	;
+                .list--icon {
+                  transform: translate(5px);
+                  background-color: #F8F8FF;
+                  color: #333;
+                }
+              }
+            }
+          }
+            &--head2 {
+              margin: 40px 0 0;
+              font-weight: bold;
+            }
+            li {
+            }
+            &--head3 {
+              margin: 40px 0 0;
+              font-weight: bold;
+            }
+            li {
+            }
+        }
+      }
+      .show__card--main {
+        width: 100%;
+        &--body {
+          width: 100%;
+          background-color: white;
+          .show__cards__title {
+            padding: 12px 4%;
+            border-bottom: 1px solid #f5f5f5;
+            text-align: center;
+            display: block;
+            font-size: 1.5em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            background-color: white;
+            line-height: 1.5em;
+          }
+          .show__card--body {
+            padding: 65px;
+            background-color: white;
+            &__tab {
+              margin-left: 150px;
+              &__list {
+                position: relative;
+                &__title {
+                  font-size: 16px;
+                  font-weight: bold;
+                }
+                &__body {
+                  padding: 24px 0;
+                  &--icon {
+                    font-size: 45px;
+                  }
+                  &__main {
+              
+                  }
+                  &__card {
+              
+                  }
+                }
+                .show__card__delete {
+                  position: absolute;
+                  margin-right: 200px;
+                  margin-top: 50px;
+                  top: 0;
+                  right: 0;
+                  padding: 4px 6px;
+                  background: #fff;
+                  border-radius: 3px;
+                  border: 1px solid #ea352d;
+                  color: #ea352d;
+                  height: fit-content;
+                }
+              }
+            }
+            .show__card--body__bottom {
+              text-decoration: none;
+              color: #0099e8;
+              display: block;
+              text-align: right;
+              border-top: solid 1px #f5f5f5;
+              .show__card--body__bottom__link {
+                line-height: 80px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

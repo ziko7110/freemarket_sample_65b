@@ -6,5 +6,5 @@
       = icon 'fas', 'angle-right', class: "icon"
   .product__lower
     = @items.first(10).each do |item|
-      %li
-        = render "item", item: item
+      %li= render "item", item: item
+  

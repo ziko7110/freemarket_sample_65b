@@ -1,0 +1,73 @@
+.devise-header
+  .devise-header__registration
+    = image_tag 'fmarket_logo_red.svg', alt: 'logo', class: 'devise-header__registration__logo', height: '60', width: '185'
+
+.confirmation
+  .section
+    .title
+      購入内容の確認
+    .item
+      .item__box
+        .item__box__image
+          = image_tag "sample.jpg", size: "80x80"
+        .item__box__content
+          .item__name
+            = @item.name
+          .item__price
+            .item__price__number
+            .item__price__tax_included
+              = "¥" + @item.price.to_s
+    .payment
+      .payment__box
+        .payment__box__inner__price
+          .payment__box__inner__price__left
+            支払い金額
+          .payment__box__inner__price__right
+            = "¥" + @item.price.to_s
+        .buy__centerbox__buyinfo__price__under
+          %label{for:"status_all", class: "payment__box__inner__check_box__icon"}
+          %input{type:"checkbox", value:"1",  class: "payment__box__inner__check_box"}/
+          ポイントを使用 (所持ポイント: P180)  
+           
+        -# = f.label :check, class: "payment__box__inner__check_box" do
+        -#   = f.check_box :check, class: "payment__box__inner__check_box__icon"
+          .payment__box__inner__check_box__word
+            ポイントを使用(所持ポイント：P0)
+        .payment__box__inner__card
+          .payment__box__inner__card__inner
+            .payment__box__inner__card__inner__method
+              .payment__box__inner__card__inner__method__word
+                支払い方法
+              .payment__box__inner__card__inner__method__change
+                = link_to "変更する", "#", class: "payment__box__inner__card__inner__method__change__link"
+            .payment__box__inner__card__inner__info
+              クレジットカード
+              %br
+              - if @default_card_information.blank?
+                %br /
+              - else
+                -#以下カード情報を表示
+                = "**** **** **** " + @default_card_information.last4
+              %br/
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              = "有効期限" + exp_month + " / " + exp_year
+            .payment__box__inner__card__inner__logo
+              =image_tag "master_card_logo.svg", class: "payment__box__inner__card__inner__logo__image"
+        .payment__box__inner__shipping
+          .payment__box__inner__shipping__inner
+            .payment__box__inner__shipping__inner__title
+              .payment__box__inner__shipping__inner__title__word
+                配送先
+              .payment__box__inner__shipping__inner__title__change
+                = link_to "変更する", "#", class: "payment__box__inner__shipping__inner__title__change__link"
+            .payment__box__inner__shipping__inner__address
+              〒542-0076
+              %br
+              大阪府 大阪市 中央区難波5-1-60
+              %br
+              スカイオ 太郎
+        .payment__box__inner__submit
+          = form_tag(action: :pay, method: :post) do
+            %button.btn{type:"submit",class:"payment__box__inner__submit__buttun"} 購入する
+          

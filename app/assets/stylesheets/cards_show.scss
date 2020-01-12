@@ -15,7 +15,6 @@
         box-sizing: border-box;
         background-color: #f5f5f5;
         font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
-        // float: left;
         width: 280px;
         margin: 0 40px 0 0;
         &--list {
@@ -27,7 +26,7 @@
               display: flex;
               justify-content: space-between;
               background: #f5f5f5;
-              .user_destroy__side--list--list {
+              &--list {
                 display: block;
                 padding: 16px;
                 background: #fff;
@@ -51,7 +50,7 @@
                 font-size: 20px;
                 transition: all 0.5s;
               }
-              .user_destroy__side--list--list:hover {
+              &--list--list:hover {
                 background-color: #F8F8FF	;
                 .list--icon {
                   transform: translate(5px);
@@ -61,22 +60,18 @@
               }
             }
           }
-          ul {
-            .user_destroy__side--list--head2 {
+            &--head2 {
               margin: 40px 0 0;
               font-weight: bold;
             }
             li {
             }
-          }
-          ul {
-            .user_destroy__side--list--head3 {
+            &--head3 {
               margin: 40px 0 0;
               font-weight: bold;
             }
             li {
             }
-          }
         }
       }
       .show__card--main {
@@ -100,15 +95,15 @@
           .show__card--body {
             padding: 65px;
             background-color: white;
-            .show__card--body__tab {
+            &__tab {
               margin-left: 150px;
-              .show__card--body__tab__list {
+              &__list {
                 position: relative;
-                .show__card--body__tab__list__title {
+                &__title {
                   font-size: 16px;
                   font-weight: bold;
                 }
-                .show__card--body__tab__list__body {
+                &__body {
                   padding: 24px 0;
                   &--icon {
                     font-size: 45px;

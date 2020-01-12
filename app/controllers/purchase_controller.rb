@@ -1,6 +1,9 @@
 class PurchaseController < ApplicationController
+
   require 'payjp'
-  before_action :set_card, :set_item
+  
+  before_action :set_card, :set_item, only: [:index, :pay, :done]
+  
   def index
     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
@@ -13,6 +16,7 @@ class PurchaseController < ApplicationController
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
+  
   def pay
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     Payjp::Charge.create(
@@ -22,13 +26,17 @@ class PurchaseController < ApplicationController
   )
   redirect_to action: 'done' #完了画面に移動
   end
+  
   def done
     @item.update(buyer_id: current_user.id)
   end
+  
   private
+  
   def set_card
     @card = Card.where(user_id: current_user).first
   end
+  
   def set_item
     @item = Item.find(params[:item_id])
   end

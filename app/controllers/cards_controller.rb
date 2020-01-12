@@ -6,8 +6,8 @@ class CardsController < ApplicationController
 
   def new
     # ここはDB実装の際に使います
-    @card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if @card.exists?
+    @cards = Card.where(user_id: current_user.id)
+    redirect_to action: "show" if @cards.exists?
   end
     # ここはDB実装の際に使います
   def pay #payjpとCardのデータベース作成を実施します。

@@ -16,6 +16,7 @@ class Item < ApplicationRecord
   # accepts_nested_attributes_for :categories, allow_destroy: true
   # belongs_to :category
   # accepts_nested_attributes_for :images, allow_destroy: true
+
   
   enum categoryname: {
   "--−":0, "レディース":1,"メンズ":2,"ベビー・キッズ":3,"インテリア・住まい・小物":4,"本・音楽・ゲーム":5,"おもちゃ・ホビー・グッズ":6,"コスメ・香水・美容":7,"家電・スマホ・カメラ":8,"スポーツ・レジャー":9,"ハンドメイド":10,"チケット":11,"自転車・オートバイ":12,"その他":13

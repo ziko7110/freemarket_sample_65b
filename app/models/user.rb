@@ -16,6 +16,7 @@ class User < ApplicationRecord
   validates :family_name_kana,:first_name_kana, presence: true, format: { with: /\p{katakana}/, \
   message: 'には日本語を含めてください。(Text must contain katakana.)' }
 
+
   def self.without_sns_data(auth)
     user = User.find_by(email: auth.info.email)
 

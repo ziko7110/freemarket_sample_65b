@@ -2,8 +2,11 @@ class ItemsController < ApplicationController
 
   layout 'devise', only: [:new, :edit, :buy_confirmation]
 
+  before_action :set_user, only: [:exhibiting, :trading, :sold]
+
   def index
-    @items = Item.joins(:photos).group("item_id").order('id DESC')
+    @items = Item.all.joins(:photos).group("item_id").order('id DESC')
+
   end
 
   def new
@@ -24,6 +27,18 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def exhibiting
+    @buyedphotos = @item.buyed_items
+  end
+
+  def trading
+    @sellingitem = @item.selling_items
+  end
+
+  def sold
+    @solditem = @item.sold_items
   end
 
   def get_delivery_method
@@ -74,4 +89,4 @@ private
   def set_user
     @user = User.find(params[:id])
   end
-  
+

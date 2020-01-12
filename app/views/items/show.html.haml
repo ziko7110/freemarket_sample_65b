@@ -2,38 +2,22 @@
   .product__body
     .product__main
       %h5.product__main--title
-        =@item.name
+        = @item.name
       .product__main--contents
+
         .item__photo
-          .item__photo--main
-            = image_tag "b69543bb.jpg", class: "product__main__item-image"
-          .item__photo--bottom
-            .item__photo--bottom--active
-              = image_tag "b69543bb.jpg", class: "product__main__item-image"
-            .item__photo--bottom--active
-              = image_tag "b69543bb.jpg", class: "product__main__item-image"
-            .item__photo--bottom--active
-              = image_tag "b69543bb.jpg", class: "product__main__item-image"
-            .item__photo--bottom--active
-              = image_tag "b69543bb.jpg", class: "product__main__item-image"
-            .item__photo--bottom--active
-              = image_tag "b69543bb.jpg", class: "product__main__item-image"
-            .item__photo--bottom--active
-              = image_tag "46_img2.jpg", class: "product__main__item-image"
-            .item__photo--bottom--active
-              = image_tag "46_img2.jpg", class: "product__main__item-image"
-            .item__photo--bottom--active
-              = image_tag "46_img2.jpg", class: "product__main__item-image"
-            .item__photo--bottom--active
-              = image_tag "46_img2.jpg", class: "product__main__item-image"
-            .item__photo--bottom--active
-              = image_tag "46_img2.jpg", class: "product__main__item-image"
-            
+          .item__photo--main.slider-item
+            -@item.photos.each do |photo|
+              = image_tag photo.image.url, class: 'product__main__item-image'
+          .item__photo--bottom.thumb-item
+            -@item.photos.each do |photo|
+              = image_tag photo.image.url, style:'width:60px;height:60px;',class: 'product__main__item-subimage'
+
         %table.item__ditail
           %tr.item__ditail--head
             %th.item__ditail--name 出品者
             %td
-              .item__ditail--title 寿限無
+              =link_to @item.user.nickname, '#', class: "item__ditail--title"
               .item__ditail--faceicon
                 %span.item__ditail--faceicon--1
                   = icon 'fas', 'grin', class:'face--icon'
@@ -47,15 +31,14 @@
           %tr.item__ditail--head
             %th.item__ditail--name カテゴリー
             %td
-              .item__ditail--list メンズ
-              .item__ditail--list1 靴
-              .item__ditail--list1 スニーカー
+              =link_to @item.categoryname, '#', class: "item__ditail--list"
 
           %tr.item__ditail--head
             %th.item__ditail--name ブランド
             %td 
-              = link_to "#" ,class:"item__ditail--brand" do
-                ナイキ
+              -@item.brands.each do |brand|
+                =link_to brand.brandname, '#' ,class:"item__ditail--brand"
+                
           %tr.item__ditail--head
             %th.item__ditail--name 商品のサイズ
             %td 27cm
@@ -71,20 +54,22 @@
           %tr.item__ditail--head
             %th.item__ditail--name 配送元地域
             %td
-              = link_to "#" ,class:"item__ditail--area" do
-                大阪府
+              = link_to @item.shipping_area, '#', class:"item__ditail--area"
           %tr.item__ditail--head
             %th.item__ditail--name 発送の目安
-            %td 1〜2日で発送
+            %td
+              = @item.shipping_days
       .product__main--item--price
-        %span.showprice ¥100,000
+        %span.showprice 
+          = @item.price
         %span.showtax（税込）
         %span.showfee 送料込み
       .item__buy--btn
         = form_for "#", class: 'item__buy--btn' do |f|
           = f.submit "購入画面に進む", class: 'item__check-btn'
       .product__main--comments
-        %p.product__main--comments--main 【27cm】Travis Scott × Nike Air Force 1 Low Cactus Jack トラヴィス スコット エアフォース ご覧いただき、ありがとうございます。SNIKRSで当選し、購入しました。 サイズは27cm になります。 状態は、新品未使用・未試着になります。 個人情報部分を切り取った納品書原本をお付けいたします。入金確認後、即発送させていただきます。※ 落札から24時間以内のご連絡、また1日以内のお振込がお約束できる方のみ、ご入札くださいませ。 ※ご相談等は、可能な限り、お受けしたいと思いますので、ご遠慮なく仰ってください。
+        %p.product__main--comments--main
+          = @item.description 
       .item__around--btn
         .item__around--btn--left 
           .item__around--btn--left--l 
@@ -114,6 +99,8 @@
             %li
               .message-body
                 .message-body--main
+                  
+
                   
                 
         .product__message--contents2

@@ -5,8 +5,8 @@ class Item < ApplicationRecord
   belongs_to :buyer, optional: true , class_name: "User"
   has_many :photos, dependent: :destroy
   accepts_nested_attributes_for :photos, allow_destroy: true
-  has_many :brands
-  accepts_nested_attributes_for :brands
+  has_many :brands, dependent: :destroy
+  accepts_nested_attributes_for :brands, allow_destroy: true
 
 
   # 下記コメントアウトはenum形式でformを作成する時の為
@@ -16,9 +16,19 @@ class Item < ApplicationRecord
   # accepts_nested_attributes_for :categories, allow_destroy: true
   # belongs_to :category
   # accepts_nested_attributes_for :images, allow_destroy: true
-  # enum delivery_fee: {
-  # "---":0,"送料込み(出品者負担)":1,"着払い(購入者負担)":2
-  # }
+
+  
+  enum categoryname: {
+  "--−":0, "レディース":1,"メンズ":2,"ベビー・キッズ":3,"インテリア・住まい・小物":4,"本・音楽・ゲーム":5,"おもちゃ・ホビー・グッズ":6,"コスメ・香水・美容":7,"家電・スマホ・カメラ":8,"スポーツ・レジャー":9,"ハンドメイド":10,"チケット":11,"自転車・オートバイ":12,"その他":13
+  }
+  
+  enum condition: {
+  "-−-":0,"新品、未使用":1,"未使用に近い":2,"目立った傷や汚れなし":3,"やや傷や汚れあり":4,"傷や汚れあり":5,"全体的に状態が悪い":6
+  }
+
+  enum delivery_fee: {
+  "---":0,"送料込み(出品者負担)":1,"着払い(購入者負担)":2
+  }
 
   # enum shipping_area: {
   # "---":0,
@@ -32,10 +42,10 @@ class Item < ApplicationRecord
   # 福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
   # },_prefix: true
 
-  # enum shipping_days: {
-  # "---":0,
-  # "1~2日で発送":1, "2~3日で発送":2, "4~7日で発送":3
-  # },_prefix: true
+  enum shipping_days: {
+  "---":0,
+  "1~2日で発送":1, "2~3日で発送":2, "4~7日で発送":3
+  },_prefix: true
 
 
 

@@ -20,16 +20,7 @@ describe ItemsController, type: :controller do
     end
   end
 
-  describe "PATCH #update" do
-    it "正常に記事を更新できるか？" do
-      item = create(:item)
-      item_params = {name:"商品"}
-      binding.pry
-    
-      patch :update, item: {name:item_params}
-      expect(item.reload.name).to eq "商品"
-    end
-  end
+
 
   describe 'DELETE #destroy' do
 

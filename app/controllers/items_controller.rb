@@ -77,14 +77,16 @@ class ItemsController < ApplicationController
     end
   end
 
-  def exhibiting
-  end
+  # def exhibiting
+  # end
 
-  def sold
-  end
+  # def sold
 
-  def trading
-  end
+  # end
+
+  # def trading
+  
+  # end
 
 end
 

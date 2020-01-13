@@ -28,51 +28,51 @@
       .payjp__form--bar--title 支払い方法
       .payjp__form--bar--main
         .payjp__form--main--bar
-        = form_with url: pay_cards_path, method: :post,optinal: true, html: {name: "pay_cards"} do |f|
-          .payjp__form--main--bar--limit
-            %label.cardnum カード番号
-            %label.must 必須
-          = f.text_field cards_path, type: 'text', class: "payjp__number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", html: {name: "card_number"}, id: "card_number"
-          %ul.payjp__card__contener__form__content__group__img
-            %li
-              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574', class:"payjp__card__contener__form__content__group__img__visa", size: "49x20"
-            %li
-              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1714804574', class:"payjp__card__contener__form__content__group__img__master-card", size: "34x20"
-            %li
-              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?1714804574', class:"payjp__card__contener__form__content__group__img__saison-card", size: "30x20"
-            %li
-              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1714804574', class:"payjp__card__contener__form__content__group__img__jcb", size: "32x20"
-            %li
-              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1714804574', class:"payjp__card__contener__form__content__group__img__american-express", size: "21x20"
-            %li
-              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1714804574', class:"payjp__card__contener__form__content__group__img__dinersclub", size: "32x20"
-            %li
-              =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1714804574', class:"payjp__card__contener__form__content__group__img__discover", size:"32x20"
-          .payjp__form--limit
-            .month--limit
-              .month--limit--bar
-                %label.expiration__date 有効期限
-                %label.must 必須
-              = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'exp_month', html: {name: "exp_month"}, id: "exp_month"
-              = icon 'fas', 'chevron-down', class:'payjp__chevron--down--icon'
-              %span 月
-            .year--limit
-              = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'exp_year', html: {name: "exp_year"}, id: "exp_year"
-              = icon 'fas', 'chevron-down', class:'payjp__chevron--down--icon'
-              %span 年
-            .payjp__form--code
-              .payjp__form--code--body
-                .payjp__form--code--body--bar
-                  %label.security__code セキュリティコード
+          = form_with url: pay_cards_path, method: :post,optinal: true, html: {name: "pay_cards"} do |f|
+            .payjp__form--main--bar--limit
+              %label.cardnum カード番号
+              %label.must 必須
+            = f.text_field cards_path, type: 'text', class: "payjp__number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", html: {name: "card_number"}, id: "card_number"
+            %ul.payjp__card__contener__form__content__group__img
+              %li
+                =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574', class:"payjp__card__contener__form__content__group__img__visa", size: "49x20"
+              %li
+                =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1714804574', class:"payjp__card__contener__form__content__group__img__master-card", size: "34x20"
+              %li
+                =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?1714804574', class:"payjp__card__contener__form__content__group__img__saison-card", size: "30x20"
+              %li
+                =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1714804574', class:"payjp__card__contener__form__content__group__img__jcb", size: "32x20"
+              %li
+                =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1714804574', class:"payjp__card__contener__form__content__group__img__american-express", size: "21x20"
+              %li
+                =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1714804574', class:"payjp__card__contener__form__content__group__img__dinersclub", size: "32x20"
+              %li
+                =image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1714804574', class:"payjp__card__contener__form__content__group__img__discover", size:"32x20"
+            .payjp__form--limit
+              .month--limit
+                .month--limit--bar
+                  %label.expiration__date 有効期限
                   %label.must 必須
-                = f.text_field :cvc, type: 'text', class: 'payjp__cvc', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4", html: {name: "cvc"}, id: "cvc"
-              .payjp__form--code--bottom
-                %label.security__code--note 
-                  = link_to "#" , class:"security__code--note--list" do
-                    = icon 'fas', 'question-circle', class:'question--icon'
-                    .security__code--note--text カード裏面の番号とは？
-                #card_token
-                = f.submit "次へ進む", class: "token_submit", id: "token_submit"
+                = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'exp_month', html: {name: "exp_month"}, id: "exp_month"
+                = icon 'fas', 'chevron-down', class:'payjp__chevron--down--icon'
+                %span 月
+              .year--limit
+                = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'exp_year', html: {name: "exp_year"}, id: "exp_year"
+                = icon 'fas', 'chevron-down', class:'payjp__chevron--down--icon'
+                %span 年
+              .payjp__form--code
+                .payjp__form--code--body
+                  .payjp__form--code--body--bar
+                    %label.security__code セキュリティコード
+                    %label.must 必須
+                  = f.text_field :cvc, type: 'text', class: 'payjp__cvc', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4", html: {name: "cvc"}, id: "cvc"
+                .payjp__form--code--bottom
+                  %label.security__code--note 
+                    = link_to "#" , class:"security__code--note--list" do
+                      = icon 'fas', 'question-circle', class:'question--icon'
+                      .security__code--note--text カード裏面の番号とは？
+                  #card_token
+                  = f.submit "次へ進む", class: "token_submit", id: "token_submit"
 
 
 

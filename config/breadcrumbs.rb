@@ -22,6 +22,11 @@ crumb :edit_user do
   parent :mypage
 end
 
+crumb :item_show do|item|
+  link item.name, edit_user_path
+  parent :root
+end
+
 
 
 # crumb :mypage do

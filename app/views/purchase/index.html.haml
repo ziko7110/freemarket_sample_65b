@@ -9,7 +9,7 @@
     .item
       .item__box
         .item__box__image
-          = image_tag "sample.jpg", size: "80x80"
+          = image_tag @item.photos.first.image.url, size: "80x80"
         .item__box__content
           .item__name
             = @item.name

@@ -29,8 +29,8 @@ class SignupController < ApplicationController
     @user.user_addresses.build
   end
   
-  def pay_jp
-  end
+  # def pay_jp
+  # end
   
   def user_done
     sign_in User.find(session[:id]) unless user_signed_in?

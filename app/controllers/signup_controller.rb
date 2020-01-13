@@ -59,7 +59,8 @@ class SignupController < ApplicationController
     @user.user_addresses.build(user_params[:user_addresses_attributes]["0"]) 
     if @user.save
       session[:id] = @user.id 
-      redirect_to   pay_jp_new_signup_index_path
+      sign_in User.find(session[:id]) unless user_signed_in?
+      redirect_to   new_card_path
     else
       render '/signup/new'
     end

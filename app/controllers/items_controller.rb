@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   layout 'devise', only: [:new, :edit, :buy_confirmation]
 
   before_action :set_user, only: [:exhibiting, :trading, :sold]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @items = Item.all.joins(:photos).group("item_id").order('id DESC')
@@ -46,7 +47,12 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    @photos = @item.photos
+    if @item.user_id == current_user.id
+      # @item = Item.find(params[:id])
+      @photos = @item.photos
+    else
+      redirect_to root_path
+    end
   end
 
   def update

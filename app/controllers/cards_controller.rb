@@ -3,6 +3,7 @@ class CardsController < ApplicationController
   require "payjp"
 
   layout 'devise', only: :new
+  before_action :authenticate_user!
 
   def new
     # ここはDB実装の際に使います

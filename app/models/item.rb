@@ -3,10 +3,15 @@ class Item < ApplicationRecord
   validates :name, :price, :description, :condition, :delivery_fee, :shipping_area, :shipping_days, :categoryname, presence: true
   belongs_to :user, optional: true ,class_name: "User" 
   belongs_to :buyer, optional: true , class_name: "User"
-  has_many :photos, dependent: :destroy
+  has_many :photos, dependent: :destroy, autosave: true 
   accepts_nested_attributes_for :photos, allow_destroy: true
   has_many :brands, dependent: :destroy
   accepts_nested_attributes_for :brands, allow_destroy: true
+
+  before_update do
+    photos = Photo.where(item_id: id)
+    photos.each{ |photo| photo.destroy}
+  end
 
 
   # 下記コメントアウトはenum形式でformを作成する時の為

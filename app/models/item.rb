@@ -14,8 +14,10 @@ class Item < ApplicationRecord
   # belongs_to_active_hash :prefecture
 
   before_update do
-    photos = Photo.where(item_id: id)
-    photos.each{ |photo| photo.destroy}
+    if buyer_id.blank?
+      photos = Photo.where(item_id: id)
+      photos.each{ |photo| photo.destroy}
+    end
   end
 
 

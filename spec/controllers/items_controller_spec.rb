@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# before_action :article_owner?, only: [:edit]
 describe ItemsController, type: :controller do
 
 
@@ -21,6 +21,16 @@ describe ItemsController, type: :controller do
   end
 
 
+  describe 'GET #edit' do
+    it "データが取れているか" do
+      item = create(:item)
+      get :edit, params: {id: item.id}
+      expect(response).to be_success
+    end
+  end
+
+
+
   describe 'DELETE #destroy' do
 
     it "deletes the item" do
@@ -33,3 +43,11 @@ describe ItemsController, type: :controller do
   end
 
 end
+
+
+# private
+# def article_owner?
+#   @item = Item.find(params[:id])
+#   unless @item.user_id == current_user.id
+#   end
+# end

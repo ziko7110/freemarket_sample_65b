@@ -54,7 +54,6 @@ $AttentionHeight: 16px;
 }
 #new_item{
   border-bottom: solid 1px #f5f5f5;
-  padding: 40px;
 }
 .image-label__input{
 }
@@ -63,6 +62,7 @@ $AttentionHeight: 16px;
     margin: 0 auto;
     width: 700px;
     background-color: white;
+    padding: 40px;
     &__images{
       &__head{
         display: flex;
@@ -93,13 +93,20 @@ $AttentionHeight: 16px;
       }
       .items__images__upload {
         display: flex;
-        
+        flex-wrap: wrap;
+        width: 625px;
         .item-image {
           text-align: center;
           background-color: white;
           margin-right: 15px;
+          margin: 0 auto;
+          .item-image__content {
+            .item-image__content--icon {
+            }
+          }
           .item-image__operetion {
             font-size: 20px;
+            background-color: #f5f5f5;
           }
         }
         .item-num-0{
@@ -167,7 +174,7 @@ $AttentionHeight: 16px;
     .items__information{
       border-bottom: solid 1px #f5f5f5;
       box-sizing: border-box;
-      padding: 40px;
+      padding-top: 30px;
       &__name{
         display: flex;
         &__title{
@@ -197,7 +204,7 @@ $AttentionHeight: 16px;
           padding: 10px 16px 8px;
           border-radius: 4px;
           border: 1px solid #ccc;
-          width: 500px;
+          width: 100%;
           box-sizing: border-box;
           font-size: 16px;
         }
@@ -242,7 +249,7 @@ $AttentionHeight: 16px;
     }
   &__definition{
     border-bottom: solid 1px #f5f5f5;
-    padding: 40px;
+    padding-top: 40px;
     &__title{
       color: #888888;
       font-size: 14px;
@@ -395,7 +402,7 @@ $AttentionHeight: 16px;
   }
 
   &__shipping{
-    padding: 40px;
+    padding-top: 40px;
     &__title{
       color: #888888;
       font-size: 14px;
@@ -568,7 +575,7 @@ $AttentionHeight: 16px;
 
   &__cost{
     border-bottom: solid 1px #f5f5f5;
-    padding: 40px;
+    padding-top: 40px;
     margin: 0;
     &__title{
       color: #888888;

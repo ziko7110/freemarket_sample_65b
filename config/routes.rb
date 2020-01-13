@@ -40,12 +40,20 @@ resources :items, except: :show
     get 'user_done' 
   end
  end
- resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+ resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy] do
+  resources :purchase, only: [:index] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+      
+    end
+  end
+ end
   resources :cards, only: [:new, :show] do
     collection do
-      post 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
     end
   end
 end

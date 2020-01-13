@@ -9,8 +9,10 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :brands, allow_destroy: true
 
   before_update do
-    photos = Photo.where(item_id: id)
-    photos.each{ |photo| photo.destroy}
+    if buyer_id.blank?
+      photos = Photo.where(item_id: id)
+      photos.each{ |photo| photo.destroy}
+    end
   end
 
 

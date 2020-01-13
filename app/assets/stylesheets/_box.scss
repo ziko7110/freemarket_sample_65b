@@ -16,7 +16,7 @@
       top: 0;
       left: 0;
       border: solid 1px transparent;
-      z-index: 50;
+      z-index: 100;
     }
     &__image {
       position: relative;
@@ -56,7 +56,7 @@
   text-decoration: none;
 }
 
-.box__inner:hover {
+.box__inner:hover::after {
   border-color: rgb(0, 149, 238);
 }
 

@@ -22,7 +22,7 @@
                   %ul.e-content__main__bottom__main__list
                     %li.e-content__main__bottom__main__list__body
                       .e-content__main__bottom__main__list__body__image
-                        - item.photos.each do |photo|
+                        - item.photos.first(1).each do |photo|
                           = image_tag photo.image.url, size:"50x50",class:"content__box--img"
                       .e-content__main__bottom__main__list__body__main
                         .e-content__main__bottom__main__list__body__main__text 

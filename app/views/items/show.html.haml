@@ -1,3 +1,4 @@
+- breadcrumb :item_show,@item
 .product
   .product__body
     .product__main
@@ -115,7 +116,7 @@
     %ul.product__nav
       = icon 'fas', 'chevron-left', class:'product__nav--icon'
       %li.product__nav--left ikonファンクラブ更新特典
-      %li.product__nav--right トランクス：ゼノ　シークレット
+      %li.product__nav--right トランクス：ゼノ シークレット
       = icon 'fas', 'chevron-right', class:'product__nav--icon'
 
     .item__sns
@@ -139,7 +140,7 @@
     .item-in-user-prf
       %section.item-box-container1
       %section.item-box-container2
-        %h6.items-box-head 寿限無　その他の商品
+        %h6.items-box-head 寿限無 その他の商品
         .items-box-content
           %section.show__item-box
             .show__item-image
@@ -205,7 +206,7 @@
     .item-in-user-prf
       %section.item-box-container1
       %section.item-box-container2
-        %h6.items-box-head チョウチンアンコウの”ここ”　その他の商品
+        %h6.items-box-head チョウチンアンコウの”ここ”  その他の商品
         .items-box-content
           %section.show__item-box
             .show__item-image
@@ -268,9 +269,4 @@
                   = icon 'far', 'heart', class:'show__item--text--num--icon'
                   %span.show__item--text--num--icon--num 3
   .root__nav
-    %ul
-      %li
-        .itemprop__url ヨダレダコ
-        = icon 'fas', 'chevron-right', class:'itemprop__url--icon'
-      %li
-        %span.itemprop__title 女将 = 蟹宮
+    = breadcrumbs pretext: "",separator: " &rsaquo; ", class:"breadcrumbs__bar__under"

@@ -81,7 +81,7 @@
                 発送元・お届け先住所変更
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
-              = link_to "#" , class:"user_destroy__side--list--list" do
+              = link_to cards_path, class:"user_destroy__side--list--list" do
                 支払い方法
                 = icon 'fas', 'chevron-right', class:'list--icon'
             %li
@@ -117,10 +117,8 @@
                     = exp_month + " / " + exp_year
                     = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
                       %input{ type: "hidden", name: "card_id", value: "" }
-                %button.show__card__delete 削除する
+                      %button.show__card__delete 削除する
             .show__card--body__bottom 
               = link_to "#", class:"show__card--body__bottom__link" do
                 支払い方法について
                 = icon 'fas', 'chevron-right', class:'list--icon'
-
-

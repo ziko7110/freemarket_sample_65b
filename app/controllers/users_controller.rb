@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
   def trading
     @sellingitems = @user.selling_items
+
   end
 
   def sold

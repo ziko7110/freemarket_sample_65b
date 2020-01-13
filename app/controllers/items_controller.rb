@@ -65,6 +65,7 @@ class ItemsController < ApplicationController
   end
 
   def buy_confirmation
+    @item = Item.find(params[:id])
     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "cards", action: "new"
@@ -77,14 +78,16 @@ class ItemsController < ApplicationController
     end
   end
 
-  def exhibiting
-  end
+  # def exhibiting
+  # end
 
-  def sold
-  end
+  # def sold
 
-  def trading
-  end
+  # end
+
+  # def trading
+  
+  # end
 
 end
 

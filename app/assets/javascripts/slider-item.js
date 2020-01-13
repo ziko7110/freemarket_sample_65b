@@ -7,7 +7,7 @@ $(function(){
   $('.thumb-item').slick({
     asNavFor:'.slider-item',
     focusOnSelect: true,
-    slidesToShow:4,
+    slidesToShow:10,
     slidesToScroll:1,
     infinite: false,
     variableWidth: false

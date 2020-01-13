@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   belongs_to :buyer, optional: true , class_name: "User"
   has_many :photos, dependent: :destroy, autosave: true 
   accepts_nested_attributes_for :photos, allow_destroy: true
-  has_many :brands, dependent: :destroy
+  has_many :brands, dependent: :destroy, autosave: true
   accepts_nested_attributes_for :brands, allow_destroy: true
 
 

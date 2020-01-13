@@ -60,7 +60,7 @@
                   ブランド
                 %label.items__definition__category__brand__contents__rightAttention
                   任意
-                = f.fields_for :brand do |brand|
+                = f.fields_for :brands do |brand|
                   = brand.text_field :brandname, placeholder: "例）シャネル", value: "", class: 'items__definition__category__brand__contents__input'
             .items__definition__category__status
               %label.items__definition__category__status__title

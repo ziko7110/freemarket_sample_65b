@@ -17,6 +17,8 @@ class Item < ApplicationRecord
     if buyer_id.blank?
       photos = Photo.where(item_id: id)
       photos.each{ |photo| photo.destroy}
+      brands = Brand.where(item_id: id)
+      brands.each{ |brand| brand.destroy}
     end
   end
 

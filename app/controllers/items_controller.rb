@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    if @item.user_id == current_user.id
+    if @item.user_id == current_user.id && @item.buyer_id.blank?
       @photos = @item.photos
     else
       redirect_to root_path

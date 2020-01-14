@@ -86,7 +86,7 @@
             あんしん・あんぜんへの取組
 
 
-    - if user_signed_in? && current_user.id == @item.user_id
+    - if user_signed_in? && current_user.id == @item.user_id && @item.buyer_id.blank?
       =render "product_change"
 
 

@@ -8,18 +8,16 @@ class Item < ApplicationRecord
   has_many :brands, dependent: :destroy, autosave: true
   accepts_nested_attributes_for :brands, allow_destroy: true
 
-
   # 発送元をアクティブハッシュで表示する時に使用？
   # extend ActiveHash::Associations::ActiveRecordExtensions
   # belongs_to_active_hash :prefecture
 
-  before_update do
-    if buyer_id.blank?
-      photos = Photo.where(item_id: id)
-      photos.each{ |photo| photo.destroy}
-      brands = Brand.where(item_id: id)
-      brands.each{ |brand| brand.destroy}
-    end
+  after_update do
+    latest_photo = Photo.where(item_id: id).order('created_at DESC').first
+    to = ( latest_photo.created_at - 1.seconds )
+    from = "0001/01/01 00:00:00"
+    before_update_photos = Photo.where(item_id: id, created_at: from..to)
+    before_update_photos.each{ |photo| photo.delete}
   end
 
 

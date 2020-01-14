@@ -14,7 +14,7 @@
       .buy__centerbox__item
         .buy__centerbox__item__bx
           .buy__centerbox__item__bx__image
-            -@item.photos.each do |photo|
+            -@item.photos.first(1).each do |photo|
               = image_tag photo.image.url, size: "200x200", class: "single_main__img"
           .buy__centerbox__item__bx__right
             .buy__centerbox__item__bx__right__name

@@ -22,8 +22,9 @@
               %label{for:"user_img"}
                 .items__images__upload__box
                   = i.file_field :image, type: 'file', name: "item[photos_attributes][][image]", value:"", style: "display:none", class: "image-label__input", id: "user_img"
-                  %pre
+                  .items__images__upload__box__word1
                     ドラッグアンドドロップ
+                  .items__images__upload__box__word2
                     またはクリックしてファイルをアップロード
             
         .clearfix

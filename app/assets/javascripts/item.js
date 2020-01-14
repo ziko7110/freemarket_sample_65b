@@ -19,7 +19,7 @@ $(function(){
         var html= `<div style= ""class='item-image' data-image="${file.name}">
                     <div class=' item-image__content'>
                       <div class='item-image__content--icon'>
-                        <img src=${image} width="120" height="142" >
+                        <img src=${image} width="120" height="120" >
                       </div>
                     </div>
                     <div style="text-align: center" class='item-image__operetion'>

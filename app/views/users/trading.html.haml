@@ -10,11 +10,14 @@
             出品した商品
           %ul.e-content__main__tab
             %li.e-content__main__tab__list4
-              %h11.e-content__main__tab__list__title4 出品中
+              = link_to exhibiting_user_path(current_user), class: "e-content__main__tab__list4__title4" do
+                出品中
             %li.e-content__main__tab__list5
-              %h11.e-content__main__tab__list__title5 取引中
+              = link_to trading_user_path(current_user), class: "e-content__main__tab__list5__title5 " do
+                取引中
             %li.e-content__main__tab__list6
-              %h11.e-content__main__tab__list__title6 売却済み
+              = link_to sold_user_path(current_user), class: "e-content__main__tab__list6__title6 " do
+                売却済み
           .e-content__main__bottom
             .e-content__main__bottom__main
               %ul

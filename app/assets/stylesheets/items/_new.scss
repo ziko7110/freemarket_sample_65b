@@ -95,6 +95,25 @@ $AttentionHeight: 16px;
         display: flex;
         flex-wrap: wrap;
         width: 625px;
+        &__box {
+          padding: 0;
+          position: relative;
+          &__word1 {
+            width: 100%;
+            left: 0;
+            position: absolute;
+            bottom: 50%;
+            width: 100%;
+            word-break: break-all;
+          }
+          &__word2 {
+            width: 100%;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            word-break: break-all;
+          }
+        }
         .item-image {
           text-align: center;
           background-color: white;
@@ -125,6 +144,7 @@ $AttentionHeight: 16px;
         }
         .item-num-4{
           width: 106px;
+
         }
         //下段のfile_field
         .item-num-5{

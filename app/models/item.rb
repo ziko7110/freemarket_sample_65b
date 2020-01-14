@@ -13,11 +13,24 @@ class Item < ApplicationRecord
   # belongs_to_active_hash :prefecture
 
   after_update do
+
+    #photoが追加された場合に古いphotoを削除
     latest_photo = Photo.where(item_id: id).order('created_at DESC').first
     to = ( latest_photo.created_at - 1.seconds )
     from = "0001/01/01 00:00:00"
     before_update_photos = Photo.where(item_id: id, created_at: from..to)
     before_update_photos.each{ |photo| photo.delete}
+
+    #更新時のbrandがblankの場合は最新データを削除、blankでない場合は過去データを削除
+    latest_brand = Brand.where(item_id: id).order('created_at DESC').first
+    if latest_brand.brandname.blank?
+      latest_brand.delete
+    else
+    to = ( latest_brand.created_at - 1.seconds )
+    from = "0001/01/01 00:00:00"
+    before_update_brands = Brand.where(item_id: id, created_at: from..to)
+    before_update_brands.each{ |brand| brand.delete}
+    end
   end
 
 

@@ -22,7 +22,7 @@
             %i.far.fa-bell 
             = link_to 'お知らせ', '/users/1', class: 'afetr_iogin__string'
             %i.fas.fa-check 
-            = link_to 'やることリスト',destroy_user_session_path, method: :delete, class: 'afetr_iogin__string'
+            = link_to 'やることリスト','#', class: 'afetr_iogin__string'
         -else
           = link_to '新規会員登録', users_path, class: 'header__container__bottom__user__signup'
           = link_to 'ログイン', new_user_session_path, class: 'header__container__bottom__user__login'

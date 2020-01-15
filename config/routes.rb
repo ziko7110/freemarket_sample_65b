@@ -45,7 +45,6 @@ resources :items, except: :show
     collection do
       post 'pay', to: 'purchase#pay'
       get 'done', to: 'purchase#done'
-      
     end
   end
  end

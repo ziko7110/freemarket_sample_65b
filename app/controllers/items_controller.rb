@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
+    if @item.save(context: :create)
       redirect_to new_item_path
     else
       render :new
@@ -48,7 +48,6 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     if @item.user_id == current_user.id && @item.buyer_id.blank?
-      @photos = @item.photos
     else
       redirect_to root_path
     end

@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
 
   validates :name, :price, :description, :condition, :delivery_fee, :shipping_area, :shipping_days, :categoryname, presence: true
+  validates :photos, presence: true, on: :create
   belongs_to :user, optional: true ,class_name: "User" 
   belongs_to :buyer, optional: true , class_name: "User"
   has_many :photos, dependent: :destroy, autosave: true 
@@ -8,31 +9,28 @@ class Item < ApplicationRecord
   has_many :brands, dependent: :destroy, autosave: true
   accepts_nested_attributes_for :brands, allow_destroy: true
 
-
   # 発送元をアクティブハッシュで表示する時に使用？
   # extend ActiveHash::Associations::ActiveRecordExtensions
   # belongs_to_active_hash :prefecture
 
-  before_update do
-    if buyer_id.blank?
-      photos = Photo.where(item_id: id)
-      photos.each{ |photo| photo.destroy}
-      brands = Brand.where(item_id: id)
-      brands.each{ |brand| brand.destroy}
+  after_update do
+    
+   #photoが追加された場合に古いphotoを削除
+    latest_photo = Photo.where(item_id: id).order('created_at DESC').first
+    before_update_photos = Photo.where(item_id: id).where.not(created_at: latest_photo.created_at)
+    before_update_photos.each{ |photo| photo.delete}
+
+   #更新時のbrandがblankの場合は最新データを削除、blankでない場合は過去データを削除
+    latest_brand = Brand.where(item_id: id).order('created_at DESC').first
+    if latest_brand.brandname.blank?
+      latest_brand.delete
+    else
+      before_update_brands = Brand.where(item_id: id).where.not(created_at: latest_brand.created_at)
+      before_update_brands.each{ |brand| brand.delete}
     end
+    
   end
 
-
-
-  # 下記コメントアウトはenum形式でformを作成する時の為
-
-  # has_many :items_categories
-  # has_many :categories, through: :items_categories
-  # accepts_nested_attributes_for :categories, allow_destroy: true
-  # belongs_to :category
-  # accepts_nested_attributes_for :images, allow_destroy: true
-
-  
   enum categoryname: {
   "レディース":1,"メンズ":2,"ベビー・キッズ":3,"インテリア・住まい・小物":4,"本・音楽・ゲーム":5,"おもちゃ・ホビー・グッズ":6,"コスメ・香水・美容":7,"家電・スマホ・カメラ":8,"スポーツ・レジャー":9,"ハンドメイド":10,"チケット":11,"自転車・オートバイ":12,"その他":13
   }

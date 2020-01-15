@@ -22,7 +22,7 @@ resources :items, except: :show
  devise_scope :user do
   get '/users/sign_out' => 'devise/sessions#destroy'
  end
- resources :tweets, only: [:new, :show, :update] 
+
  resource :photos,only: [:show]
  resources :users, only: [:edit, :update, :index, :show, :new, :destroy, :create] do
   member do
@@ -50,6 +50,7 @@ resources :items, except: :show
  end
   resources :cards, only: [:new, :show] do
     collection do
+      get 'create', to: 'cards#create'
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
